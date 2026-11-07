@@ -1,0 +1,1 @@
+Store versioned n8n workflow exports and documentation here. Never export credentials or secrets.

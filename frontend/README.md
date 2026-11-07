@@ -1,0 +1,1 @@
+Next.js frontend. See docs/DESIGN_SYSTEM.md and AGENTS.md.

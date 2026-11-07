@@ -1,0 +1,1 @@
+FastAPI modular backend. See docs/SYSTEM_ARCHITECTURE.md and AGENTS.md.
