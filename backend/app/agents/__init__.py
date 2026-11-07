@@ -1,0 +1,43 @@
+from backend.app.agents.schemas import (
+    BusinessIntent,
+    DiscoveryResult,
+    DiscoveredAsset,
+    MatchTier,
+    KpiMatch,
+    KpiAnalysisResult,
+    DuplicateCandidate,
+    DuplicationResult,
+    GovernanceAgentResult,
+    DecisionResult,
+    DecisionType,
+    DecisionAlternative,
+    AssistantRequestCreate,
+    AssistantRequestOut,
+    AgentTraceOut,
+    AssistantRecommendationOut,
+    AssistantWorkflowResponse,
+)
+from backend.app.agents.orchestrator import AgentOrchestrator, orchestrator
+
+__all__ = [
+    "BusinessIntent",
+    "DiscoveryResult",
+    "DiscoveredAsset",
+    "MatchTier",
+    "KpiMatch",
+    "KpiAnalysisResult",
+    "DuplicateCandidate",
+    "DuplicationResult",
+    "GovernanceAgentResult",
+    "DecisionResult",
+    "DecisionType",
+    "DecisionAlternative",
+    "AssistantRequestCreate",
+    "AssistantRequestOut",
+    "AgentTraceOut",
+    "AssistantRecommendationOut",
+    "AssistantWorkflowResponse",
+    "AgentOrchestrator",
+    "orchestrator",
+]
+
