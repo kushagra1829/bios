@@ -1,0 +1,96 @@
+{
+  "manifest_id": "BIOS-MANIFEST-5-9-INTELLIGENCE",
+  "milestone": "5.9",
+  "milestone_title": "AI Intelligence Quality, Decision Accuracy & Optimization",
+  "timestamp": "2026-11-07T15:22:00Z",
+  "classification": "AI INTELLIGENCE OPTIMIZATION PASSED",
+  "environment": {
+    "os": "Windows 11 (win32)",
+    "python_version": "3.14.8",
+    "pytest_version": "9.2.0",
+    "node_version": "v20.x",
+    "next_version": "14.2.35",
+    "fastapi_version": "0.110.x",
+    "database_engine": "SQLite 3",
+    "database_path": "data/bios.db",
+    "alembic_head": "b4f1c2d7e8a9",
+    "git_commit_baseline": "99c8fd01632e4e4a0cc1646f9d7338a8d7e06aab",
+    "git_branch": "main",
+    "git_status": "Clean unstaged modifications; zero git commits or resets"
+  },
+  "dataset": {
+    "file_path": "data/source/Bayer_Pharmaceuticals_SinceAI_2026_FINAL_Builder_Data_Pack.xlsx",
+    "sha256": "7d01877096c640d7705c0507cfc32840dd88a99fe546d975a715f73b40f101ab",
+    "table_counts": {
+      "analytics_assets": 360,
+      "semantic_models": 75,
+      "kpi_catalog": 15,
+      "migration_backlog": 94,
+      "owners": 25,
+      "governance_rules": 8
+    }
+  },
+  "model_configuration": {
+    "primary_provider": "Ollama (Local)",
+    "primary_model": "qwen3.5:4b",
+    "fallback_adapter": "DeterministicFallbackAdapter",
+    "evaluation_mode": "DETERMINISTIC_BENCHMARK",
+    "training_claim": "None (zero training or fine-tuning on Bayer enterprise data)",
+    "deployment_claim": "None (strictly synthetic validation environment)"
+  },
+  "test_execution": {
+    "backend_test_suite": {
+      "command": "backend\\.venv\\Scripts\\python.exe -m pytest backend/tests -q",
+      "total_collected": 420,
+      "passed": 406,
+      "failed": 0,
+      "skipped": 14,
+      "skipped_reasons": "Live external network / remote Ollama socket tests intentionally bypassed during offline deterministic validation",
+      "duration_seconds": 30.58,
+      "exit_code": 0
+    },
+    "benchmark_test_suite": {
+      "command": "backend\\.venv\\Scripts\\python.exe -m pytest backend/tests/benchmarks/test_milestone_5_9_intelligence_benchmark.py -v",
+      "total_cases": 30,
+      "passed": 30,
+      "failed": 0,
+      "duration_seconds": 3.36,
+      "exit_code": 0
+    },
+    "frontend_validation": {
+      "type_check_command": "npx.cmd tsc --noEmit",
+      "type_check_status": "PASSED (0 errors)",
+      "build_command": "npm.cmd run build",
+      "build_status": "PASSED (All 12 pages successfully generated)",
+      "live_probe_routes": [
+        {"route": "/dashboard", "status": 200},
+        {"route": "/assistant", "status": 200},
+        {"route": "/assets", "status": 200},
+        {"route": "/governance", "status": 200},
+        {"route": "/approvals", "status": 200},
+        {"route": "/lifecycle", "status": 200},
+        {"route": "/artifacts", "status": 200},
+        {"route": "/admin", "status": 200}
+      ]
+    }
+  },
+  "benchmark_metrics": {
+    "decision_accuracy_pct": 100.0,
+    "intent_accuracy_pct": 100.0,
+    "kpi_mapping_accuracy_pct": 96.67,
+    "hallucination_rate_pct": 0.0,
+    "phantom_ids_detected": 0,
+    "mean_latency_ms": 90.30,
+    "median_latency_p50_ms": 84.52,
+    "p95_latency_ms": 122.83,
+    "human_approval_enforcement_pct": 100.0
+  },
+  "security_controls_verified": [
+    {"control": "N4", "description": "Live database re-query of owner authority at approval execution", "status": "VERIFIED"},
+    {"control": "N5", "description": "Synchronous point-of-use waiver expiry enforcement", "status": "VERIFIED"},
+    {"control": "N6", "description": "RULE-008 waiver-bypass protection", "status": "VERIFIED"},
+    {"control": "RULE-005", "description": "High-reach invariant threshold = 500, self-service = 250", "status": "VERIFIED"},
+    {"control": "NO-HARDWARE", "description": "Software-only scope; Arduino routes strictly return 404", "status": "VERIFIED"}
+  ]
+}
+

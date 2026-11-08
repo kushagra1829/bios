@@ -1,0 +1,802 @@
+{
+ "request_id": "REQ-20261107181045-371439",
+ "raw_prompt": "Add forecast variance to AST-0268.",
+ "status": "completed",
+ "intent": {
+  "raw_prompt": "Add forecast variance to AST-0268.",
+  "products": [],
+  "markets": [],
+  "kpis": [
+   "forecast variance"
+  ],
+  "dimensions": [],
+  "time_periods": [],
+  "business_purpose": "Analytics request for unspecified product covering forecast variance",
+  "missing_or_ambiguous": [
+   "Product scope is unspecified (e.g., Nubeqa, Xarelto).",
+   "Target geographic market is unspecified.",
+   "Time horizon or refresh frequency is unspecified (e.g. monthly, YTD)."
+  ],
+  "confidence": 0.55,
+  "ambiguities": [],
+  "interpretation_notes": [],
+  "unresolved_terms": [],
+  "resolution": {
+   "original_request": "Add forecast variance to AST-0268.",
+   "deterministic_intent": {
+    "products": [],
+    "markets": [],
+    "kpis": [
+     "forecast variance"
+    ],
+    "dimensions": [],
+    "time_periods": [],
+    "business_purpose": "Analytics request for unspecified product covering forecast variance",
+    "missing_or_ambiguous": [
+     "Product scope is unspecified (e.g., Nubeqa, Xarelto).",
+     "Target geographic market is unspecified.",
+     "Time horizon or refresh frequency is unspecified (e.g. monthly, YTD)."
+    ],
+    "confidence": 0.55
+   },
+   "llm_proposal": null,
+   "accepted": [],
+   "confirmed": [],
+   "rejected": []
+  },
+  "geography": {
+   "status": "NOT_SPECIFIED",
+   "phrases": [],
+   "resolved_market_ids": [],
+   "unresolved_geography": [],
+   "explanation": "The request names no geography."
+  },
+  "request_types": [
+   "ASSET_REQUEST"
+  ],
+  "request_type_evidence": [
+   "Imperative change to AST-0268: 'Add'."
+  ],
+  "asset_ids_mentioned": [
+   "AST-0268"
+  ],
+  "duplication_question": false,
+  "title_topics": []
+ },
+ "recommendation": {
+  "decision": "MODIFY",
+  "confidence": 0.88,
+  "primary_recommendation": "Modifying AST-0268 is blocked. AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified.",
+  "rationale": "The request names AST-0268. BIOS checked owner authority and active critical findings before allowing the action. AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified.",
+  "target_asset_ids": [],
+  "target_model_ids": [],
+  "alternatives": [],
+  "blockers": [
+   "RULE-003 BLOCKER on AST-0268: Missing accountable owner on asset AST-0268. Rationale: Asset AST-0268 ('Nubeqa Budget Monthly') in workspace WS-013 has no accountable owner assigned (owner_id is NULL). Unowned assets cannot be certified, audited, or safely modified.",
+   "RULE-003 BLOCKER: Asset AST-0268 has no assigned owner. Unowned assets cannot be extended.",
+   "AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified."
+  ],
+  "warnings": [
+   "RULE-005 HIGH WARNING on AST-0268: Unendorsed high-reach asset AST-0268 (audience: 1199)."
+  ],
+  "human_approval_required": true,
+  "next_steps": [
+   "Assign and verify an accountable owner for AST-0268; then ask BIOS to re-evaluate."
+  ],
+  "active_finding_ids": [
+   "FND-RULE001-1171669A47DB",
+   "FND-RULE002-041FE027EEF6",
+   "FND-RULE003-4DB9EFEF96B4",
+   "FND-RULE005-0914F7E32EC7",
+   "FND-RULE006-CD53C4317188",
+   "FND-RULE008-63B76BE62EA8"
+  ],
+  "out_of_scope_warnings": [],
+  "llm_narrative": null,
+  "action_status": "BLOCKED",
+  "ineligible_targets": [
+   {
+    "asset_id": "AST-0268",
+    "eligible": false,
+    "reasons": [
+     "AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified."
+    ],
+    "warnings": [],
+    "rule_ids": [
+     "RULE-003"
+    ],
+    "owner_id": null,
+    "owner_name": null,
+    "owner_status": null,
+    "lifecycle_status": "legacy",
+    "endorsement": "none",
+    "critical_finding_ids": [
+     "FND-RULE003-4DB9EFEF96B4"
+    ]
+   }
+  ]
+ },
+ "discovery": {
+  "exact_matches": [
+   {
+    "asset_id": "AST-0268",
+    "asset_name": "Nubeqa Budget Monthly",
+    "match_tier": "EXACT",
+    "product_scope": "Nubeqa",
+    "market_scope": "DE",
+    "platform": "Tableau",
+    "endorsement": "none",
+    "lifecycle_status": "legacy",
+    "match_score": 0.7,
+    "match_reasons": [
+     "Named in the request"
+    ],
+    "model_id": "SM-007",
+    "model_name": "Portfolio Performance 07",
+    "model_endorsement": "promoted",
+    "owner_name": null,
+    "estimated_audience": 1199,
+    "evidence": {
+     "asset_id": "AST-0268",
+     "workspace_id": "WS-013",
+     "model_id": "SM-007",
+     "product_scope": "Nubeqa",
+     "market_scope": "DE",
+     "endorsement": "none",
+     "lifecycle_status": "legacy",
+     "owner_status": "missing",
+     "missing_evidence": [
+      "No active owner assigned (RULE-004 accountability defect)"
+     ],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": true
+    }
+   }
+  ],
+  "partial_matches": [],
+  "weak_candidates": [
+   {
+    "asset_id": "AST-0019",
+    "asset_name": "All Pharma Forecast",
+    "match_tier": "WEAK",
+    "product_scope": "All Pharma",
+    "market_scope": "BR",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: forecast variance",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-065",
+    "model_name": "Portfolio Performance 65",
+    "model_endorsement": "certified",
+    "owner_name": "Max Virtanen",
+    "estimated_audience": 416,
+    "evidence": {
+     "asset_id": "AST-0019",
+     "workspace_id": "WS-003",
+     "model_id": "SM-065",
+     "product_scope": "All Pharma",
+     "market_scope": "BR",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0096",
+    "asset_name": "Kerendia Forecast",
+    "match_tier": "WEAK",
+    "product_scope": "Kerendia",
+    "market_scope": "AU",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: forecast variance",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-056",
+    "model_name": "Pharma Commercial Core 56",
+    "model_endorsement": "promoted",
+    "owner_name": "Mika Rossi",
+    "estimated_audience": 763,
+    "evidence": {
+     "asset_id": "AST-0096",
+     "workspace_id": "WS-014",
+     "model_id": "SM-056",
+     "product_scope": "Kerendia",
+     "market_scope": "AU",
+     "endorsement": "certified",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0114",
+    "asset_name": "Nubeqa Forecast - US",
+    "match_tier": "WEAK",
+    "product_scope": "Nubeqa",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: forecast variance",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-062",
+    "model_name": "Channel Performance 62",
+    "model_endorsement": "none",
+    "owner_name": "Mika Novak",
+    "estimated_audience": 1001,
+    "evidence": {
+     "asset_id": "AST-0114",
+     "workspace_id": "WS-006",
+     "model_id": "SM-062",
+     "product_scope": "Nubeqa",
+     "market_scope": "JP",
+     "endorsement": "certified",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0231",
+    "asset_name": "All Pharma Forecast - Global",
+    "match_tier": "WEAK",
+    "product_scope": "All Pharma",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: forecast variance",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-068",
+    "model_name": "Demand Forecast 68",
+    "model_endorsement": "certified",
+    "owner_name": "Max Keller",
+    "estimated_audience": 1541,
+    "evidence": {
+     "asset_id": "AST-0231",
+     "workspace_id": "WS-004",
+     "model_id": "SM-068",
+     "product_scope": "All Pharma",
+     "market_scope": "JP",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0233",
+    "asset_name": "Nubeqa Forecast - Global",
+    "match_tier": "WEAK",
+    "product_scope": "Nubeqa",
+    "market_scope": "BR",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: forecast variance",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-047",
+    "model_name": "Regional Commercial 47",
+    "model_endorsement": "none",
+    "owner_name": "Daniel Schmidt",
+    "estimated_audience": 1004,
+    "evidence": {
+     "asset_id": "AST-0233",
+     "workspace_id": "WS-012",
+     "model_id": "SM-047",
+     "product_scope": "Nubeqa",
+     "market_scope": "BR",
+     "endorsement": "certified",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0249",
+    "asset_name": "Beyonttra Forecast New",
+    "match_tier": "WEAK",
+    "product_scope": "Beyonttra",
+    "market_scope": "SE",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: forecast variance",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-048",
+    "model_name": "Market Access 48",
+    "model_endorsement": "none",
+    "owner_name": "Mika Weber",
+    "estimated_audience": 1648,
+    "evidence": {
+     "asset_id": "AST-0249",
+     "workspace_id": "WS-003",
+     "model_id": "SM-048",
+     "product_scope": "Beyonttra",
+     "market_scope": "SE",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0257",
+    "asset_name": "Hyrnuo Forecast Mgmt",
+    "match_tier": "WEAK",
+    "product_scope": "Hyrnuo",
+    "market_scope": "JP",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: forecast variance",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-019",
+    "model_name": "Portfolio Performance 19",
+    "model_endorsement": "promoted",
+    "owner_name": "Sofia Fischer",
+    "estimated_audience": 1624,
+    "evidence": {
+     "asset_id": "AST-0257",
+     "workspace_id": "WS-010",
+     "model_id": "SM-019",
+     "product_scope": "Hyrnuo",
+     "market_scope": "JP",
+     "endorsement": "certified",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0275",
+    "asset_name": "Eylea Forecast Final",
+    "match_tier": "WEAK",
+    "product_scope": "Eylea",
+    "market_scope": "Global",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: forecast variance",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-050",
+    "model_name": "Pharma Finance 50",
+    "model_endorsement": "none",
+    "owner_name": "Felix Meyer",
+    "estimated_audience": 1587,
+    "evidence": {
+     "asset_id": "AST-0275",
+     "workspace_id": "WS-004",
+     "model_id": "SM-050",
+     "product_scope": "Eylea",
+     "market_scope": "Global",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0322",
+    "asset_name": "Hyrnuo Forecast",
+    "match_tier": "WEAK",
+    "product_scope": "Hyrnuo",
+    "market_scope": "Global",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: forecast variance",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-008",
+    "model_name": "Pharma Finance 08",
+    "model_endorsement": "certified",
+    "owner_name": "Sofia Rossi",
+    "estimated_audience": 1033,
+    "evidence": {
+     "asset_id": "AST-0322",
+     "workspace_id": "WS-013",
+     "model_id": "SM-008",
+     "product_scope": "Hyrnuo",
+     "market_scope": "Global",
+     "endorsement": "promoted",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   }
+  ],
+  "total_searched": 360,
+  "search_notes": "Searched 360 assets. Found 1 exact matches, 0 partial matches, and 9 weak candidates.",
+  "data_answer": null,
+  "governance_answer": null,
+  "migration_answer": null,
+  "title_topic_matches": []
+ },
+ "kpi_analysis": {
+  "matches": [
+   {
+    "requested_metric": "forecast variance",
+    "matched_kpi_id": "KPI-042",
+    "matched_kpi_name": "Forecast Variance",
+    "domain": "Finance",
+    "approval_status": "approved",
+    "definition_status": "canonical",
+    "is_canonical": true,
+    "is_approved": true,
+    "semantic_equivalence_notes": "Exact match on canonical approved KPI 'Forecast Variance' (KPI-042)",
+    "conflicts": [],
+    "alternative_kpis": []
+   }
+  ],
+  "canonical_approved_kpi_ids": [
+   "KPI-042"
+  ],
+  "unapproved_or_conflicted_kpi_ids": [],
+  "unmatched_requested_metrics": [],
+  "has_conflicts": false,
+  "summary": "Evaluated 1 requested metrics: 1 canonical approved, 0 unapproved/conflicted, 0 unmatched.",
+  "llm_review": []
+ },
+ "duplication": {
+  "has_duplicates": false,
+  "candidates": [
+   {
+    "asset_id": "AST-0268",
+    "asset_name": "Nubeqa Budget Monthly",
+    "similarity_score": 0.5,
+    "structural_similarity": 0.8,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.7,
+    "endorsement": "none",
+    "lifecycle_status": "legacy",
+    "evidence": {
+     "scope_compatible": true,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'promoted'"
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Named in the request"
+     ],
+     "mapped_kpi_count": 5
+    }
+   }
+  ],
+  "highest_similarity_score": 0.5,
+  "primary_duplicate_asset_id": null,
+  "explanation": "No high-confidence duplicates detected. Existing assets have distinct structural scope, incompatible domains, or disjoint KPI mappings.",
+  "gate_evaluations": [],
+  "consolidation_eligible_pairs": [],
+  "title_alike_groups": []
+ },
+ "governance": {
+  "blockers": [
+   "RULE-003 BLOCKER on AST-0268: Missing accountable owner on asset AST-0268. Rationale: Asset AST-0268 ('Nubeqa Budget Monthly') in workspace WS-013 has no accountable owner assigned (owner_id is NULL). Unowned assets cannot be certified, audited, or safely modified.",
+   "RULE-003 BLOCKER: Asset AST-0268 has no assigned owner. Unowned assets cannot be extended."
+  ],
+  "warnings": [
+   "RULE-005 HIGH WARNING on AST-0268: Unendorsed high-reach asset AST-0268 (audience: 1199)."
+  ],
+  "applicable_rule_ids": [
+   "RULE-001",
+   "RULE-002",
+   "RULE-003",
+   "RULE-005",
+   "RULE-006",
+   "RULE-008"
+  ],
+  "active_finding_ids": [
+   "FND-RULE001-1171669A47DB",
+   "FND-RULE002-041FE027EEF6",
+   "FND-RULE003-4DB9EFEF96B4",
+   "FND-RULE005-0914F7E32EC7",
+   "FND-RULE006-CD53C4317188",
+   "FND-RULE008-63B76BE62EA8"
+  ],
+  "human_approval_required": true,
+  "evidence_references": [
+   {
+    "finding_id": "FND-RULE001-1171669A47DB",
+    "target_id": "AST-0268",
+    "rule_id": "RULE-001",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-041FE027EEF6",
+    "target_id": "AST-0268",
+    "rule_id": "RULE-002",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE003-4DB9EFEF96B4",
+    "target_id": "AST-0268",
+    "rule_id": "RULE-003",
+    "severity": "critical",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE005-0914F7E32EC7",
+    "target_id": "AST-0268",
+    "rule_id": "RULE-005",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE006-CD53C4317188",
+    "target_id": "AST-0268",
+    "rule_id": "RULE-006",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE008-63B76BE62EA8",
+    "target_id": "AST-0268",
+    "rule_id": "RULE-008",
+    "severity": "medium",
+    "scope": "request"
+   }
+  ],
+  "request_finding_ids": [
+   "FND-RULE001-1171669A47DB",
+   "FND-RULE002-041FE027EEF6",
+   "FND-RULE003-4DB9EFEF96B4",
+   "FND-RULE005-0914F7E32EC7",
+   "FND-RULE006-CD53C4317188",
+   "FND-RULE008-63B76BE62EA8"
+  ],
+  "out_of_scope_finding_ids": [],
+  "out_of_scope_warnings": []
+ },
+ "traces": [
+  {
+   "trace_id": "TRC-2D4521C5FE96",
+   "request_id": "REQ-20261107181045-371439",
+   "agent_name": "IntentAgent",
+   "step_order": 1,
+   "status": "success",
+   "duration_ms": 5.31,
+   "input_json": "{\"prompt\": \"Add forecast variance to AST-0268.\"}",
+   "output_json": "{\"raw_prompt\": \"Add forecast variance to AST-0268.\", \"products\": [], \"markets\": [], \"kpis\": [\"forecast variance\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for unspecified product covering forecast variance\", \"missing_or_ambiguous\": [\"Product scope is unspecified (e.g., Nubeqa, Xarelto).\", \"Target geographic market is unspecified.\", \"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.55, \"ambiguities\": [], \"interpretation_notes\": [], \"unresolved_terms\": [], \"resolution\": {\"original_request\": \"Add forecast variance to AST-0268.\", \"deterministic_intent\": {\"products\": [], \"markets\": [], \"kpis\": [\"forecast variance\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for unspecified product covering forecast variance\", \"missing_or_ambiguous\": [\"Product scope is unspecified (e.g., Nubeqa, Xarelto).\", \"Target geographic market is unspecified.\", \"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.55}, \"llm_proposal\": null, \"accepted\": [], \"confirmed\": [], \"rejected\": []}, \"geography\": {\"status\": \"NOT_SPECIFIED\", \"phrases\": [], \"resolved_market_ids\": [], \"unresolved_geography\": [], \"explanation\": \"The request names no geography.\"}, \"request_types\": [\"ASSET_REQUEST\"], \"request_type_evidence\": [\"Imperative change to AST-0268: 'Add'.\"], \"asset_ids_mentioned\": [\"AST-0268\"], \"duplication_question\": false, \"title_topics\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":\"deterministic_fallback\",\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:45.269254"
+  },
+  {
+   "trace_id": "TRC-7FAB143A45CE",
+   "request_id": "REQ-20261107181045-371439",
+   "agent_name": "DiscoveryAgent",
+   "step_order": 2,
+   "status": "success",
+   "duration_ms": 12.37,
+   "input_json": "{\"raw_prompt\": \"Add forecast variance to AST-0268.\", \"products\": [], \"markets\": [], \"kpis\": [\"forecast variance\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for unspecified product covering forecast variance\", \"missing_or_ambiguous\": [\"Product scope is unspecified (e.g., Nubeqa, Xarelto).\", \"Target geographic market is unspecified.\", \"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.55, \"ambiguities\": [], \"interpretation_notes\": [], \"unresolved_terms\": [], \"resolution\": {\"original_request\": \"Add forecast variance to AST-0268.\", \"deterministic_intent\": {\"products\": [], \"markets\": [], \"kpis\": [\"forecast variance\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for unspecified product covering forecast variance\", \"missing_or_ambiguous\": [\"Product scope is unspecified (e.g., Nubeqa, Xarelto).\", \"Target geographic market is unspecified.\", \"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.55}, \"llm_proposal\": null, \"accepted\": [], \"confirmed\": [], \"rejected\": []}, \"geography\": {\"status\": \"NOT_SPECIFIED\", \"phrases\": [], \"resolved_market_ids\": [], \"unresolved_geography\": [], \"explanation\": \"The request names no geography.\"}, \"request_types\": [\"ASSET_REQUEST\"], \"request_type_evidence\": [\"Imperative change to AST-0268: 'Add'.\"], \"asset_ids_mentioned\": [\"AST-0268\"], \"duplication_question\": false, \"title_topics\": []}",
+   "output_json": "{\"exact_matches\": [{\"asset_id\": \"AST-0268\", \"asset_name\": \"Nubeqa Budget Monthly\", \"match_tier\": \"EXACT\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"DE\", \"platform\": \"Tableau\", \"endorsement\": \"none\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.7, \"match_reasons\": [\"Named in the request\"], \"model_id\": \"SM-007\", \"model_name\": \"Portfolio Performance 07\", \"model_endorsement\": \"promoted\", \"owner_name\": null, \"estimated_audience\": 1199, \"evidence\": {\"asset_id\": \"AST-0268\", \"workspace_id\": \"WS-013\", \"model_id\": \"SM-007\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"DE\", \"endorsement\": \"none\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"missing\", \"missing_evidence\": [\"No active owner assigned (RULE-004 accountability defect)\"], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": true}}], \"partial_matches\": [], \"weak_candidates\": [{\"asset_id\": \"AST-0019\", \"asset_name\": \"All Pharma Forecast\", \"match_tier\": \"WEAK\", \"product_scope\": \"All Pharma\", \"market_scope\": \"BR\", \"platform\": \"Tableau\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: forecast variance\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-065\", \"model_name\": \"Portfolio Performance 65\", \"model_endorsement\": \"certified\", \"owner_name\": \"Max Virtanen\", \"estimated_audience\": 416, \"evidence\": {\"asset_id\": \"AST-0019\", \"workspace_id\": \"WS-003\", \"model_id\": \"SM-065\", \"product_scope\": \"All Pharma\", \"market_scope\": \"BR\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0096\", \"asset_name\": \"Kerendia Forecast\", \"match_tier\": \"WEAK\", \"product_scope\": \"Kerendia\", \"market_scope\": \"AU\", \"platform\": \"Tableau\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: forecast variance\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-056\", \"model_name\": \"Pharma Commercial Core 56\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Mika Rossi\", \"estimated_audience\": 763, \"evidence\": {\"asset_id\": \"AST-0096\", \"workspace_id\": \"WS-014\", \"model_id\": \"SM-056\", \"product_scope\": \"Kerendia\", \"market_scope\": \"AU\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0114\", \"asset_name\": \"Nubeqa Forecast - US\", \"match_tier\": \"WEAK\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: forecast variance\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-062\", \"model_name\": \"Channel Performance 62\", \"model_endorsement\": \"none\", \"owner_name\": \"Mika Novak\", \"estimated_audience\": 1001, \"evidence\": {\"asset_id\": \"AST-0114\", \"workspace_id\": \"WS-006\", \"model_id\": \"SM-062\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"JP\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0231\", \"asset_name\": \"All Pharma Forecast - Global\", \"match_tier\": \"WEAK\", \"product_scope\": \"All Pharma\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: forecast variance\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-068\", \"model_name\": \"Demand Forecast 68\", \"model_endorsement\": \"certified\", \"owner_name\": \"Max Keller\", \"estimated_audience\": 1541, \"evidence\": {\"asset_id\": \"AST-0231\", \"workspace_id\": \"WS-004\", \"model_id\": \"SM-068\", \"product_scope\": \"All Pharma\", \"market_scope\": \"JP\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0233\", \"asset_name\": \"Nubeqa Forecast - Global\", \"match_tier\": \"WEAK\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"BR\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: forecast variance\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-047\", \"model_name\": \"Regional Commercial 47\", \"model_endorsement\": \"none\", \"owner_name\": \"Daniel Schmidt\", \"estimated_audience\": 1004, \"evidence\": {\"asset_id\": \"AST-0233\", \"workspace_id\": \"WS-012\", \"model_id\": \"SM-047\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"BR\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0249\", \"asset_name\": \"Beyonttra Forecast New\", \"match_tier\": \"WEAK\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"SE\", \"platform\": \"Tableau\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: forecast variance\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-048\", \"model_name\": \"Market Access 48\", \"model_endorsement\": \"none\", \"owner_name\": \"Mika Weber\", \"estimated_audience\": 1648, \"evidence\": {\"asset_id\": \"AST-0249\", \"workspace_id\": \"WS-003\", \"model_id\": \"SM-048\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"SE\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0257\", \"asset_name\": \"Hyrnuo Forecast Mgmt\", \"match_tier\": \"WEAK\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"JP\", \"platform\": \"Tableau\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: forecast variance\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-019\", \"model_name\": \"Portfolio Performance 19\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Sofia Fischer\", \"estimated_audience\": 1624, \"evidence\": {\"asset_id\": \"AST-0257\", \"workspace_id\": \"WS-010\", \"model_id\": \"SM-019\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"JP\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0275\", \"asset_name\": \"Eylea Forecast Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"Eylea\", \"market_scope\": \"Global\", \"platform\": \"Tableau\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: forecast variance\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-050\", \"model_name\": \"Pharma Finance 50\", \"model_endorsement\": \"none\", \"owner_name\": \"Felix Meyer\", \"estimated_audience\": 1587, \"evidence\": {\"asset_id\": \"AST-0275\", \"workspace_id\": \"WS-004\", \"model_id\": \"SM-050\", \"product_scope\": \"Eylea\", \"market_scope\": \"Global\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0322\", \"asset_name\": \"Hyrnuo Forecast\", \"match_tier\": \"WEAK\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"Global\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: forecast variance\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-008\", \"model_name\": \"Pharma Finance 08\", \"model_endorsement\": \"certified\", \"owner_name\": \"Sofia Rossi\", \"estimated_audience\": 1033, \"evidence\": {\"asset_id\": \"AST-0322\", \"workspace_id\": \"WS-013\", \"model_id\": \"SM-008\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"Global\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}], \"total_searched\": 360, \"search_notes\": \"Searched 360 assets. Found 1 exact matches, 0 partial matches, and 9 weak candidates.\", \"data_answer\": null, \"governance_answer\": null, \"migration_answer\": null, \"title_topic_matches\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:45.295106"
+  },
+  {
+   "trace_id": "TRC-3BA05BB6B215",
+   "request_id": "REQ-20261107181045-371439",
+   "agent_name": "KpiIntelligenceAgent",
+   "step_order": 3,
+   "status": "success",
+   "duration_ms": 1.04,
+   "input_json": "{\"requested_kpis\": [\"forecast variance\"]}",
+   "output_json": "{\"matches\": [{\"requested_metric\": \"forecast variance\", \"matched_kpi_id\": \"KPI-042\", \"matched_kpi_name\": \"Forecast Variance\", \"domain\": \"Finance\", \"approval_status\": \"approved\", \"definition_status\": \"canonical\", \"is_canonical\": true, \"is_approved\": true, \"semantic_equivalence_notes\": \"Exact match on canonical approved KPI 'Forecast Variance' (KPI-042)\", \"conflicts\": [], \"alternative_kpis\": []}], \"canonical_approved_kpi_ids\": [\"KPI-042\"], \"unapproved_or_conflicted_kpi_ids\": [], \"unmatched_requested_metrics\": [], \"has_conflicts\": false, \"summary\": \"Evaluated 1 requested metrics: 1 canonical approved, 0 unapproved/conflicted, 0 unmatched.\", \"llm_review\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:45.302576"
+  },
+  {
+   "trace_id": "TRC-30AB3AAC1CA0",
+   "request_id": "REQ-20261107181045-371439",
+   "agent_name": "DuplicationAgent",
+   "step_order": 4,
+   "status": "success",
+   "duration_ms": 2.33,
+   "input_json": "{\"products\": [], \"exact_matches\": 1, \"canonical_kpis\": [\"KPI-042\"]}",
+   "output_json": "{\"has_duplicates\": false, \"candidates\": [{\"asset_id\": \"AST-0268\", \"asset_name\": \"Nubeqa Budget Monthly\", \"similarity_score\": 0.5, \"structural_similarity\": 0.8, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.7, \"endorsement\": \"none\", \"lifecycle_status\": \"legacy\", \"evidence\": {\"scope_compatible\": true, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'promoted'\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Named in the request\"], \"mapped_kpi_count\": 5}}], \"highest_similarity_score\": 0.5, \"primary_duplicate_asset_id\": null, \"explanation\": \"No high-confidence duplicates detected. Existing assets have distinct structural scope, incompatible domains, or disjoint KPI mappings.\", \"gate_evaluations\": [], \"consolidation_eligible_pairs\": [], \"title_alike_groups\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:45.311840"
+  },
+  {
+   "trace_id": "TRC-81F4D3FD46D0",
+   "request_id": "REQ-20261107181045-371439",
+   "agent_name": "GovernanceAgent",
+   "step_order": 5,
+   "status": "success",
+   "duration_ms": 1.98,
+   "input_json": "{\"exact_candidates\": [\"AST-0268\"], \"unapproved_kpis\": []}",
+   "output_json": "{\"blockers\": [\"RULE-003 BLOCKER on AST-0268: Missing accountable owner on asset AST-0268. Rationale: Asset AST-0268 ('Nubeqa Budget Monthly') in workspace WS-013 has no accountable owner assigned (owner_id is NULL). Unowned assets cannot be certified, audited, or safely modified.\", \"RULE-003 BLOCKER: Asset AST-0268 has no assigned owner. Unowned assets cannot be extended.\"], \"warnings\": [\"RULE-005 HIGH WARNING on AST-0268: Unendorsed high-reach asset AST-0268 (audience: 1199).\"], \"applicable_rule_ids\": [\"RULE-001\", \"RULE-002\", \"RULE-003\", \"RULE-005\", \"RULE-006\", \"RULE-008\"], \"active_finding_ids\": [\"FND-RULE001-1171669A47DB\", \"FND-RULE002-041FE027EEF6\", \"FND-RULE003-4DB9EFEF96B4\", \"FND-RULE005-0914F7E32EC7\", \"FND-RULE006-CD53C4317188\", \"FND-RULE008-63B76BE62EA8\"], \"human_approval_required\": true, \"evidence_references\": [{\"finding_id\": \"FND-RULE001-1171669A47DB\", \"target_id\": \"AST-0268\", \"rule_id\": \"RULE-001\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-041FE027EEF6\", \"target_id\": \"AST-0268\", \"rule_id\": \"RULE-002\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE003-4DB9EFEF96B4\", \"target_id\": \"AST-0268\", \"rule_id\": \"RULE-003\", \"severity\": \"critical\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE005-0914F7E32EC7\", \"target_id\": \"AST-0268\", \"rule_id\": \"RULE-005\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE006-CD53C4317188\", \"target_id\": \"AST-0268\", \"rule_id\": \"RULE-006\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE008-63B76BE62EA8\", \"target_id\": \"AST-0268\", \"rule_id\": \"RULE-008\", \"severity\": \"medium\", \"scope\": \"request\"}], \"request_finding_ids\": [\"FND-RULE001-1171669A47DB\", \"FND-RULE002-041FE027EEF6\", \"FND-RULE003-4DB9EFEF96B4\", \"FND-RULE005-0914F7E32EC7\", \"FND-RULE006-CD53C4317188\", \"FND-RULE008-63B76BE62EA8\"], \"out_of_scope_finding_ids\": [], \"out_of_scope_warnings\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:45.319898"
+  },
+  {
+   "trace_id": "TRC-3E6629E12B38",
+   "request_id": "REQ-20261107181045-371439",
+   "agent_name": "DecisionAgent",
+   "step_order": 6,
+   "status": "success",
+   "duration_ms": 1.68,
+   "input_json": "{\"intent_confidence\": 0.55, \"exact_matches_count\": 1, \"has_duplicates\": false, \"governance_blockers_count\": 2}",
+   "output_json": "{\"decision\": \"MODIFY\", \"confidence\": 0.88, \"primary_recommendation\": \"Modifying AST-0268 is blocked. AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified.\", \"rationale\": \"The request names AST-0268. BIOS checked owner authority and active critical findings before allowing the action. AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified.\", \"target_asset_ids\": [], \"target_model_ids\": [], \"alternatives\": [], \"blockers\": [\"RULE-003 BLOCKER on AST-0268: Missing accountable owner on asset AST-0268. Rationale: Asset AST-0268 ('Nubeqa Budget Monthly') in workspace WS-013 has no accountable owner assigned (owner_id is NULL). Unowned assets cannot be certified, audited, or safely modified.\", \"RULE-003 BLOCKER: Asset AST-0268 has no assigned owner. Unowned assets cannot be extended.\", \"AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified.\"], \"warnings\": [\"RULE-005 HIGH WARNING on AST-0268: Unendorsed high-reach asset AST-0268 (audience: 1199).\"], \"human_approval_required\": true, \"next_steps\": [\"Assign and verify an accountable owner for AST-0268; then ask BIOS to re-evaluate.\"], \"active_finding_ids\": [\"FND-RULE001-1171669A47DB\", \"FND-RULE002-041FE027EEF6\", \"FND-RULE003-4DB9EFEF96B4\", \"FND-RULE005-0914F7E32EC7\", \"FND-RULE006-CD53C4317188\", \"FND-RULE008-63B76BE62EA8\"], \"out_of_scope_warnings\": [], \"llm_narrative\": null, \"action_status\": \"BLOCKED\", \"ineligible_targets\": [{\"asset_id\": \"AST-0268\", \"eligible\": false, \"reasons\": [\"AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified.\"], \"warnings\": [], \"rule_ids\": [\"RULE-003\"], \"owner_id\": null, \"owner_name\": null, \"owner_status\": null, \"lifecycle_status\": \"legacy\", \"endorsement\": \"none\", \"critical_finding_ids\": [\"FND-RULE003-4DB9EFEF96B4\"]}]}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":\"deterministic_fallback\",\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:45.327918"
+  }
+ ],
+ "request_types": [
+  "ASSET_REQUEST"
+ ],
+ "data_answer": null,
+ "governance_answer": null,
+ "migration_answer": null,
+ "presentation": {
+  "response_type": "ASSET_RECOMMENDATION",
+  "recommended_action": "MODIFY",
+  "action_label": "Modify an existing asset",
+  "action_status": "BLOCKED",
+  "direct_answer": "Modifying AST-0268 is blocked. AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified.",
+  "why": [
+   "The request names AST-0268. BIOS checked owner authority and active critical findings before allowing the action. AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified."
+  ],
+  "matching_assets": [
+   {
+    "asset_id": "AST-0268",
+    "asset_name": "Nubeqa Budget Monthly",
+    "product_scope": "Nubeqa",
+    "market_scope": "DE",
+    "platform": "Tableau",
+    "endorsement": "none",
+    "lifecycle_status": "legacy",
+    "owner_name": null,
+    "match_tier": "EXACT",
+    "reasons": [
+     "Named in the request"
+    ]
+   }
+  ],
+  "next_steps": [
+   "Assign and verify an accountable owner for AST-0268; then ask BIOS to re-evaluate."
+  ],
+  "human_approval_required": true,
+  "approval_explanation": "Blocked: approval can't be requested until the governance blockers below are resolved.",
+  "confidence_explanation": "The recommendation is constrained by a deterministic governance blocker.",
+  "governance": {
+   "blockers": [
+    {
+     "rule_id": "RULE-003",
+     "severity": "CRITICAL",
+     "asset_id": "AST-0268",
+     "kind": "BLOCKER",
+     "effect": "PREVENTS_ACTION",
+     "message": "Using this asset as the target is blocked pending owner assignment.",
+     "required_action": "Assign and verify an accountable owner, then ask BIOS to re-evaluate.",
+     "finding_ids": [],
+     "sources": [
+      "AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified."
+     ],
+     "affects_target": true
+    },
+    {
+     "rule_id": "RULE-003",
+     "severity": "CRITICAL",
+     "asset_id": "AST-0268",
+     "kind": "BLOCKER",
+     "effect": "PREVENTS_ACTION",
+     "message": "No accountable owner is assigned. The asset cannot be safely extended until ownership is established. AST-0268 is therefore not used as a target for this request.",
+     "required_action": "Assign an active business or technical owner to asset AST-0268 before further operational usage.",
+     "finding_ids": [
+      "FND-RULE003-4DB9EFEF96B4"
+     ],
+     "sources": [
+      "RULE-003 BLOCKER on AST-0268: Missing accountable owner on asset AST-0268. Rationale: Asset AST-0268 ('Nubeqa Budget Monthly') in workspace WS-013 has no accountable owner assigned (owner_id is NULL). Unowned assets cannot be certified, audited, or safely modified.",
+      "RULE-003 BLOCKER: Asset AST-0268 has no assigned owner. Unowned assets cannot be extended.",
+      "AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified."
+     ],
+     "affects_target": false
+    }
+   ],
+   "warnings": [
+    {
+     "rule_id": "RULE-005",
+     "severity": "HIGH",
+     "asset_id": "AST-0268",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Unendorsed high-reach asset AST-0268 (audience: 1199).",
+     "required_action": "Initiate formal certification review for AST-0268 or restrict workspace distribution.",
+     "finding_ids": [
+      "FND-RULE005-0914F7E32EC7"
+     ],
+     "sources": [
+      "RULE-005 HIGH WARNING on AST-0268: Unendorsed high-reach asset AST-0268 (audience: 1199)."
+     ],
+     "affects_target": false
+    }
+   ],
+   "directives": [],
+   "backend_blocker_count": 3,
+   "backend_warning_count": 1,
+   "displayed_blocker_count": 2,
+   "displayed_warning_count": 1,
+   "displayed_directive_count": 0,
+   "out_of_scope_count": 0
+  }
+ }
+}

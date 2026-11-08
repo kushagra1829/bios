@@ -1,0 +1,155 @@
+{
+ "run_at": "2026-11-07T18:35:01.821123+00:00",
+ "ui": "http://127.0.0.1:3002",
+ "results": [
+  {
+   "id": "N1",
+   "prompt": "check nubeqa sales in germany",
+   "request_id": "REQ-20261107183437-A3DB0D",
+   "decision": "INFORMATIONAL",
+   "action_status": "NOT_APPLICABLE",
+   "targets": [],
+   "ineligible": [],
+   "ui_action": "ANSWER",
+   "ui_status": "No action proposed",
+   "direct_answer": "Nubeqa net sales in Germany (DE) were €237.10M in Jan–Oct 2026. Across the 10 months, the highest was Sep 2026 at €44.50M.",
+   "execution_modes": {
+    "IntentAgent": "LLM_ASSISTED",
+    "DiscoveryAgent": "DETERMINISTIC",
+    "KpiIntelligenceAgent": "LLM_ASSISTED",
+    "DuplicationAgent": "DETERMINISTIC",
+    "GovernanceAgent": "DETERMINISTIC",
+    "DecisionAgent": "LLM_ASSISTED"
+   },
+   "target_kpis": {},
+   "checks": {
+    "llm_assisted_steps_ran": true,
+    "no_unowned_target": true,
+    "blocked_has_no_target": true,
+    "ui_answer_matches_api": true,
+    "ui_status_matches_api": true,
+    "no_actionable_consolidation_into_blocked_asset": true,
+    "targets_have_kpi_or_scope_evidence": true,
+    "validated": true
+   },
+   "passed": true
+  },
+  {
+   "id": "N2",
+   "prompt": "I need a scoreboard for Nubeqa sales in Germany.",
+   "request_id": "REQ-20261107183444-1701A9",
+   "decision": "MODIFY",
+   "action_status": "REQUIRES_APPROVAL",
+   "targets": [
+    "AST-0240"
+   ],
+   "ineligible": [
+    "AST-0268"
+   ],
+   "ui_action": "MODIFY",
+   "ui_status": "Requires human approval",
+   "direct_answer": "Extend existing asset AST-0240 and shared model SM-068.",
+   "execution_modes": {
+    "IntentAgent": "LLM_ASSISTED",
+    "DiscoveryAgent": "DETERMINISTIC",
+    "KpiIntelligenceAgent": "LLM_ASSISTED",
+    "DuplicationAgent": "DETERMINISTIC",
+    "GovernanceAgent": "DETERMINISTIC",
+    "DecisionAgent": "LLM_ASSISTED"
+   },
+   "target_kpis": {
+    "AST-0240": [
+     "KPI-004",
+     "KPI-045",
+     "KPI-049",
+     "KPI-055"
+    ]
+   },
+   "checks": {
+    "llm_assisted_steps_ran": true,
+    "no_unowned_target": true,
+    "blocked_has_no_target": true,
+    "ui_answer_matches_api": true,
+    "ui_status_matches_api": true,
+    "no_actionable_consolidation_into_blocked_asset": true,
+    "targets_have_kpi_or_scope_evidence": true,
+    "validated": true
+   },
+   "passed": true
+  },
+  {
+   "id": "N3",
+   "prompt": "Consolidate the Nubeqa Germany dashboards into AST-0268.",
+   "request_id": "REQ-20261107183451-9750A2",
+   "decision": "CONSOLIDATE",
+   "action_status": "BLOCKED",
+   "targets": [],
+   "ineligible": [
+    "AST-0268"
+   ],
+   "ui_action": "CONSOLIDATE",
+   "ui_status": "Blocked by governance",
+   "direct_answer": "Consolidating AST-0268 is blocked. AST-0268 has no accountable owner (RULE-003). It cannot be used as a consolidation target until an owner is assigned and verified.",
+   "execution_modes": {
+    "IntentAgent": "LLM_ASSISTED",
+    "DiscoveryAgent": "DETERMINISTIC",
+    "KpiIntelligenceAgent": "DETERMINISTIC",
+    "DuplicationAgent": "DETERMINISTIC",
+    "GovernanceAgent": "DETERMINISTIC",
+    "DecisionAgent": "LLM_ASSISTED"
+   },
+   "target_kpis": {},
+   "checks": {
+    "llm_assisted_steps_ran": true,
+    "no_unowned_target": true,
+    "blocked_has_no_target": true,
+    "ui_answer_matches_api": true,
+    "ui_status_matches_api": true,
+    "no_actionable_consolidation_into_blocked_asset": true,
+    "targets_have_kpi_or_scope_evidence": true,
+    "validated": true
+   },
+   "passed": true
+  },
+  {
+   "id": "N4",
+   "prompt": "Can I reuse AST-0157 for Nubeqa sales in Germany?",
+   "request_id": "REQ-20261107183455-F17AC9",
+   "decision": "MODIFY",
+   "action_status": "REQUIRES_APPROVAL",
+   "targets": [
+    "AST-0157"
+   ],
+   "ineligible": [],
+   "ui_action": "MODIFY",
+   "ui_status": "Requires human approval",
+   "direct_answer": "Modifying AST-0157 is permitted, subject to human approval.",
+   "execution_modes": {
+    "IntentAgent": "LLM_ASSISTED",
+    "DiscoveryAgent": "DETERMINISTIC",
+    "KpiIntelligenceAgent": "LLM_ASSISTED",
+    "DuplicationAgent": "DETERMINISTIC",
+    "GovernanceAgent": "DETERMINISTIC",
+    "DecisionAgent": "LLM_ASSISTED"
+   },
+   "target_kpis": {
+    "AST-0157": [
+     "KPI-015",
+     "KPI-032",
+     "KPI-052"
+    ]
+   },
+   "checks": {
+    "llm_assisted_steps_ran": true,
+    "no_unowned_target": true,
+    "blocked_has_no_target": true,
+    "ui_answer_matches_api": true,
+    "ui_status_matches_api": true,
+    "no_actionable_consolidation_into_blocked_asset": true,
+    "targets_have_kpi_or_scope_evidence": true,
+    "validated": true
+   },
+   "passed": true
+  }
+ ]
+}

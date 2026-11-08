@@ -1,0 +1,102 @@
+{
+  "manifest_id": "RUN-MANIFEST-M58-20261107",
+  "milestone": "5.8",
+  "title": "Enterprise End-to-End Reliability & Product Validation",
+  "generated_at": "2026-11-07T14:42:00Z",
+  "classification": "ENTERPRISE VALIDATION PASSED",
+  "baseline": {
+    "git_commit": "99c8fd01632e4e4a0cc1646f9d7338a8d7e06aab",
+    "git_branch": "main",
+    "dataset_path": "data/source/Bayer_Pharmaceuticals_SinceAI_2026_FINAL_Builder_Data_Pack.xlsx",
+    "dataset_sha256": "7d01877096c640d7705c0507cfc32840dd88a99fe546d975a715f73b40f101ab",
+    "alembic_head": "b4f1c2d7e8a9",
+    "sqlite_database": "data/bios.db"
+  },
+  "backend_validation": {
+    "framework": "pytest-9.2.0 (Python 3.14.8)",
+    "total_collected": 419,
+    "passed": 405,
+    "skipped": 14,
+    "failed": 0,
+    "duration_seconds": 27.43,
+    "skipped_detail": "14 tests in test_ollama_live.py skipped due to offline local Ollama daemon; deterministic adapters passed 100%",
+    "key_suites": [
+      {
+        "suite": "backend/tests/test_milestone_5_8_e2e.py",
+        "passed": 9,
+        "failed": 0,
+        "scope": "End-to-end 6-agent orchestration, 8 governance rules, N4/N5 security, PBIP artifact factory"
+      },
+      {
+        "suite": "backend/tests/test_reliability_n4_n5.py",
+        "passed": 12,
+        "failed": 0,
+        "scope": "N4 live owner verification and N5 synchronous waiver expiry"
+      },
+      {
+        "suite": "backend/tests/benchmarks/test_end_to_end_use_cases.py",
+        "passed": 5,
+        "failed": 0,
+        "scope": "5 canonical enterprise business scenarios (Nubeqa, KPI conflict, Tableau modernization, Geography ambiguity, Genuine New Build)"
+      },
+      {
+        "suite": "backend/tests/benchmarks/test_governance_benchmarks.py",
+        "passed": 8,
+        "failed": 0,
+        "scope": "RULE-001 through RULE-008 deterministic rule benchmarks"
+      },
+      {
+        "suite": "backend/tests/benchmarks/test_hallucination_security.py",
+        "passed": 13,
+        "failed": 0,
+        "scope": "Prompt injection, hallucination detector, and negative controls N1, N3, N6, N8, N9"
+      },
+      {
+        "suite": "backend/tests/benchmarks/test_powerbi_ladder.py",
+        "passed": 1,
+        "failed": 0,
+        "scope": "Power BI Artifact Factory G0-G3 validation ladder"
+      }
+    ]
+  },
+  "frontend_validation": {
+    "framework": "Next.js 14.2.35 (Node.js v22.14.0)",
+    "typescript_errors": 0,
+    "regression_suite": {
+      "path": "frontend/tests/assistant_regression.test.mjs",
+      "tests": 8,
+      "passed": 8,
+      "failed": 0
+    },
+    "production_build": {
+      "status": "compiled_successfully",
+      "pages_generated": 12
+    },
+    "runtime_safety": {
+      "tofixed_guarded": true,
+      "utility_module": "frontend/lib/format.ts",
+      "unvalidated_calls": 0
+    }
+  },
+  "live_service_probes": [
+    {"name": "Backend Health", "url": "http://127.0.0.1:8000/health", "status": 200, "result": "OK"},
+    {"name": "Command Center", "url": "http://localhost:3000/dashboard", "status": 200, "result": "OK"},
+    {"name": "Analytics Intelligence", "url": "http://localhost:3000/assistant", "status": 200, "result": "OK"},
+    {"name": "Analytics Portfolio", "url": "http://localhost:3000/assets", "status": 200, "result": "OK"},
+    {"name": "Governance & Compliance", "url": "http://localhost:3000/governance", "status": 200, "result": "OK"},
+    {"name": "Decision & Approval Management", "url": "http://localhost:3000/approvals", "status": 200, "result": "OK"},
+    {"name": "Lifecycle Management", "url": "http://localhost:3000/lifecycle", "status": 200, "result": "OK"},
+    {"name": "Development Studio", "url": "http://localhost:3000/artifacts", "status": 200, "result": "OK"},
+    {"name": "Platform Administration", "url": "http://localhost:3000/admin", "status": 200, "result": "OK"},
+    {"name": "Arduino Edge (Removed)", "url": "http://localhost:3000/arduino", "status": 404, "result": "OK"}
+  ],
+  "governance_safeguards": {
+    "all_six_agents_preserved": true,
+    "all_eight_rules_preserved": true,
+    "rule_005_thresholds": {"high_reach": 500, "self_service": 250},
+    "software_only_scope": true,
+    "hardware_arduino_removed": true,
+    "dataset_provenance_maintained": true
+  }
+}
+

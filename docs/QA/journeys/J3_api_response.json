@@ -1,0 +1,2382 @@
+{
+ "request_id": "REQ-20261107181043-384E5C",
+ "raw_prompt": "I need a Hyrnuo net sales dashboard for the US, but we already have overlapping reports there.",
+ "status": "completed",
+ "intent": {
+  "raw_prompt": "I need a Hyrnuo net sales dashboard for the US, but we already have overlapping reports there.",
+  "products": [
+   "Hyrnuo"
+  ],
+  "markets": [
+   "US"
+  ],
+  "kpis": [
+   "net sales"
+  ],
+  "dimensions": [],
+  "time_periods": [],
+  "business_purpose": "Analytics request for Hyrnuo across US covering net sales",
+  "missing_or_ambiguous": [
+   "Time horizon or refresh frequency is unspecified (e.g. monthly, YTD)."
+  ],
+  "confidence": 0.85,
+  "ambiguities": [],
+  "interpretation_notes": [],
+  "unresolved_terms": [],
+  "resolution": {
+   "original_request": "I need a Hyrnuo net sales dashboard for the US, but we already have overlapping reports there.",
+   "deterministic_intent": {
+    "products": [
+     "Hyrnuo"
+    ],
+    "markets": [
+     "US"
+    ],
+    "kpis": [
+     "net sales"
+    ],
+    "dimensions": [],
+    "time_periods": [],
+    "business_purpose": "Analytics request for Hyrnuo across US covering net sales",
+    "missing_or_ambiguous": [
+     "Time horizon or refresh frequency is unspecified (e.g. monthly, YTD)."
+    ],
+    "confidence": 0.85
+   },
+   "llm_proposal": null,
+   "accepted": [],
+   "confirmed": [],
+   "rejected": []
+  },
+  "geography": {
+   "status": "RESOLVED",
+   "phrases": [
+    {
+     "original_phrase": "US",
+     "normalized_scope": "US",
+     "resolved_market_ids": [
+      "US"
+     ],
+     "suggested_market_ids": [],
+     "catalog_evidence": [],
+     "external_context": [],
+     "status": "RESOLVED",
+     "explanation": "'US' matches catalog scope 'US'."
+    }
+   ],
+   "resolved_market_ids": [
+    "US"
+   ],
+   "unresolved_geography": [],
+   "explanation": "All requested geography matched catalog records."
+  },
+  "request_types": [
+   "ASSET_REQUEST"
+  ],
+  "request_type_evidence": [
+   "Asks to provision an asset: 'need a Hyrnuo net sales dashboard for the US, but we already have overlapping reports'."
+  ],
+  "asset_ids_mentioned": [],
+  "duplication_question": true,
+  "title_topics": []
+ },
+ "recommendation": {
+  "decision": "CONSOLIDATE",
+  "confidence": 0.86,
+  "primary_recommendation": "Consolidate AST-0056 into AST-0147 ('Hyrnuo Launch Final') instead of building another asset.",
+  "rationale": "2 existing Hyrnuo assets in US overlap: the staged duplication gates confirm AST-0056 + AST-0147 share scope and governed KPI concepts. Gates: G1 scope pass; G2 canonical-concept overlap 0.75; G3 exact-KPI overlap 0.14; G4 shared model/workspace no. AST-0147 is the strongest target (promoted endorsement, lifecycle 'active', owner Oliver Martin, audience 1,495). 9 governance finding(s) on assets outside the requested scope are reported separately and aren't blockers for this request.",
+  "target_asset_ids": [
+   "AST-0147"
+  ],
+  "target_model_ids": [
+   "SM-033"
+  ],
+  "alternatives": [
+   {
+    "action": "REUSE",
+    "target_id": "AST-0147",
+    "pros": "Immediate access to the strongest asset.",
+    "cons": "Leaves the overlapping asset(s) in place, so the duplication remains."
+   },
+   {
+    "action": "BUILD_NEW",
+    "target_id": null,
+    "pros": "None for this scope.",
+    "cons": "Adds another overlapping asset; violates RULE-001."
+   }
+  ],
+  "blockers": [],
+  "warnings": [
+   "RULE-001 HIGH WARNING on AST-0152: Duplicate asset title: 'Hyrnuo Portfolio Monthly' (2 occurrences).",
+   "RULE-002 HIGH WARNING on AST-0147: Asset uses 2 non-canonical KPI(s).",
+   "RULE-002 HIGH WARNING on AST-0183: Asset uses 2 non-canonical KPI(s).",
+   "RULE-002 HIGH WARNING on AST-0082: Asset uses 2 non-canonical KPI(s).",
+   "RULE-004 HIGH WARNING on AST-0183: Unmitigated downstream lineage: AST-0183 (CONSOLIDATE_BEFORE_MIGRATION).",
+   "RULE-005 HIGH WARNING on AST-0056: Unendorsed high-reach asset AST-0056 (audience: 1600).",
+   "RULE-005 HIGH WARNING on AST-0113: Unendorsed high-reach asset AST-0113 (audience: 2014).",
+   "RULE-005 HIGH WARNING on AST-0152: Unendorsed high-reach asset AST-0152 (audience: 2111).",
+   "RULE-005 HIGH WARNING on AST-0295: Unendorsed high-reach asset AST-0295 (audience: 1056).",
+   "RULE-006 HIGH WARNING on AST-0056: Waste rationalisation: AST-0056 (RETIRE).",
+   "RULE-006 HIGH WARNING on AST-0082: Waste rationalisation: AST-0082 (RETIRE).",
+   "RULE-001 DIRECTIVE: Certified asset AST-0183 ('Hyrnuo Digital Engagement Legacy') already serves this exact scope. Reuse must be prioritized before building new analytics."
+  ],
+  "human_approval_required": true,
+  "next_steps": [
+   "Raise a CONSOLIDATE approval request for AST-0056 into AST-0147; the accountable owner (Oliver Martin) must approve.",
+   "Confirm metric parity for the shared KPIs before redirecting users.",
+   "Retire the consolidated source asset(s) only after a RULE-008 impact assessment."
+  ],
+  "active_finding_ids": [
+   "FND-RULE001-5679C8933D45",
+   "FND-RULE001-BE09956D543C",
+   "FND-RULE002-3B5A0EA17620",
+   "FND-RULE002-9B588716930B",
+   "FND-RULE002-8AD8CE980177",
+   "FND-RULE002-900E1740DAB5",
+   "FND-RULE002-3772B0A5CF1D",
+   "FND-RULE002-91633EF2F005",
+   "FND-RULE002-9AC2DF3AFE58",
+   "FND-RULE002-24B0C90E8909",
+   "FND-RULE002-F2D0F5F59DFA",
+   "FND-RULE002-999EAA3F9A8B",
+   "FND-RULE002-9D817503E85B",
+   "FND-RULE002-63ACEC7F1E47",
+   "FND-RULE004-127CC6F64EED",
+   "FND-RULE005-1E789E98D8DE",
+   "FND-RULE005-3CC29C9DD622",
+   "FND-RULE005-3604C42E0C95",
+   "FND-RULE005-90571C855170",
+   "FND-RULE005-F7E721DEFDB2",
+   "FND-RULE005-E737E50F5D65",
+   "FND-RULE006-236CDDDF40A6",
+   "FND-RULE006-C8686036432C",
+   "FND-RULE006-2C8CA74A4EEF",
+   "FND-RULE006-D0D13173693B",
+   "FND-RULE008-AFF57529ECAF",
+   "FND-RULE008-F94962FD7A5D"
+  ],
+  "out_of_scope_warnings": [
+   "RULE-002 on AST-0075, outside the requested scope: Asset uses 1 non-canonical KPI(s).",
+   "RULE-002 on AST-0007, outside the requested scope: Asset uses 1 non-canonical KPI(s).",
+   "RULE-005 on AST-0105, outside the requested scope: Unendorsed high-reach asset AST-0105 (audience: 1267)."
+  ],
+  "llm_narrative": null,
+  "action_status": "REQUIRES_APPROVAL",
+  "ineligible_targets": []
+ },
+ "discovery": {
+  "exact_matches": [
+   {
+    "asset_id": "AST-0082",
+    "asset_name": "Hyrnuo Gross-to-Net Final",
+    "match_tier": "EXACT",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.9,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-071",
+    "model_name": "Pharma Commercial Core 71",
+    "model_endorsement": "none",
+    "owner_name": "Nina Schmidt",
+    "estimated_audience": 2120,
+    "evidence": {
+     "asset_id": "AST-0082",
+     "workspace_id": "WS-005",
+     "model_id": "SM-071",
+     "product_scope": "Hyrnuo",
+     "market_scope": "US",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0147",
+    "asset_name": "Hyrnuo Launch Final",
+    "match_tier": "EXACT",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.9,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-033",
+    "model_name": "Executive Pharma 33",
+    "model_endorsement": "certified",
+    "owner_name": "Oliver Martin",
+    "estimated_audience": 1495,
+    "evidence": {
+     "asset_id": "AST-0147",
+     "workspace_id": "WS-001",
+     "model_id": "SM-033",
+     "product_scope": "Hyrnuo",
+     "market_scope": "US",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0183",
+    "asset_name": "Hyrnuo Digital Engagement Legacy",
+    "match_tier": "EXACT",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "match_score": 0.9,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-029",
+    "model_name": "Market Access 29",
+    "model_endorsement": "none",
+    "owner_name": "Jonas Meyer",
+    "estimated_audience": 1140,
+    "evidence": {
+     "asset_id": "AST-0183",
+     "workspace_id": "WS-014",
+     "model_id": "SM-029",
+     "product_scope": "Hyrnuo",
+     "market_scope": "US",
+     "endorsement": "certified",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0056",
+    "asset_name": "Hyrnuo Supply New",
+    "match_tier": "EXACT",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Tableau",
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'"
+    ],
+    "model_id": "SM-020",
+    "model_name": "Regional Commercial 20",
+    "model_endorsement": "none",
+    "owner_name": "Mika Novak",
+    "estimated_audience": 1600,
+    "evidence": {
+     "asset_id": "AST-0056",
+     "workspace_id": "WS-014",
+     "model_id": "SM-020",
+     "product_scope": "Hyrnuo",
+     "market_scope": "US",
+     "endorsement": "none",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0113",
+    "asset_name": "Hyrnuo Supply Legacy",
+    "match_tier": "EXACT",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'"
+    ],
+    "model_id": "SM-021",
+    "model_name": "Product Market Performance 21",
+    "model_endorsement": "none",
+    "owner_name": "Mika Fischer",
+    "estimated_audience": 2014,
+    "evidence": {
+     "asset_id": "AST-0113",
+     "workspace_id": "WS-008",
+     "model_id": "SM-021",
+     "product_scope": "Hyrnuo",
+     "market_scope": "US",
+     "endorsement": "none",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0152",
+    "asset_name": "Hyrnuo Portfolio Monthly",
+    "match_tier": "EXACT",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "none",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'"
+    ],
+    "model_id": "SM-026",
+    "model_name": "Executive Pharma 26",
+    "model_endorsement": "none",
+    "owner_name": "Mika Novak",
+    "estimated_audience": 2111,
+    "evidence": {
+     "asset_id": "AST-0152",
+     "workspace_id": "WS-001",
+     "model_id": "SM-026",
+     "product_scope": "Hyrnuo",
+     "market_scope": "US",
+     "endorsement": "none",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0295",
+    "asset_name": "Hyrnuo Demand Mgmt",
+    "match_tier": "EXACT",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'"
+    ],
+    "model_id": "SM-065",
+    "model_name": "Portfolio Performance 65",
+    "model_endorsement": "certified",
+    "owner_name": "Oliver Martin",
+    "estimated_audience": 1056,
+    "evidence": {
+     "asset_id": "AST-0295",
+     "workspace_id": "WS-008",
+     "model_id": "SM-065",
+     "product_scope": "Hyrnuo",
+     "market_scope": "US",
+     "endorsement": "none",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   }
+  ],
+  "partial_matches": [
+   {
+    "asset_id": "AST-0075",
+    "asset_name": "Hyrnuo Net Sales Final",
+    "match_tier": "PARTIAL",
+    "product_scope": "Hyrnuo",
+    "market_scope": "AU",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Title keywords match requested concepts: net sales",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-067",
+    "model_name": "Market Access 67",
+    "model_endorsement": "promoted",
+    "owner_name": "Julia Martin",
+    "estimated_audience": 1105,
+    "evidence": {
+     "asset_id": "AST-0075",
+     "workspace_id": "WS-016",
+     "model_id": "SM-067",
+     "product_scope": "Hyrnuo",
+     "market_scope": "AU",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0105",
+    "asset_name": "Hyrnuo Net Sales Monthly",
+    "match_tier": "PARTIAL",
+    "product_scope": "Hyrnuo",
+    "market_scope": "CA",
+    "platform": "Tableau",
+    "endorsement": "none",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.7,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Title keywords match requested concepts: net sales"
+    ],
+    "model_id": "SM-040",
+    "model_name": "Launch Excellence 40",
+    "model_endorsement": "none",
+    "owner_name": "Elias Rossi",
+    "estimated_audience": 1267,
+    "evidence": {
+     "asset_id": "AST-0105",
+     "workspace_id": "WS-006",
+     "model_id": "SM-040",
+     "product_scope": "Hyrnuo",
+     "market_scope": "CA",
+     "endorsement": "none",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0128",
+    "asset_name": "Hyrnuo Net Sales v2",
+    "match_tier": "PARTIAL",
+    "product_scope": "Hyrnuo",
+    "market_scope": "ES",
+    "platform": "Power BI",
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "match_score": 0.7,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Title keywords match requested concepts: net sales"
+    ],
+    "model_id": "SM-058",
+    "model_name": "Product Market Performance 58",
+    "model_endorsement": "certified",
+    "owner_name": "Maya Meyer",
+    "estimated_audience": 191,
+    "evidence": {
+     "asset_id": "AST-0128",
+     "workspace_id": "WS-007",
+     "model_id": "SM-058",
+     "product_scope": "Hyrnuo",
+     "market_scope": "ES",
+     "endorsement": "none",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0131",
+    "asset_name": "Hyrnuo Net Sales - EMEA",
+    "match_tier": "PARTIAL",
+    "product_scope": "Hyrnuo",
+    "market_scope": "MX",
+    "platform": "Power BI",
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "match_score": 0.7,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Title keywords match requested concepts: net sales"
+    ],
+    "model_id": "SM-024",
+    "model_name": "Regional Commercial 24",
+    "model_endorsement": "promoted",
+    "owner_name": "Daniel Meyer",
+    "estimated_audience": 855,
+    "evidence": {
+     "asset_id": "AST-0131",
+     "workspace_id": "WS-002",
+     "model_id": "SM-024",
+     "product_scope": "Hyrnuo",
+     "market_scope": "MX",
+     "endorsement": "none",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0007",
+    "asset_name": "Hyrnuo Digital Engagement Final",
+    "match_tier": "PARTIAL",
+    "product_scope": "Hyrnuo",
+    "market_scope": "SE",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-007",
+    "model_name": "Portfolio Performance 07",
+    "model_endorsement": "promoted",
+    "owner_name": "Sofia Novak",
+    "estimated_audience": 1668,
+    "evidence": {
+     "asset_id": "AST-0007",
+     "workspace_id": "WS-015",
+     "model_id": "SM-007",
+     "product_scope": "Hyrnuo",
+     "market_scope": "SE",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0024",
+    "asset_name": "Hyrnuo Product Performance - US",
+    "match_tier": "PARTIAL",
+    "product_scope": "Hyrnuo",
+    "market_scope": "Global",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-007",
+    "model_name": "Portfolio Performance 07",
+    "model_endorsement": "promoted",
+    "owner_name": "Maya Andersson",
+    "estimated_audience": 982,
+    "evidence": {
+     "asset_id": "AST-0024",
+     "workspace_id": "WS-004",
+     "model_id": "SM-007",
+     "product_scope": "Hyrnuo",
+     "market_scope": "Global",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0048",
+    "asset_name": "Hyrnuo Portfolio v2",
+    "match_tier": "PARTIAL",
+    "product_scope": "Hyrnuo",
+    "market_scope": "AU",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-002",
+    "model_name": "Market Access 02",
+    "model_endorsement": "none",
+    "owner_name": "Mika Martin",
+    "estimated_audience": 884,
+    "evidence": {
+     "asset_id": "AST-0048",
+     "workspace_id": "WS-001",
+     "model_id": "SM-002",
+     "product_scope": "Hyrnuo",
+     "market_scope": "AU",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0091",
+    "asset_name": "Hyrnuo Growth - US",
+    "match_tier": "PARTIAL",
+    "product_scope": "Hyrnuo",
+    "market_scope": "SE",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-058",
+    "model_name": "Product Market Performance 58",
+    "model_endorsement": "certified",
+    "owner_name": "Felix Fischer",
+    "estimated_audience": 105,
+    "evidence": {
+     "asset_id": "AST-0091",
+     "workspace_id": "WS-016",
+     "model_id": "SM-058",
+     "product_scope": "Hyrnuo",
+     "market_scope": "SE",
+     "endorsement": "certified",
+     "lifecycle_status": "active",
+     "owner_status": "inactive",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Assigned owner is 'inactive'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0138",
+    "asset_name": "Hyrnuo Supply - EMEA",
+    "match_tier": "PARTIAL",
+    "product_scope": "Hyrnuo",
+    "market_scope": "AU",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-057",
+    "model_name": "Supply & Inventory 57",
+    "model_endorsement": "none",
+    "owner_name": "Emma Novak",
+    "estimated_audience": 1584,
+    "evidence": {
+     "asset_id": "AST-0138",
+     "workspace_id": "WS-011",
+     "model_id": "SM-057",
+     "product_scope": "Hyrnuo",
+     "market_scope": "AU",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0251",
+    "asset_name": "Hyrnuo Market Access - Global",
+    "match_tier": "PARTIAL",
+    "product_scope": "Hyrnuo",
+    "market_scope": "Global",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-054",
+    "model_name": "Executive Pharma 54",
+    "model_endorsement": "promoted",
+    "owner_name": "Sofia Rossi",
+    "estimated_audience": 482,
+    "evidence": {
+     "asset_id": "AST-0251",
+     "workspace_id": "WS-007",
+     "model_id": "SM-054",
+     "product_scope": "Hyrnuo",
+     "market_scope": "Global",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   }
+  ],
+  "weak_candidates": [
+   {
+    "asset_id": "AST-0017",
+    "asset_name": "Lynkuet Commercial Reach Monthly",
+    "match_tier": "WEAK",
+    "product_scope": "Lynkuet",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-011",
+    "model_name": "Regional Commercial 11",
+    "model_endorsement": "none",
+    "owner_name": "Nina Garcia",
+    "estimated_audience": 738,
+    "evidence": {
+     "asset_id": "AST-0017",
+     "workspace_id": "WS-002",
+     "model_id": "SM-011",
+     "product_scope": "Lynkuet",
+     "market_scope": "US",
+     "endorsement": "promoted",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Lynkuet' does not match requested 'Hyrnuo'",
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0063",
+    "asset_name": "Xarelto Executive Legacy",
+    "match_tier": "WEAK",
+    "product_scope": "Xarelto",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-049",
+    "model_name": "Pharma Commercial Core 49",
+    "model_endorsement": "promoted",
+    "owner_name": "Julia Brown",
+    "estimated_audience": 2106,
+    "evidence": {
+     "asset_id": "AST-0063",
+     "workspace_id": "WS-007",
+     "model_id": "SM-049",
+     "product_scope": "Xarelto",
+     "market_scope": "US",
+     "endorsement": "certified",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Xarelto' does not match requested 'Hyrnuo'",
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0064",
+    "asset_name": "Eylea Market Access New",
+    "match_tier": "WEAK",
+    "product_scope": "Eylea",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-016",
+    "model_name": "Portfolio Performance 16",
+    "model_endorsement": "none",
+    "owner_name": "Anna Meyer",
+    "estimated_audience": 1686,
+    "evidence": {
+     "asset_id": "AST-0064",
+     "workspace_id": "WS-010",
+     "model_id": "SM-016",
+     "product_scope": "Eylea",
+     "market_scope": "US",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Eylea' does not match requested 'Hyrnuo'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0070",
+    "asset_name": "Xarelto Budget Final",
+    "match_tier": "WEAK",
+    "product_scope": "Xarelto",
+    "market_scope": "US",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-021",
+    "model_name": "Product Market Performance 21",
+    "model_endorsement": "none",
+    "owner_name": "Leo Keller",
+    "estimated_audience": 767,
+    "evidence": {
+     "asset_id": "AST-0070",
+     "workspace_id": "WS-002",
+     "model_id": "SM-021",
+     "product_scope": "Xarelto",
+     "market_scope": "US",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Xarelto' does not match requested 'Hyrnuo'",
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0090",
+    "asset_name": "Nubeqa Supply Mgmt",
+    "match_tier": "WEAK",
+    "product_scope": "Nubeqa",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-013",
+    "model_name": "Pharma Finance 13",
+    "model_endorsement": "promoted",
+    "owner_name": "Sofia Brown",
+    "estimated_audience": 215,
+    "evidence": {
+     "asset_id": "AST-0090",
+     "workspace_id": "WS-004",
+     "model_id": "SM-013",
+     "product_scope": "Nubeqa",
+     "market_scope": "US",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Nubeqa' does not match requested 'Hyrnuo'",
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0224",
+    "asset_name": "Nubeqa Executive - Global",
+    "match_tier": "WEAK",
+    "product_scope": "Nubeqa",
+    "market_scope": "US",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "legacy",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-023",
+    "model_name": "Pharma Finance 23",
+    "model_endorsement": "certified",
+    "owner_name": "Nina Garcia",
+    "estimated_audience": 2095,
+    "evidence": {
+     "asset_id": "AST-0224",
+     "workspace_id": "WS-009",
+     "model_id": "SM-023",
+     "product_scope": "Nubeqa",
+     "market_scope": "US",
+     "endorsement": "promoted",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Nubeqa' does not match requested 'Hyrnuo'",
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0280",
+    "asset_name": "Kerendia Market Access - EMEA",
+    "match_tier": "WEAK",
+    "product_scope": "Kerendia",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-013",
+    "model_name": "Pharma Finance 13",
+    "model_endorsement": "promoted",
+    "owner_name": "Felix Meyer",
+    "estimated_audience": 452,
+    "evidence": {
+     "asset_id": "AST-0280",
+     "workspace_id": "WS-001",
+     "model_id": "SM-013",
+     "product_scope": "Kerendia",
+     "market_scope": "US",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Kerendia' does not match requested 'Hyrnuo'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0010",
+    "asset_name": "All Pharma Commercial Reach - Global",
+    "match_tier": "WEAK",
+    "product_scope": "All Pharma",
+    "market_scope": "US",
+    "platform": "Tableau",
+    "endorsement": "none",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Market scope aligns with 'US'"
+    ],
+    "model_id": "SM-040",
+    "model_name": "Launch Excellence 40",
+    "model_endorsement": "none",
+    "owner_name": "Mika Fischer",
+    "estimated_audience": 1221,
+    "evidence": {
+     "asset_id": "AST-0010",
+     "workspace_id": "WS-010",
+     "model_id": "SM-040",
+     "product_scope": "All Pharma",
+     "market_scope": "US",
+     "endorsement": "none",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'All Pharma' does not match requested 'Hyrnuo'",
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0022",
+    "asset_name": "All Pharma Net Sales Final",
+    "match_tier": "WEAK",
+    "product_scope": "All Pharma",
+    "market_scope": "FI",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: net sales",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-007",
+    "model_name": "Portfolio Performance 07",
+    "model_endorsement": "promoted",
+    "owner_name": "Nina Garcia",
+    "estimated_audience": 1479,
+    "evidence": {
+     "asset_id": "AST-0022",
+     "workspace_id": "WS-012",
+     "model_id": "SM-007",
+     "product_scope": "All Pharma",
+     "market_scope": "FI",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'All Pharma' does not match requested 'Hyrnuo'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0042",
+    "asset_name": "Eylea Net Sales Final",
+    "match_tier": "WEAK",
+    "product_scope": "Eylea",
+    "market_scope": "SE",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: net sales",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-045",
+    "model_name": "Demand Forecast 45",
+    "model_endorsement": "none",
+    "owner_name": "Sofia Rossi",
+    "estimated_audience": 1980,
+    "evidence": {
+     "asset_id": "AST-0042",
+     "workspace_id": "WS-009",
+     "model_id": "SM-045",
+     "product_scope": "Eylea",
+     "market_scope": "SE",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Eylea' does not match requested 'Hyrnuo'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   }
+  ],
+  "total_searched": 360,
+  "search_notes": "Searched 360 assets. Found 7 exact matches, 44 partial matches, and 24 weak candidates.",
+  "data_answer": null,
+  "governance_answer": null,
+  "migration_answer": null,
+  "title_topic_matches": []
+ },
+ "kpi_analysis": {
+  "matches": [
+   {
+    "requested_metric": "net sales",
+    "matched_kpi_id": "KPI-001",
+    "matched_kpi_name": "Net Sales",
+    "domain": "Commercial",
+    "approval_status": "approved",
+    "definition_status": "canonical",
+    "is_canonical": true,
+    "is_approved": true,
+    "semantic_equivalence_notes": "Exact match on canonical approved KPI 'Net Sales' (KPI-001)",
+    "conflicts": [],
+    "alternative_kpis": []
+   }
+  ],
+  "canonical_approved_kpi_ids": [
+   "KPI-001"
+  ],
+  "unapproved_or_conflicted_kpi_ids": [],
+  "unmatched_requested_metrics": [],
+  "has_conflicts": false,
+  "summary": "Evaluated 1 requested metrics: 1 canonical approved, 0 unapproved/conflicted, 0 unmatched.",
+  "llm_review": []
+ },
+ "duplication": {
+  "has_duplicates": true,
+  "candidates": [
+   {
+    "asset_id": "AST-0183",
+    "asset_name": "Hyrnuo Digital Engagement Legacy",
+    "similarity_score": 0.8,
+    "structural_similarity": 0.6,
+    "kpi_similarity": 1.0,
+    "semantic_similarity": 0.9,
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": true,
+     "metric_drift_detected": false,
+     "structural_reasons": [
+      "Shares product semantic model SM-029 ('Market Access 29')"
+     ],
+     "kpi_reasons": [
+      "Shares 1 requested KPI(s): KPI-001"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Hyrnuo'",
+      "Market scope aligns with 'US'",
+      "Endorsement level is 'certified'"
+     ],
+     "mapped_kpi_count": 6
+    }
+   },
+   {
+    "asset_id": "AST-0147",
+    "asset_name": "Hyrnuo Launch Final",
+    "similarity_score": 0.36,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.9,
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": true,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'certified'"
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Hyrnuo'",
+      "Market scope aligns with 'US'",
+      "Endorsement level is 'promoted'"
+     ],
+     "mapped_kpi_count": 4
+    }
+   },
+   {
+    "asset_id": "AST-0295",
+    "asset_name": "Hyrnuo Demand Mgmt",
+    "similarity_score": 0.34,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.8,
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": true,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'certified'"
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Hyrnuo'",
+      "Market scope aligns with 'US'"
+     ],
+     "mapped_kpi_count": 3
+    }
+   },
+   {
+    "asset_id": "AST-0075",
+    "asset_name": "Hyrnuo Net Sales Final",
+    "similarity_score": 0.34,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.8,
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'promoted'",
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Hyrnuo'",
+      "Title keywords match requested concepts: net sales",
+      "Endorsement level is 'promoted'"
+     ],
+     "mapped_kpi_count": 3
+    }
+   },
+   {
+    "asset_id": "AST-0128",
+    "asset_name": "Hyrnuo Net Sales v2",
+    "similarity_score": 0.32,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.7,
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'certified'",
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Hyrnuo'",
+      "Title keywords match requested concepts: net sales"
+     ],
+     "mapped_kpi_count": 3
+    }
+   },
+   {
+    "asset_id": "AST-0131",
+    "asset_name": "Hyrnuo Net Sales - EMEA",
+    "similarity_score": 0.32,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.7,
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'promoted'",
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Hyrnuo'",
+      "Title keywords match requested concepts: net sales"
+     ],
+     "mapped_kpi_count": 3
+    }
+   },
+   {
+    "asset_id": "AST-0007",
+    "asset_name": "Hyrnuo Digital Engagement Final",
+    "similarity_score": 0.3,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.6,
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'promoted'",
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Hyrnuo'",
+      "Endorsement level is 'promoted'"
+     ],
+     "mapped_kpi_count": 2
+    }
+   },
+   {
+    "asset_id": "AST-0024",
+    "asset_name": "Hyrnuo Product Performance - US",
+    "similarity_score": 0.3,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.6,
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": true,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'promoted'"
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Hyrnuo'",
+      "Endorsement level is 'promoted'"
+     ],
+     "mapped_kpi_count": 4
+    }
+   }
+  ],
+  "highest_similarity_score": 0.8,
+  "primary_duplicate_asset_id": "AST-0183",
+  "explanation": "Found 1 high-confidence duplicate asset(s) (similarity >= 0.65). Top match: AST-0183 ('Hyrnuo Digital Engagement Legacy') with composite similarity 0.80. Staged G1-G4 gates over 7 in-scope asset(s): 1 consolidation-eligible pair(s) (AST-0056 + AST-0147); 1 same-title group(s) checked.",
+  "gate_evaluations": [
+   {
+    "pair": [
+     "AST-0056",
+     "AST-0147"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.75,
+    "g3_exact_kpi_jaccard": 0.14,
+    "g4_shares_model": false,
+    "consolidation_eligible": true,
+    "recommendation": "SURFACE_FOR_CONSOLIDATION_REVIEW",
+    "explanation": "High canonical concept similarity (0.75) across shared scope ('Hyrnuo', 'US'). Surfaced for human governance review."
+   },
+   {
+    "pair": [
+     "AST-0056",
+     "AST-0082"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.0,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0056",
+     "AST-0113"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.29,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.29). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0056",
+     "AST-0152"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.11,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.11). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0056",
+     "AST-0183"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.25,
+    "g3_exact_kpi_jaccard": 0.11,
+    "g4_shares_model": true,
+    "consolidation_eligible": false,
+    "recommendation": "INSUFFICIENT_SIMILARITY",
+    "explanation": "Moderate similarity (exact: 0.11, group: 0.25). Insufficient evidence for consolidation."
+   },
+   {
+    "pair": [
+     "AST-0056",
+     "AST-0295"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.0,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0082",
+     "AST-0113"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.0,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0082",
+     "AST-0147"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.0,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0082",
+     "AST-0152"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.0,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0082",
+     "AST-0183"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.0,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0082",
+     "AST-0295"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.0,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0113",
+     "AST-0147"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.33,
+    "g3_exact_kpi_jaccard": 0.12,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "INSUFFICIENT_SIMILARITY",
+    "explanation": "Moderate similarity (exact: 0.12, group: 0.33). Insufficient evidence for consolidation."
+   },
+   {
+    "pair": [
+     "AST-0113",
+     "AST-0152"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.1,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.10). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0113",
+     "AST-0183"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.57,
+    "g3_exact_kpi_jaccard": 0.1,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "INSUFFICIENT_SIMILARITY",
+    "explanation": "Moderate similarity (exact: 0.10, group: 0.57). Insufficient evidence for consolidation."
+   },
+   {
+    "pair": [
+     "AST-0113",
+     "AST-0295"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.0,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": true,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0147",
+     "AST-0152"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.12,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": true,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.12). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0147",
+     "AST-0183"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.29,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.29). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0147",
+     "AST-0295"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.0,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0152",
+     "AST-0183"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.09,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.09). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   },
+   {
+    "pair": [
+     "AST-0152",
+     "AST-0295"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.12,
+    "g3_exact_kpi_jaccard": 0.12,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "INSUFFICIENT_SIMILARITY",
+    "explanation": "Moderate similarity (exact: 0.12, group: 0.12). Insufficient evidence for consolidation."
+   },
+   {
+    "pair": [
+     "AST-0183",
+     "AST-0295"
+    ],
+    "scope": "Hyrnuo / US",
+    "g1_scope_pass": true,
+    "g2_canonical_group_jaccard": 0.0,
+    "g3_exact_kpi_jaccard": 0.0,
+    "g4_shares_model": false,
+    "consolidation_eligible": false,
+    "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+    "explanation": "Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation."
+   }
+  ],
+  "consolidation_eligible_pairs": [
+   [
+    "AST-0056",
+    "AST-0147"
+   ]
+  ],
+  "title_alike_groups": [
+   {
+    "title_root": "hyrnuo supply",
+    "asset_ids": [
+     "AST-0056",
+     "AST-0113"
+    ],
+    "markets": [
+     "US"
+    ],
+    "consolidation_eligible_pairs": [],
+    "verdict": "Same scope but the gates found insufficient KPI overlap or metric drift (G2/G3)."
+   }
+  ]
+ },
+ "governance": {
+  "blockers": [],
+  "warnings": [
+   "RULE-001 HIGH WARNING on AST-0152: Duplicate asset title: 'Hyrnuo Portfolio Monthly' (2 occurrences).",
+   "RULE-002 HIGH WARNING on AST-0147: Asset uses 2 non-canonical KPI(s).",
+   "RULE-002 HIGH WARNING on AST-0183: Asset uses 2 non-canonical KPI(s).",
+   "RULE-002 HIGH WARNING on AST-0082: Asset uses 2 non-canonical KPI(s).",
+   "RULE-004 HIGH WARNING on AST-0183: Unmitigated downstream lineage: AST-0183 (CONSOLIDATE_BEFORE_MIGRATION).",
+   "RULE-005 HIGH WARNING on AST-0056: Unendorsed high-reach asset AST-0056 (audience: 1600).",
+   "RULE-005 HIGH WARNING on AST-0113: Unendorsed high-reach asset AST-0113 (audience: 2014).",
+   "RULE-005 HIGH WARNING on AST-0152: Unendorsed high-reach asset AST-0152 (audience: 2111).",
+   "RULE-005 HIGH WARNING on AST-0295: Unendorsed high-reach asset AST-0295 (audience: 1056).",
+   "RULE-006 HIGH WARNING on AST-0056: Waste rationalisation: AST-0056 (RETIRE).",
+   "RULE-006 HIGH WARNING on AST-0082: Waste rationalisation: AST-0082 (RETIRE).",
+   "RULE-001 DIRECTIVE: Certified asset AST-0183 ('Hyrnuo Digital Engagement Legacy') already serves this exact scope. Reuse must be prioritized before building new analytics."
+  ],
+  "applicable_rule_ids": [
+   "RULE-001",
+   "RULE-002",
+   "RULE-003",
+   "RULE-004",
+   "RULE-005",
+   "RULE-006",
+   "RULE-008"
+  ],
+  "active_finding_ids": [
+   "FND-RULE001-5679C8933D45",
+   "FND-RULE001-BE09956D543C",
+   "FND-RULE002-3B5A0EA17620",
+   "FND-RULE002-9B588716930B",
+   "FND-RULE002-8AD8CE980177",
+   "FND-RULE002-900E1740DAB5",
+   "FND-RULE002-3772B0A5CF1D",
+   "FND-RULE002-91633EF2F005",
+   "FND-RULE002-9AC2DF3AFE58",
+   "FND-RULE002-24B0C90E8909",
+   "FND-RULE002-F2D0F5F59DFA",
+   "FND-RULE002-999EAA3F9A8B",
+   "FND-RULE002-9D817503E85B",
+   "FND-RULE002-63ACEC7F1E47",
+   "FND-RULE004-127CC6F64EED",
+   "FND-RULE005-1E789E98D8DE",
+   "FND-RULE005-3CC29C9DD622",
+   "FND-RULE005-3604C42E0C95",
+   "FND-RULE005-90571C855170",
+   "FND-RULE005-F7E721DEFDB2",
+   "FND-RULE005-E737E50F5D65",
+   "FND-RULE006-236CDDDF40A6",
+   "FND-RULE006-C8686036432C",
+   "FND-RULE006-2C8CA74A4EEF",
+   "FND-RULE006-D0D13173693B",
+   "FND-RULE008-AFF57529ECAF",
+   "FND-RULE008-F94962FD7A5D"
+  ],
+  "human_approval_required": true,
+  "evidence_references": [
+   {
+    "finding_id": "FND-RULE001-5679C8933D45",
+    "target_id": "AST-0152",
+    "rule_id": "RULE-001",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE001-BE09956D543C",
+    "target_id": "AST-0113",
+    "rule_id": "RULE-001",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-3B5A0EA17620",
+    "target_id": "AST-0113",
+    "rule_id": "RULE-002",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-9B588716930B",
+    "target_id": "AST-0056",
+    "rule_id": "RULE-002",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-8AD8CE980177",
+    "target_id": "AST-0147",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-900E1740DAB5",
+    "target_id": "AST-0128",
+    "rule_id": "RULE-002",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-3772B0A5CF1D",
+    "target_id": "AST-0152",
+    "rule_id": "RULE-002",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-91633EF2F005",
+    "target_id": "AST-0295",
+    "rule_id": "RULE-002",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-9AC2DF3AFE58",
+    "target_id": "AST-0105",
+    "rule_id": "RULE-002",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-24B0C90E8909",
+    "target_id": "AST-0131",
+    "rule_id": "RULE-002",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-F2D0F5F59DFA",
+    "target_id": "AST-0183",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-999EAA3F9A8B",
+    "target_id": "AST-0082",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-9D817503E85B",
+    "target_id": "AST-0075",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-63ACEC7F1E47",
+    "target_id": "AST-0007",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE004-127CC6F64EED",
+    "target_id": "AST-0183",
+    "rule_id": "RULE-004",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE005-1E789E98D8DE",
+    "target_id": "AST-0056",
+    "rule_id": "RULE-005",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE005-3CC29C9DD622",
+    "target_id": "AST-0105",
+    "rule_id": "RULE-005",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE005-3604C42E0C95",
+    "target_id": "AST-0113",
+    "rule_id": "RULE-005",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE005-90571C855170",
+    "target_id": "AST-0131",
+    "rule_id": "RULE-005",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE005-F7E721DEFDB2",
+    "target_id": "AST-0152",
+    "rule_id": "RULE-005",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE005-E737E50F5D65",
+    "target_id": "AST-0295",
+    "rule_id": "RULE-005",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE006-236CDDDF40A6",
+    "target_id": "AST-0056",
+    "rule_id": "RULE-006",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE006-C8686036432C",
+    "target_id": "AST-0082",
+    "rule_id": "RULE-006",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE006-2C8CA74A4EEF",
+    "target_id": "AST-0105",
+    "rule_id": "RULE-006",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE006-D0D13173693B",
+    "target_id": "AST-0183",
+    "rule_id": "RULE-006",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE008-AFF57529ECAF",
+    "target_id": "AST-0105",
+    "rule_id": "RULE-008",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE008-F94962FD7A5D",
+    "target_id": "AST-0152",
+    "rule_id": "RULE-008",
+    "severity": "medium",
+    "scope": "request"
+   }
+  ],
+  "request_finding_ids": [
+   "FND-RULE001-5679C8933D45",
+   "FND-RULE001-BE09956D543C",
+   "FND-RULE002-3B5A0EA17620",
+   "FND-RULE002-9B588716930B",
+   "FND-RULE002-8AD8CE980177",
+   "FND-RULE002-3772B0A5CF1D",
+   "FND-RULE002-91633EF2F005",
+   "FND-RULE002-F2D0F5F59DFA",
+   "FND-RULE002-999EAA3F9A8B",
+   "FND-RULE004-127CC6F64EED",
+   "FND-RULE005-1E789E98D8DE",
+   "FND-RULE005-3604C42E0C95",
+   "FND-RULE005-F7E721DEFDB2",
+   "FND-RULE005-E737E50F5D65",
+   "FND-RULE006-236CDDDF40A6",
+   "FND-RULE006-C8686036432C",
+   "FND-RULE006-D0D13173693B",
+   "FND-RULE008-F94962FD7A5D"
+  ],
+  "out_of_scope_finding_ids": [
+   "FND-RULE002-900E1740DAB5",
+   "FND-RULE002-9AC2DF3AFE58",
+   "FND-RULE002-24B0C90E8909",
+   "FND-RULE002-9D817503E85B",
+   "FND-RULE002-63ACEC7F1E47",
+   "FND-RULE005-3CC29C9DD622",
+   "FND-RULE005-90571C855170",
+   "FND-RULE006-2C8CA74A4EEF",
+   "FND-RULE008-AFF57529ECAF"
+  ],
+  "out_of_scope_warnings": [
+   "RULE-002 on AST-0075, outside the requested scope: Asset uses 1 non-canonical KPI(s).",
+   "RULE-002 on AST-0007, outside the requested scope: Asset uses 1 non-canonical KPI(s).",
+   "RULE-005 on AST-0105, outside the requested scope: Unendorsed high-reach asset AST-0105 (audience: 1267)."
+  ]
+ },
+ "traces": [
+  {
+   "trace_id": "TRC-1643A28050AF",
+   "request_id": "REQ-20261107181043-384E5C",
+   "agent_name": "IntentAgent",
+   "step_order": 1,
+   "status": "success",
+   "duration_ms": 5.71,
+   "input_json": "{\"prompt\": \"I need a Hyrnuo net sales dashboard for the US, but we already have overlapping reports there.\"}",
+   "output_json": "{\"raw_prompt\": \"I need a Hyrnuo net sales dashboard for the US, but we already have overlapping reports there.\", \"products\": [\"Hyrnuo\"], \"markets\": [\"US\"], \"kpis\": [\"net sales\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for Hyrnuo across US covering net sales\", \"missing_or_ambiguous\": [\"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.85, \"ambiguities\": [], \"interpretation_notes\": [], \"unresolved_terms\": [], \"resolution\": {\"original_request\": \"I need a Hyrnuo net sales dashboard for the US, but we already have overlapping reports there.\", \"deterministic_intent\": {\"products\": [\"Hyrnuo\"], \"markets\": [\"US\"], \"kpis\": [\"net sales\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for Hyrnuo across US covering net sales\", \"missing_or_ambiguous\": [\"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.85}, \"llm_proposal\": null, \"accepted\": [], \"confirmed\": [], \"rejected\": []}, \"geography\": {\"status\": \"RESOLVED\", \"phrases\": [{\"original_phrase\": \"US\", \"normalized_scope\": \"US\", \"resolved_market_ids\": [\"US\"], \"suggested_market_ids\": [], \"catalog_evidence\": [], \"external_context\": [], \"status\": \"RESOLVED\", \"explanation\": \"'US' matches catalog scope 'US'.\"}], \"resolved_market_ids\": [\"US\"], \"unresolved_geography\": [], \"explanation\": \"All requested geography matched catalog records.\"}, \"request_types\": [\"ASSET_REQUEST\"], \"request_type_evidence\": [\"Asks to provision an asset: 'need a Hyrnuo net sales dashboard for the US, but we already have overlapping reports'.\"], \"asset_ids_mentioned\": [], \"duplication_question\": true, \"title_topics\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":\"deterministic_fallback\",\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:43.955335"
+  },
+  {
+   "trace_id": "TRC-E871D33F7112",
+   "request_id": "REQ-20261107181043-384E5C",
+   "agent_name": "DiscoveryAgent",
+   "step_order": 2,
+   "status": "success",
+   "duration_ms": 13.22,
+   "input_json": "{\"raw_prompt\": \"I need a Hyrnuo net sales dashboard for the US, but we already have overlapping reports there.\", \"products\": [\"Hyrnuo\"], \"markets\": [\"US\"], \"kpis\": [\"net sales\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for Hyrnuo across US covering net sales\", \"missing_or_ambiguous\": [\"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.85, \"ambiguities\": [], \"interpretation_notes\": [], \"unresolved_terms\": [], \"resolution\": {\"original_request\": \"I need a Hyrnuo net sales dashboard for the US, but we already have overlapping reports there.\", \"deterministic_intent\": {\"products\": [\"Hyrnuo\"], \"markets\": [\"US\"], \"kpis\": [\"net sales\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for Hyrnuo across US covering net sales\", \"missing_or_ambiguous\": [\"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.85}, \"llm_proposal\": null, \"accepted\": [], \"confirmed\": [], \"rejected\": []}, \"geography\": {\"status\": \"RESOLVED\", \"phrases\": [{\"original_phrase\": \"US\", \"normalized_scope\": \"US\", \"resolved_market_ids\": [\"US\"], \"suggested_market_ids\": [], \"catalog_evidence\": [], \"external_context\": [], \"status\": \"RESOLVED\", \"explanation\": \"'US' matches catalog scope 'US'.\"}], \"resolved_market_ids\": [\"US\"], \"unresolved_geography\": [], \"explanation\": \"All requested geography matched catalog records.\"}, \"request_types\": [\"ASSET_REQUEST\"], \"request_type_evidence\": [\"Asks to provision an asset: 'need a Hyrnuo net sales dashboard for the US, but we already have overlapping reports'.\"], \"asset_ids_mentioned\": [], \"duplication_question\": true, \"title_topics\": []}",
+   "output_json": "{\"exact_matches\": [{\"asset_id\": \"AST-0082\", \"asset_name\": \"Hyrnuo Gross-to-Net Final\", \"match_tier\": \"EXACT\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"platform\": \"Tableau\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.9, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Market scope aligns with 'US'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-071\", \"model_name\": \"Pharma Commercial Core 71\", \"model_endorsement\": \"none\", \"owner_name\": \"Nina Schmidt\", \"estimated_audience\": 2120, \"evidence\": {\"asset_id\": \"AST-0082\", \"workspace_id\": \"WS-005\", \"model_id\": \"SM-071\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0147\", \"asset_name\": \"Hyrnuo Launch Final\", \"match_tier\": \"EXACT\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.9, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Market scope aligns with 'US'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-033\", \"model_name\": \"Executive Pharma 33\", \"model_endorsement\": \"certified\", \"owner_name\": \"Oliver Martin\", \"estimated_audience\": 1495, \"evidence\": {\"asset_id\": \"AST-0147\", \"workspace_id\": \"WS-001\", \"model_id\": \"SM-033\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0183\", \"asset_name\": \"Hyrnuo Digital Engagement Legacy\", \"match_tier\": \"EXACT\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"platform\": \"Tableau\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"match_score\": 0.9, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Market scope aligns with 'US'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-029\", \"model_name\": \"Market Access 29\", \"model_endorsement\": \"none\", \"owner_name\": \"Jonas Meyer\", \"estimated_audience\": 1140, \"evidence\": {\"asset_id\": \"AST-0183\", \"workspace_id\": \"WS-014\", \"model_id\": \"SM-029\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0056\", \"asset_name\": \"Hyrnuo Supply New\", \"match_tier\": \"EXACT\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"platform\": \"Tableau\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Market scope aligns with 'US'\"], \"model_id\": \"SM-020\", \"model_name\": \"Regional Commercial 20\", \"model_endorsement\": \"none\", \"owner_name\": \"Mika Novak\", \"estimated_audience\": 1600, \"evidence\": {\"asset_id\": \"AST-0056\", \"workspace_id\": \"WS-014\", \"model_id\": \"SM-020\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0113\", \"asset_name\": \"Hyrnuo Supply Legacy\", \"match_tier\": \"EXACT\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"platform\": \"Power BI\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Market scope aligns with 'US'\"], \"model_id\": \"SM-021\", \"model_name\": \"Product Market Performance 21\", \"model_endorsement\": \"none\", \"owner_name\": \"Mika Fischer\", \"estimated_audience\": 2014, \"evidence\": {\"asset_id\": \"AST-0113\", \"workspace_id\": \"WS-008\", \"model_id\": \"SM-021\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0152\", \"asset_name\": \"Hyrnuo Portfolio Monthly\", \"match_tier\": \"EXACT\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"platform\": \"Power BI\", \"endorsement\": \"none\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Market scope aligns with 'US'\"], \"model_id\": \"SM-026\", \"model_name\": \"Executive Pharma 26\", \"model_endorsement\": \"none\", \"owner_name\": \"Mika Novak\", \"estimated_audience\": 2111, \"evidence\": {\"asset_id\": \"AST-0152\", \"workspace_id\": \"WS-001\", \"model_id\": \"SM-026\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"endorsement\": \"none\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0295\", \"asset_name\": \"Hyrnuo Demand Mgmt\", \"match_tier\": \"EXACT\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"platform\": \"Power BI\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Market scope aligns with 'US'\"], \"model_id\": \"SM-065\", \"model_name\": \"Portfolio Performance 65\", \"model_endorsement\": \"certified\", \"owner_name\": \"Oliver Martin\", \"estimated_audience\": 1056, \"evidence\": {\"asset_id\": \"AST-0295\", \"workspace_id\": \"WS-008\", \"model_id\": \"SM-065\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"US\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}], \"partial_matches\": [{\"asset_id\": \"AST-0075\", \"asset_name\": \"Hyrnuo Net Sales Final\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"AU\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Title keywords match requested concepts: net sales\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-067\", \"model_name\": \"Market Access 67\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Julia Martin\", \"estimated_audience\": 1105, \"evidence\": {\"asset_id\": \"AST-0075\", \"workspace_id\": \"WS-016\", \"model_id\": \"SM-067\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"AU\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0105\", \"asset_name\": \"Hyrnuo Net Sales Monthly\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"CA\", \"platform\": \"Tableau\", \"endorsement\": \"none\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.7, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Title keywords match requested concepts: net sales\"], \"model_id\": \"SM-040\", \"model_name\": \"Launch Excellence 40\", \"model_endorsement\": \"none\", \"owner_name\": \"Elias Rossi\", \"estimated_audience\": 1267, \"evidence\": {\"asset_id\": \"AST-0105\", \"workspace_id\": \"WS-006\", \"model_id\": \"SM-040\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"CA\", \"endorsement\": \"none\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0128\", \"asset_name\": \"Hyrnuo Net Sales v2\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"ES\", \"platform\": \"Power BI\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"match_score\": 0.7, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Title keywords match requested concepts: net sales\"], \"model_id\": \"SM-058\", \"model_name\": \"Product Market Performance 58\", \"model_endorsement\": \"certified\", \"owner_name\": \"Maya Meyer\", \"estimated_audience\": 191, \"evidence\": {\"asset_id\": \"AST-0128\", \"workspace_id\": \"WS-007\", \"model_id\": \"SM-058\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"ES\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0131\", \"asset_name\": \"Hyrnuo Net Sales - EMEA\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"MX\", \"platform\": \"Power BI\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"match_score\": 0.7, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Title keywords match requested concepts: net sales\"], \"model_id\": \"SM-024\", \"model_name\": \"Regional Commercial 24\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Daniel Meyer\", \"estimated_audience\": 855, \"evidence\": {\"asset_id\": \"AST-0131\", \"workspace_id\": \"WS-002\", \"model_id\": \"SM-024\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"MX\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0007\", \"asset_name\": \"Hyrnuo Digital Engagement Final\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"SE\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-007\", \"model_name\": \"Portfolio Performance 07\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Sofia Novak\", \"estimated_audience\": 1668, \"evidence\": {\"asset_id\": \"AST-0007\", \"workspace_id\": \"WS-015\", \"model_id\": \"SM-007\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"SE\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0024\", \"asset_name\": \"Hyrnuo Product Performance - US\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"Global\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-007\", \"model_name\": \"Portfolio Performance 07\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Maya Andersson\", \"estimated_audience\": 982, \"evidence\": {\"asset_id\": \"AST-0024\", \"workspace_id\": \"WS-004\", \"model_id\": \"SM-007\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"Global\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0048\", \"asset_name\": \"Hyrnuo Portfolio v2\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"AU\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-002\", \"model_name\": \"Market Access 02\", \"model_endorsement\": \"none\", \"owner_name\": \"Mika Martin\", \"estimated_audience\": 884, \"evidence\": {\"asset_id\": \"AST-0048\", \"workspace_id\": \"WS-001\", \"model_id\": \"SM-002\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"AU\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0091\", \"asset_name\": \"Hyrnuo Growth - US\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"SE\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-058\", \"model_name\": \"Product Market Performance 58\", \"model_endorsement\": \"certified\", \"owner_name\": \"Felix Fischer\", \"estimated_audience\": 105, \"evidence\": {\"asset_id\": \"AST-0091\", \"workspace_id\": \"WS-016\", \"model_id\": \"SM-058\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"SE\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"owner_status\": \"inactive\", \"missing_evidence\": [], \"negative_evidence\": [\"Assigned owner is 'inactive'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0138\", \"asset_name\": \"Hyrnuo Supply - EMEA\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"AU\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-057\", \"model_name\": \"Supply & Inventory 57\", \"model_endorsement\": \"none\", \"owner_name\": \"Emma Novak\", \"estimated_audience\": 1584, \"evidence\": {\"asset_id\": \"AST-0138\", \"workspace_id\": \"WS-011\", \"model_id\": \"SM-057\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"AU\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0251\", \"asset_name\": \"Hyrnuo Market Access - Global\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"Global\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-054\", \"model_name\": \"Executive Pharma 54\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Sofia Rossi\", \"estimated_audience\": 482, \"evidence\": {\"asset_id\": \"AST-0251\", \"workspace_id\": \"WS-007\", \"model_id\": \"SM-054\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"Global\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}], \"weak_candidates\": [{\"asset_id\": \"AST-0017\", \"asset_name\": \"Lynkuet Commercial Reach Monthly\", \"match_tier\": \"WEAK\", \"product_scope\": \"Lynkuet\", \"market_scope\": \"US\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'US'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-011\", \"model_name\": \"Regional Commercial 11\", \"model_endorsement\": \"none\", \"owner_name\": \"Nina Garcia\", \"estimated_audience\": 738, \"evidence\": {\"asset_id\": \"AST-0017\", \"workspace_id\": \"WS-002\", \"model_id\": \"SM-011\", \"product_scope\": \"Lynkuet\", \"market_scope\": \"US\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Lynkuet' does not match requested 'Hyrnuo'\", \"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0063\", \"asset_name\": \"Xarelto Executive Legacy\", \"match_tier\": \"WEAK\", \"product_scope\": \"Xarelto\", \"market_scope\": \"US\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'US'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-049\", \"model_name\": \"Pharma Commercial Core 49\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Julia Brown\", \"estimated_audience\": 2106, \"evidence\": {\"asset_id\": \"AST-0063\", \"workspace_id\": \"WS-007\", \"model_id\": \"SM-049\", \"product_scope\": \"Xarelto\", \"market_scope\": \"US\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Xarelto' does not match requested 'Hyrnuo'\", \"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0064\", \"asset_name\": \"Eylea Market Access New\", \"match_tier\": \"WEAK\", \"product_scope\": \"Eylea\", \"market_scope\": \"US\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'US'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-016\", \"model_name\": \"Portfolio Performance 16\", \"model_endorsement\": \"none\", \"owner_name\": \"Anna Meyer\", \"estimated_audience\": 1686, \"evidence\": {\"asset_id\": \"AST-0064\", \"workspace_id\": \"WS-010\", \"model_id\": \"SM-016\", \"product_scope\": \"Eylea\", \"market_scope\": \"US\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Eylea' does not match requested 'Hyrnuo'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0070\", \"asset_name\": \"Xarelto Budget Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"Xarelto\", \"market_scope\": \"US\", \"platform\": \"Tableau\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'US'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-021\", \"model_name\": \"Product Market Performance 21\", \"model_endorsement\": \"none\", \"owner_name\": \"Leo Keller\", \"estimated_audience\": 767, \"evidence\": {\"asset_id\": \"AST-0070\", \"workspace_id\": \"WS-002\", \"model_id\": \"SM-021\", \"product_scope\": \"Xarelto\", \"market_scope\": \"US\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Xarelto' does not match requested 'Hyrnuo'\", \"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0090\", \"asset_name\": \"Nubeqa Supply Mgmt\", \"match_tier\": \"WEAK\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"US\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'US'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-013\", \"model_name\": \"Pharma Finance 13\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Sofia Brown\", \"estimated_audience\": 215, \"evidence\": {\"asset_id\": \"AST-0090\", \"workspace_id\": \"WS-004\", \"model_id\": \"SM-013\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"US\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Nubeqa' does not match requested 'Hyrnuo'\", \"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0224\", \"asset_name\": \"Nubeqa Executive - Global\", \"match_tier\": \"WEAK\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"US\", \"platform\": \"Tableau\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'US'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-023\", \"model_name\": \"Pharma Finance 23\", \"model_endorsement\": \"certified\", \"owner_name\": \"Nina Garcia\", \"estimated_audience\": 2095, \"evidence\": {\"asset_id\": \"AST-0224\", \"workspace_id\": \"WS-009\", \"model_id\": \"SM-023\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"US\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Nubeqa' does not match requested 'Hyrnuo'\", \"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0280\", \"asset_name\": \"Kerendia Market Access - EMEA\", \"match_tier\": \"WEAK\", \"product_scope\": \"Kerendia\", \"market_scope\": \"US\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'US'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-013\", \"model_name\": \"Pharma Finance 13\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Felix Meyer\", \"estimated_audience\": 452, \"evidence\": {\"asset_id\": \"AST-0280\", \"workspace_id\": \"WS-001\", \"model_id\": \"SM-013\", \"product_scope\": \"Kerendia\", \"market_scope\": \"US\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Kerendia' does not match requested 'Hyrnuo'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0010\", \"asset_name\": \"All Pharma Commercial Reach - Global\", \"match_tier\": \"WEAK\", \"product_scope\": \"All Pharma\", \"market_scope\": \"US\", \"platform\": \"Tableau\", \"endorsement\": \"none\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.3, \"match_reasons\": [\"Market scope aligns with 'US'\"], \"model_id\": \"SM-040\", \"model_name\": \"Launch Excellence 40\", \"model_endorsement\": \"none\", \"owner_name\": \"Mika Fischer\", \"estimated_audience\": 1221, \"evidence\": {\"asset_id\": \"AST-0010\", \"workspace_id\": \"WS-010\", \"model_id\": \"SM-040\", \"product_scope\": \"All Pharma\", \"market_scope\": \"US\", \"endorsement\": \"none\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'All Pharma' does not match requested 'Hyrnuo'\", \"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0022\", \"asset_name\": \"All Pharma Net Sales Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"All Pharma\", \"market_scope\": \"FI\", \"platform\": \"Tableau\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: net sales\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-007\", \"model_name\": \"Portfolio Performance 07\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Nina Garcia\", \"estimated_audience\": 1479, \"evidence\": {\"asset_id\": \"AST-0022\", \"workspace_id\": \"WS-012\", \"model_id\": \"SM-007\", \"product_scope\": \"All Pharma\", \"market_scope\": \"FI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'All Pharma' does not match requested 'Hyrnuo'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0042\", \"asset_name\": \"Eylea Net Sales Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"Eylea\", \"market_scope\": \"SE\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: net sales\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-045\", \"model_name\": \"Demand Forecast 45\", \"model_endorsement\": \"none\", \"owner_name\": \"Sofia Rossi\", \"estimated_audience\": 1980, \"evidence\": {\"asset_id\": \"AST-0042\", \"workspace_id\": \"WS-009\", \"model_id\": \"SM-045\", \"product_scope\": \"Eylea\", \"market_scope\": \"SE\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Eylea' does not match requested 'Hyrnuo'\"], \"title_topic_match\": [], \"named_in_request\": false}}], \"total_searched\": 360, \"search_notes\": \"Searched 360 assets. Found 7 exact matches, 44 partial matches, and 24 weak candidates.\", \"data_answer\": null, \"governance_answer\": null, \"migration_answer\": null, \"title_topic_matches\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:43.981278"
+  },
+  {
+   "trace_id": "TRC-5A3F79004CF2",
+   "request_id": "REQ-20261107181043-384E5C",
+   "agent_name": "KpiIntelligenceAgent",
+   "step_order": 3,
+   "status": "success",
+   "duration_ms": 1.15,
+   "input_json": "{\"requested_kpis\": [\"net sales\"]}",
+   "output_json": "{\"matches\": [{\"requested_metric\": \"net sales\", \"matched_kpi_id\": \"KPI-001\", \"matched_kpi_name\": \"Net Sales\", \"domain\": \"Commercial\", \"approval_status\": \"approved\", \"definition_status\": \"canonical\", \"is_canonical\": true, \"is_approved\": true, \"semantic_equivalence_notes\": \"Exact match on canonical approved KPI 'Net Sales' (KPI-001)\", \"conflicts\": [], \"alternative_kpis\": []}], \"canonical_approved_kpi_ids\": [\"KPI-001\"], \"unapproved_or_conflicted_kpi_ids\": [], \"unmatched_requested_metrics\": [], \"has_conflicts\": false, \"summary\": \"Evaluated 1 requested metrics: 1 canonical approved, 0 unapproved/conflicted, 0 unmatched.\", \"llm_review\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:43.988987"
+  },
+  {
+   "trace_id": "TRC-FD81D20EBF8F",
+   "request_id": "REQ-20261107181043-384E5C",
+   "agent_name": "DuplicationAgent",
+   "step_order": 4,
+   "status": "success",
+   "duration_ms": 62.14,
+   "input_json": "{\"products\": [\"Hyrnuo\"], \"exact_matches\": 7, \"canonical_kpis\": [\"KPI-001\"]}",
+   "output_json": "{\"has_duplicates\": true, \"candidates\": [{\"asset_id\": \"AST-0183\", \"asset_name\": \"Hyrnuo Digital Engagement Legacy\", \"similarity_score\": 0.8, \"structural_similarity\": 0.6, \"kpi_similarity\": 1.0, \"semantic_similarity\": 0.9, \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": true, \"metric_drift_detected\": false, \"structural_reasons\": [\"Shares product semantic model SM-029 ('Market Access 29')\"], \"kpi_reasons\": [\"Shares 1 requested KPI(s): KPI-001\"], \"semantic_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Market scope aligns with 'US'\", \"Endorsement level is 'certified'\"], \"mapped_kpi_count\": 6}}, {\"asset_id\": \"AST-0147\", \"asset_name\": \"Hyrnuo Launch Final\", \"similarity_score\": 0.36, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.9, \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": true, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'certified'\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Market scope aligns with 'US'\", \"Endorsement level is 'promoted'\"], \"mapped_kpi_count\": 4}}, {\"asset_id\": \"AST-0295\", \"asset_name\": \"Hyrnuo Demand Mgmt\", \"similarity_score\": 0.34, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.8, \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": true, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'certified'\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Market scope aligns with 'US'\"], \"mapped_kpi_count\": 3}}, {\"asset_id\": \"AST-0075\", \"asset_name\": \"Hyrnuo Net Sales Final\", \"similarity_score\": 0.34, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.8, \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'promoted'\", \"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Title keywords match requested concepts: net sales\", \"Endorsement level is 'promoted'\"], \"mapped_kpi_count\": 3}}, {\"asset_id\": \"AST-0128\", \"asset_name\": \"Hyrnuo Net Sales v2\", \"similarity_score\": 0.32, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.7, \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'certified'\", \"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Title keywords match requested concepts: net sales\"], \"mapped_kpi_count\": 3}}, {\"asset_id\": \"AST-0131\", \"asset_name\": \"Hyrnuo Net Sales - EMEA\", \"similarity_score\": 0.32, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.7, \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'promoted'\", \"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Title keywords match requested concepts: net sales\"], \"mapped_kpi_count\": 3}}, {\"asset_id\": \"AST-0007\", \"asset_name\": \"Hyrnuo Digital Engagement Final\", \"similarity_score\": 0.3, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.6, \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'promoted'\", \"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Endorsement level is 'promoted'\"], \"mapped_kpi_count\": 2}}, {\"asset_id\": \"AST-0024\", \"asset_name\": \"Hyrnuo Product Performance - US\", \"similarity_score\": 0.3, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.6, \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": true, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'promoted'\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Hyrnuo'\", \"Endorsement level is 'promoted'\"], \"mapped_kpi_count\": 4}}], \"highest_similarity_score\": 0.8, \"primary_duplicate_asset_id\": \"AST-0183\", \"explanation\": \"Found 1 high-confidence duplicate asset(s) (similarity >= 0.65). Top match: AST-0183 ('Hyrnuo Digital Engagement Legacy') with composite similarity 0.80. Staged G1-G4 gates over 7 in-scope asset(s): 1 consolidation-eligible pair(s) (AST-0056 + AST-0147); 1 same-title group(s) checked.\", \"gate_evaluations\": [{\"pair\": [\"AST-0056\", \"AST-0147\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.75, \"g3_exact_kpi_jaccard\": 0.14, \"g4_shares_model\": false, \"consolidation_eligible\": true, \"recommendation\": \"SURFACE_FOR_CONSOLIDATION_REVIEW\", \"explanation\": \"High canonical concept similarity (0.75) across shared scope ('Hyrnuo', 'US'). Surfaced for human governance review.\"}, {\"pair\": [\"AST-0056\", \"AST-0082\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.0, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0056\", \"AST-0113\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.29, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.29). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0056\", \"AST-0152\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.11, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.11). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0056\", \"AST-0183\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.25, \"g3_exact_kpi_jaccard\": 0.11, \"g4_shares_model\": true, \"consolidation_eligible\": false, \"recommendation\": \"INSUFFICIENT_SIMILARITY\", \"explanation\": \"Moderate similarity (exact: 0.11, group: 0.25). Insufficient evidence for consolidation.\"}, {\"pair\": [\"AST-0056\", \"AST-0295\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.0, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0082\", \"AST-0113\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.0, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0082\", \"AST-0147\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.0, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0082\", \"AST-0152\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.0, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0082\", \"AST-0183\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.0, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0082\", \"AST-0295\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.0, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0113\", \"AST-0147\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.33, \"g3_exact_kpi_jaccard\": 0.12, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"INSUFFICIENT_SIMILARITY\", \"explanation\": \"Moderate similarity (exact: 0.12, group: 0.33). Insufficient evidence for consolidation.\"}, {\"pair\": [\"AST-0113\", \"AST-0152\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.1, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.10). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0113\", \"AST-0183\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.57, \"g3_exact_kpi_jaccard\": 0.1, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"INSUFFICIENT_SIMILARITY\", \"explanation\": \"Moderate similarity (exact: 0.10, group: 0.57). Insufficient evidence for consolidation.\"}, {\"pair\": [\"AST-0113\", \"AST-0295\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.0, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": true, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0147\", \"AST-0152\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.12, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": true, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.12). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0147\", \"AST-0183\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.29, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.29). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0147\", \"AST-0295\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.0, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0152\", \"AST-0183\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.09, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.09). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}, {\"pair\": [\"AST-0152\", \"AST-0295\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.12, \"g3_exact_kpi_jaccard\": 0.12, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"INSUFFICIENT_SIMILARITY\", \"explanation\": \"Moderate similarity (exact: 0.12, group: 0.12). Insufficient evidence for consolidation.\"}, {\"pair\": [\"AST-0183\", \"AST-0295\"], \"scope\": \"Hyrnuo / US\", \"g1_scope_pass\": true, \"g2_canonical_group_jaccard\": 0.0, \"g3_exact_kpi_jaccard\": 0.0, \"g4_shares_model\": false, \"consolidation_eligible\": false, \"recommendation\": \"ROUTE_TO_RULE_002_METRIC_DRIFT\", \"explanation\": \"Shared scope ('Hyrnuo', 'US') but zero exact shared KPIs and low concept similarity (0.00). Classified as metric drift; routed to RULE-002 rather than automated consolidation.\"}], \"consolidation_eligible_pairs\": [[\"AST-0056\", \"AST-0147\"]], \"title_alike_groups\": [{\"title_root\": \"hyrnuo supply\", \"asset_ids\": [\"AST-0056\", \"AST-0113\"], \"markets\": [\"US\"], \"consolidation_eligible_pairs\": [], \"verdict\": \"Same scope but the gates found insufficient KPI overlap or metric drift (G2/G3).\"}]}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:44.057481"
+  },
+  {
+   "trace_id": "TRC-C83A2F272146",
+   "request_id": "REQ-20261107181043-384E5C",
+   "agent_name": "GovernanceAgent",
+   "step_order": 5,
+   "status": "success",
+   "duration_ms": 6.77,
+   "input_json": "{\"exact_candidates\": [\"AST-0082\", \"AST-0147\", \"AST-0183\", \"AST-0056\", \"AST-0113\", \"AST-0152\", \"AST-0295\"], \"unapproved_kpis\": []}",
+   "output_json": "{\"blockers\": [], \"warnings\": [\"RULE-001 HIGH WARNING on AST-0152: Duplicate asset title: 'Hyrnuo Portfolio Monthly' (2 occurrences).\", \"RULE-002 HIGH WARNING on AST-0147: Asset uses 2 non-canonical KPI(s).\", \"RULE-002 HIGH WARNING on AST-0183: Asset uses 2 non-canonical KPI(s).\", \"RULE-002 HIGH WARNING on AST-0082: Asset uses 2 non-canonical KPI(s).\", \"RULE-004 HIGH WARNING on AST-0183: Unmitigated downstream lineage: AST-0183 (CONSOLIDATE_BEFORE_MIGRATION).\", \"RULE-005 HIGH WARNING on AST-0056: Unendorsed high-reach asset AST-0056 (audience: 1600).\", \"RULE-005 HIGH WARNING on AST-0113: Unendorsed high-reach asset AST-0113 (audience: 2014).\", \"RULE-005 HIGH WARNING on AST-0152: Unendorsed high-reach asset AST-0152 (audience: 2111).\", \"RULE-005 HIGH WARNING on AST-0295: Unendorsed high-reach asset AST-0295 (audience: 1056).\", \"RULE-006 HIGH WARNING on AST-0056: Waste rationalisation: AST-0056 (RETIRE).\", \"RULE-006 HIGH WARNING on AST-0082: Waste rationalisation: AST-0082 (RETIRE).\", \"RULE-001 DIRECTIVE: Certified asset AST-0183 ('Hyrnuo Digital Engagement Legacy') already serves this exact scope. Reuse must be prioritized before building new analytics.\"], \"applicable_rule_ids\": [\"RULE-001\", \"RULE-002\", \"RULE-003\", \"RULE-004\", \"RULE-005\", \"RULE-006\", \"RULE-008\"], \"active_finding_ids\": [\"FND-RULE001-5679C8933D45\", \"FND-RULE001-BE09956D543C\", \"FND-RULE002-3B5A0EA17620\", \"FND-RULE002-9B588716930B\", \"FND-RULE002-8AD8CE980177\", \"FND-RULE002-900E1740DAB5\", \"FND-RULE002-3772B0A5CF1D\", \"FND-RULE002-91633EF2F005\", \"FND-RULE002-9AC2DF3AFE58\", \"FND-RULE002-24B0C90E8909\", \"FND-RULE002-F2D0F5F59DFA\", \"FND-RULE002-999EAA3F9A8B\", \"FND-RULE002-9D817503E85B\", \"FND-RULE002-63ACEC7F1E47\", \"FND-RULE004-127CC6F64EED\", \"FND-RULE005-1E789E98D8DE\", \"FND-RULE005-3CC29C9DD622\", \"FND-RULE005-3604C42E0C95\", \"FND-RULE005-90571C855170\", \"FND-RULE005-F7E721DEFDB2\", \"FND-RULE005-E737E50F5D65\", \"FND-RULE006-236CDDDF40A6\", \"FND-RULE006-C8686036432C\", \"FND-RULE006-2C8CA74A4EEF\", \"FND-RULE006-D0D13173693B\", \"FND-RULE008-AFF57529ECAF\", \"FND-RULE008-F94962FD7A5D\"], \"human_approval_required\": true, \"evidence_references\": [{\"finding_id\": \"FND-RULE001-5679C8933D45\", \"target_id\": \"AST-0152\", \"rule_id\": \"RULE-001\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE001-BE09956D543C\", \"target_id\": \"AST-0113\", \"rule_id\": \"RULE-001\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-3B5A0EA17620\", \"target_id\": \"AST-0113\", \"rule_id\": \"RULE-002\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-9B588716930B\", \"target_id\": \"AST-0056\", \"rule_id\": \"RULE-002\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-8AD8CE980177\", \"target_id\": \"AST-0147\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-900E1740DAB5\", \"target_id\": \"AST-0128\", \"rule_id\": \"RULE-002\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-3772B0A5CF1D\", \"target_id\": \"AST-0152\", \"rule_id\": \"RULE-002\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-91633EF2F005\", \"target_id\": \"AST-0295\", \"rule_id\": \"RULE-002\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-9AC2DF3AFE58\", \"target_id\": \"AST-0105\", \"rule_id\": \"RULE-002\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-24B0C90E8909\", \"target_id\": \"AST-0131\", \"rule_id\": \"RULE-002\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-F2D0F5F59DFA\", \"target_id\": \"AST-0183\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-999EAA3F9A8B\", \"target_id\": \"AST-0082\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-9D817503E85B\", \"target_id\": \"AST-0075\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-63ACEC7F1E47\", \"target_id\": \"AST-0007\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE004-127CC6F64EED\", \"target_id\": \"AST-0183\", \"rule_id\": \"RULE-004\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE005-1E789E98D8DE\", \"target_id\": \"AST-0056\", \"rule_id\": \"RULE-005\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE005-3CC29C9DD622\", \"target_id\": \"AST-0105\", \"rule_id\": \"RULE-005\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE005-3604C42E0C95\", \"target_id\": \"AST-0113\", \"rule_id\": \"RULE-005\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE005-90571C855170\", \"target_id\": \"AST-0131\", \"rule_id\": \"RULE-005\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE005-F7E721DEFDB2\", \"target_id\": \"AST-0152\", \"rule_id\": \"RULE-005\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE005-E737E50F5D65\", \"target_id\": \"AST-0295\", \"rule_id\": \"RULE-005\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE006-236CDDDF40A6\", \"target_id\": \"AST-0056\", \"rule_id\": \"RULE-006\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE006-C8686036432C\", \"target_id\": \"AST-0082\", \"rule_id\": \"RULE-006\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE006-2C8CA74A4EEF\", \"target_id\": \"AST-0105\", \"rule_id\": \"RULE-006\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE006-D0D13173693B\", \"target_id\": \"AST-0183\", \"rule_id\": \"RULE-006\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE008-AFF57529ECAF\", \"target_id\": \"AST-0105\", \"rule_id\": \"RULE-008\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE008-F94962FD7A5D\", \"target_id\": \"AST-0152\", \"rule_id\": \"RULE-008\", \"severity\": \"medium\", \"scope\": \"request\"}], \"request_finding_ids\": [\"FND-RULE001-5679C8933D45\", \"FND-RULE001-BE09956D543C\", \"FND-RULE002-3B5A0EA17620\", \"FND-RULE002-9B588716930B\", \"FND-RULE002-8AD8CE980177\", \"FND-RULE002-3772B0A5CF1D\", \"FND-RULE002-91633EF2F005\", \"FND-RULE002-F2D0F5F59DFA\", \"FND-RULE002-999EAA3F9A8B\", \"FND-RULE004-127CC6F64EED\", \"FND-RULE005-1E789E98D8DE\", \"FND-RULE005-3604C42E0C95\", \"FND-RULE005-F7E721DEFDB2\", \"FND-RULE005-E737E50F5D65\", \"FND-RULE006-236CDDDF40A6\", \"FND-RULE006-C8686036432C\", \"FND-RULE006-D0D13173693B\", \"FND-RULE008-F94962FD7A5D\"], \"out_of_scope_finding_ids\": [\"FND-RULE002-900E1740DAB5\", \"FND-RULE002-9AC2DF3AFE58\", \"FND-RULE002-24B0C90E8909\", \"FND-RULE002-9D817503E85B\", \"FND-RULE002-63ACEC7F1E47\", \"FND-RULE005-3CC29C9DD622\", \"FND-RULE005-90571C855170\", \"FND-RULE006-2C8CA74A4EEF\", \"FND-RULE008-AFF57529ECAF\"], \"out_of_scope_warnings\": [\"RULE-002 on AST-0075, outside the requested scope: Asset uses 1 non-canonical KPI(s).\", \"RULE-002 on AST-0007, outside the requested scope: Asset uses 1 non-canonical KPI(s).\", \"RULE-005 on AST-0105, outside the requested scope: Unendorsed high-reach asset AST-0105 (audience: 1267).\"]}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:44.071080"
+  },
+  {
+   "trace_id": "TRC-AA6D8C9AA2DB",
+   "request_id": "REQ-20261107181043-384E5C",
+   "agent_name": "DecisionAgent",
+   "step_order": 6,
+   "status": "success",
+   "duration_ms": 6.99,
+   "input_json": "{\"intent_confidence\": 0.85, \"exact_matches_count\": 7, \"has_duplicates\": true, \"governance_blockers_count\": 0}",
+   "output_json": "{\"decision\": \"CONSOLIDATE\", \"confidence\": 0.86, \"primary_recommendation\": \"Consolidate AST-0056 into AST-0147 ('Hyrnuo Launch Final') instead of building another asset.\", \"rationale\": \"2 existing Hyrnuo assets in US overlap: the staged duplication gates confirm AST-0056 + AST-0147 share scope and governed KPI concepts. Gates: G1 scope pass; G2 canonical-concept overlap 0.75; G3 exact-KPI overlap 0.14; G4 shared model/workspace no. AST-0147 is the strongest target (promoted endorsement, lifecycle 'active', owner Oliver Martin, audience 1,495). 9 governance finding(s) on assets outside the requested scope are reported separately and aren't blockers for this request.\", \"target_asset_ids\": [\"AST-0147\"], \"target_model_ids\": [\"SM-033\"], \"alternatives\": [{\"action\": \"REUSE\", \"target_id\": \"AST-0147\", \"pros\": \"Immediate access to the strongest asset.\", \"cons\": \"Leaves the overlapping asset(s) in place, so the duplication remains.\"}, {\"action\": \"BUILD_NEW\", \"target_id\": null, \"pros\": \"None for this scope.\", \"cons\": \"Adds another overlapping asset; violates RULE-001.\"}], \"blockers\": [], \"warnings\": [\"RULE-001 HIGH WARNING on AST-0152: Duplicate asset title: 'Hyrnuo Portfolio Monthly' (2 occurrences).\", \"RULE-002 HIGH WARNING on AST-0147: Asset uses 2 non-canonical KPI(s).\", \"RULE-002 HIGH WARNING on AST-0183: Asset uses 2 non-canonical KPI(s).\", \"RULE-002 HIGH WARNING on AST-0082: Asset uses 2 non-canonical KPI(s).\", \"RULE-004 HIGH WARNING on AST-0183: Unmitigated downstream lineage: AST-0183 (CONSOLIDATE_BEFORE_MIGRATION).\", \"RULE-005 HIGH WARNING on AST-0056: Unendorsed high-reach asset AST-0056 (audience: 1600).\", \"RULE-005 HIGH WARNING on AST-0113: Unendorsed high-reach asset AST-0113 (audience: 2014).\", \"RULE-005 HIGH WARNING on AST-0152: Unendorsed high-reach asset AST-0152 (audience: 2111).\", \"RULE-005 HIGH WARNING on AST-0295: Unendorsed high-reach asset AST-0295 (audience: 1056).\", \"RULE-006 HIGH WARNING on AST-0056: Waste rationalisation: AST-0056 (RETIRE).\", \"RULE-006 HIGH WARNING on AST-0082: Waste rationalisation: AST-0082 (RETIRE).\", \"RULE-001 DIRECTIVE: Certified asset AST-0183 ('Hyrnuo Digital Engagement Legacy') already serves this exact scope. Reuse must be prioritized before building new analytics.\"], \"human_approval_required\": true, \"next_steps\": [\"Raise a CONSOLIDATE approval request for AST-0056 into AST-0147; the accountable owner (Oliver Martin) must approve.\", \"Confirm metric parity for the shared KPIs before redirecting users.\", \"Retire the consolidated source asset(s) only after a RULE-008 impact assessment.\"], \"active_finding_ids\": [\"FND-RULE001-5679C8933D45\", \"FND-RULE001-BE09956D543C\", \"FND-RULE002-3B5A0EA17620\", \"FND-RULE002-9B588716930B\", \"FND-RULE002-8AD8CE980177\", \"FND-RULE002-900E1740DAB5\", \"FND-RULE002-3772B0A5CF1D\", \"FND-RULE002-91633EF2F005\", \"FND-RULE002-9AC2DF3AFE58\", \"FND-RULE002-24B0C90E8909\", \"FND-RULE002-F2D0F5F59DFA\", \"FND-RULE002-999EAA3F9A8B\", \"FND-RULE002-9D817503E85B\", \"FND-RULE002-63ACEC7F1E47\", \"FND-RULE004-127CC6F64EED\", \"FND-RULE005-1E789E98D8DE\", \"FND-RULE005-3CC29C9DD622\", \"FND-RULE005-3604C42E0C95\", \"FND-RULE005-90571C855170\", \"FND-RULE005-F7E721DEFDB2\", \"FND-RULE005-E737E50F5D65\", \"FND-RULE006-236CDDDF40A6\", \"FND-RULE006-C8686036432C\", \"FND-RULE006-2C8CA74A4EEF\", \"FND-RULE006-D0D13173693B\", \"FND-RULE008-AFF57529ECAF\", \"FND-RULE008-F94962FD7A5D\"], \"out_of_scope_warnings\": [\"RULE-002 on AST-0075, outside the requested scope: Asset uses 1 non-canonical KPI(s).\", \"RULE-002 on AST-0007, outside the requested scope: Asset uses 1 non-canonical KPI(s).\", \"RULE-005 on AST-0105, outside the requested scope: Unendorsed high-reach asset AST-0105 (audience: 1267).\"], \"llm_narrative\": null, \"action_status\": \"REQUIRES_APPROVAL\", \"ineligible_targets\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":\"deterministic_fallback\",\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:44.084645"
+  }
+ ],
+ "request_types": [
+  "ASSET_REQUEST"
+ ],
+ "data_answer": null,
+ "governance_answer": null,
+ "migration_answer": null,
+ "presentation": {
+  "response_type": "ASSET_RECOMMENDATION",
+  "recommended_action": "CONSOLIDATE",
+  "action_label": "Consolidate overlapping assets",
+  "action_status": "REQUIRES_APPROVAL",
+  "direct_answer": "Consolidate AST-0056 into AST-0147 ('Hyrnuo Launch Final') instead of building another asset.",
+  "why": [
+   "2 existing Hyrnuo assets in US overlap: the staged duplication gates confirm AST-0056 + AST-0147 share scope and governed KPI concepts. Gates: G1 scope pass; G2 canonical-concept overlap 0.75; G3 exact-KPI overlap 0.14; G4 shared model/workspace no. AST-0147 is the strongest target (promoted endorsement, lifecycle 'active', owner Oliver Martin, audience 1,495). 9 governance finding(s) on assets outside the requested scope are reported separately and aren't blockers for this request.",
+   "Found 1 high-confidence duplicate asset(s) (similarity >= 0.65). Top match: AST-0183 ('Hyrnuo Digital Engagement Legacy') with composite similarity 0.80. Staged G1-G4 gates over 7 in-scope asset(s): 1 consolidation-eligible pair(s) (AST-0056 + AST-0147); 1 same-title group(s) checked."
+  ],
+  "matching_assets": [
+   {
+    "asset_id": "AST-0147",
+    "asset_name": "Hyrnuo Launch Final",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "owner_name": "Oliver Martin",
+    "match_tier": "EXACT",
+    "reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'promoted'"
+    ]
+   },
+   {
+    "asset_id": "AST-0082",
+    "asset_name": "Hyrnuo Gross-to-Net Final",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "owner_name": "Nina Schmidt",
+    "match_tier": "EXACT",
+    "reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'promoted'"
+    ]
+   },
+   {
+    "asset_id": "AST-0183",
+    "asset_name": "Hyrnuo Digital Engagement Legacy",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "owner_name": "Jonas Meyer",
+    "match_tier": "EXACT",
+    "reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'",
+     "Endorsement level is 'certified'"
+    ]
+   },
+   {
+    "asset_id": "AST-0056",
+    "asset_name": "Hyrnuo Supply New",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Tableau",
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "owner_name": "Mika Novak",
+    "match_tier": "EXACT",
+    "reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'"
+    ]
+   },
+   {
+    "asset_id": "AST-0113",
+    "asset_name": "Hyrnuo Supply Legacy",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "owner_name": "Mika Fischer",
+    "match_tier": "EXACT",
+    "reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'"
+    ]
+   },
+   {
+    "asset_id": "AST-0152",
+    "asset_name": "Hyrnuo Portfolio Monthly",
+    "product_scope": "Hyrnuo",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "none",
+    "lifecycle_status": "candidate_retire",
+    "owner_name": "Mika Novak",
+    "match_tier": "EXACT",
+    "reasons": [
+     "Product scope matches 'Hyrnuo'",
+     "Market scope aligns with 'US'"
+    ]
+   }
+  ],
+  "next_steps": [
+   "Raise a CONSOLIDATE approval request for AST-0056 into AST-0147; the accountable owner (Oliver Martin) must approve.",
+   "Confirm metric parity for the shared KPIs before redirecting users.",
+   "Retire the consolidated source asset(s) only after a RULE-008 impact assessment."
+  ],
+  "human_approval_required": true,
+  "approval_explanation": "An authorised human must approve this action before anything changes (owner authority is checked by the approvals service).",
+  "confidence_explanation": "Rule-based decision (internal score 0.86). The score orders the decision matrix's outcomes; it is not a calibrated probability.",
+  "governance": {
+   "blockers": [],
+   "warnings": [
+    {
+     "rule_id": "RULE-002",
+     "severity": "HIGH",
+     "asset_id": "AST-0147",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Asset uses 2 non-canonical KPI(s).",
+     "required_action": "Remap asset AST-0147 to certified canonical KPIs before next release.",
+     "finding_ids": [
+      "FND-RULE002-8AD8CE980177"
+     ],
+     "sources": [
+      "RULE-002 HIGH WARNING on AST-0147: Asset uses 2 non-canonical KPI(s)."
+     ],
+     "affects_target": true
+    },
+    {
+     "rule_id": "RULE-001",
+     "severity": "HIGH",
+     "asset_id": "AST-0152",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Duplicate asset title: 'Hyrnuo Portfolio Monthly' (2 occurrences).",
+     "required_action": "Consolidate AST-0152 into certified asset AST-0296.",
+     "finding_ids": [
+      "FND-RULE001-5679C8933D45"
+     ],
+     "sources": [
+      "RULE-001 HIGH WARNING on AST-0152: Duplicate asset title: 'Hyrnuo Portfolio Monthly' (2 occurrences)."
+     ],
+     "affects_target": false
+    },
+    {
+     "rule_id": "RULE-002",
+     "severity": "HIGH",
+     "asset_id": "AST-0082",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Asset uses 2 non-canonical KPI(s).",
+     "required_action": "Remap asset AST-0082 to certified canonical KPIs before next release.",
+     "finding_ids": [
+      "FND-RULE002-999EAA3F9A8B"
+     ],
+     "sources": [
+      "RULE-002 HIGH WARNING on AST-0082: Asset uses 2 non-canonical KPI(s)."
+     ],
+     "affects_target": false
+    },
+    {
+     "rule_id": "RULE-002",
+     "severity": "HIGH",
+     "asset_id": "AST-0183",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Asset uses 2 non-canonical KPI(s).",
+     "required_action": "Remap asset AST-0183 to certified canonical KPIs before next release.",
+     "finding_ids": [
+      "FND-RULE002-F2D0F5F59DFA"
+     ],
+     "sources": [
+      "RULE-002 HIGH WARNING on AST-0183: Asset uses 2 non-canonical KPI(s)."
+     ],
+     "affects_target": false
+    },
+    {
+     "rule_id": "RULE-004",
+     "severity": "HIGH",
+     "asset_id": "AST-0183",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Unmitigated downstream lineage: AST-0183 (CONSOLIDATE_BEFORE_MIGRATION).",
+     "required_action": "Re-point downstream assets (AST-0120) to a certified target model before executing CONSOLIDATE_BEFORE_MIGRATION on AST-0183.",
+     "finding_ids": [
+      "FND-RULE004-127CC6F64EED"
+     ],
+     "sources": [
+      "RULE-004 HIGH WARNING on AST-0183: Unmitigated downstream lineage: AST-0183 (CONSOLIDATE_BEFORE_MIGRATION)."
+     ],
+     "affects_target": false
+    },
+    {
+     "rule_id": "RULE-005",
+     "severity": "HIGH",
+     "asset_id": "AST-0056",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Unendorsed high-reach asset AST-0056 (audience: 1600).",
+     "required_action": "Initiate formal certification review for AST-0056 or restrict workspace distribution.",
+     "finding_ids": [
+      "FND-RULE005-1E789E98D8DE"
+     ],
+     "sources": [
+      "RULE-005 HIGH WARNING on AST-0056: Unendorsed high-reach asset AST-0056 (audience: 1600)."
+     ],
+     "affects_target": false
+    },
+    {
+     "rule_id": "RULE-005",
+     "severity": "HIGH",
+     "asset_id": "AST-0113",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Unendorsed high-reach asset AST-0113 (audience: 2014).",
+     "required_action": "Initiate formal certification review for AST-0113 or restrict workspace distribution.",
+     "finding_ids": [
+      "FND-RULE005-3604C42E0C95"
+     ],
+     "sources": [
+      "RULE-005 HIGH WARNING on AST-0113: Unendorsed high-reach asset AST-0113 (audience: 2014)."
+     ],
+     "affects_target": false
+    },
+    {
+     "rule_id": "RULE-005",
+     "severity": "HIGH",
+     "asset_id": "AST-0152",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Unendorsed high-reach asset AST-0152 (audience: 2111).",
+     "required_action": "Initiate formal certification review for AST-0152 or restrict workspace distribution.",
+     "finding_ids": [
+      "FND-RULE005-F7E721DEFDB2"
+     ],
+     "sources": [
+      "RULE-005 HIGH WARNING on AST-0152: Unendorsed high-reach asset AST-0152 (audience: 2111)."
+     ],
+     "affects_target": false
+    },
+    {
+     "rule_id": "RULE-005",
+     "severity": "HIGH",
+     "asset_id": "AST-0295",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Unendorsed high-reach asset AST-0295 (audience: 1056).",
+     "required_action": "Initiate formal certification review for AST-0295 or restrict workspace distribution.",
+     "finding_ids": [
+      "FND-RULE005-E737E50F5D65"
+     ],
+     "sources": [
+      "RULE-005 HIGH WARNING on AST-0295: Unendorsed high-reach asset AST-0295 (audience: 1056)."
+     ],
+     "affects_target": false
+    },
+    {
+     "rule_id": "RULE-006",
+     "severity": "HIGH",
+     "asset_id": "AST-0056",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Waste rationalisation: AST-0056 (RETIRE).",
+     "required_action": "Decommission legacy asset AST-0056 and archive historical queries without migrating.",
+     "finding_ids": [
+      "FND-RULE006-236CDDDF40A6"
+     ],
+     "sources": [
+      "RULE-006 HIGH WARNING on AST-0056: Waste rationalisation: AST-0056 (RETIRE)."
+     ],
+     "affects_target": false
+    },
+    {
+     "rule_id": "RULE-006",
+     "severity": "HIGH",
+     "asset_id": "AST-0082",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Waste rationalisation: AST-0082 (RETIRE).",
+     "required_action": "Decommission legacy asset AST-0082 and archive historical queries without migrating.",
+     "finding_ids": [
+      "FND-RULE006-C8686036432C"
+     ],
+     "sources": [
+      "RULE-006 HIGH WARNING on AST-0082: Waste rationalisation: AST-0082 (RETIRE)."
+     ],
+     "affects_target": false
+    }
+   ],
+   "directives": [
+    {
+     "rule_id": "RULE-001",
+     "severity": "DIRECTIVE",
+     "asset_id": "AST-0183",
+     "kind": "DIRECTIVE",
+     "effect": "INFORMATIONAL",
+     "message": "RULE-001: Existing endorsed assets already serve this scope (for example AST-0183). Reuse before build: BIOS recommends AST-0147 because it carries the strongest evidence for this request.",
+     "required_action": "",
+     "finding_ids": [],
+     "sources": [
+      "RULE-001: Existing endorsed assets already serve this scope (for example AST-0183). Reuse before build: BIOS recommends AST-0147 because it carries the strongest evidence for this request."
+     ],
+     "affects_target": false
+    }
+   ],
+   "backend_blocker_count": 0,
+   "backend_warning_count": 12,
+   "displayed_blocker_count": 0,
+   "displayed_warning_count": 11,
+   "displayed_directive_count": 1,
+   "out_of_scope_count": 9
+  }
+ }
+}

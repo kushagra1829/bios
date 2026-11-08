@@ -9,8 +9,30 @@ class DecisionType(str, Enum):
     CONSOLIDATE = "CONSOLIDATE"
     MODIFY = "MODIFY"
     MIGRATE = "MIGRATE"
+    RETIRE = "RETIRE"
     BUILD_NEW = "BUILD_NEW"
     NEEDS_CLARIFICATION = "NEEDS_CLARIFICATION"
+    # The request asked a question (data, governance or migration) rather than for an asset.
+    # The answer is in AssistantWorkflowResponse.answer; no lifecycle action is proposed.
+    INFORMATIONAL = "INFORMATIONAL"
+
+
+class RequestType(str, Enum):
+    """What the user actually asked for. A request can carry several."""
+    BUSINESS_DATA_QUESTION = "BUSINESS_DATA_QUESTION"
+    DATA_QUESTION = "BUSINESS_DATA_QUESTION"
+    ASSET_REQUEST = "ASSET_REQUEST"
+    GOVERNANCE_QUESTION = "GOVERNANCE_QUESTION"
+    MIGRATION_QUESTION = "MIGRATION_QUESTION"
+
+
+class ActionStatus(str, Enum):
+    """Whether the recommended action can proceed. Set deterministically by the Decision Agent."""
+    ACTIONABLE = "ACTIONABLE"  # Can proceed without a consequential approval (e.g. reuse access).
+    REQUIRES_APPROVAL = "REQUIRES_APPROVAL"  # Can proceed only after an authorised human approves.
+    BLOCKED = "BLOCKED"  # A governance blocker on the target prevents the action.
+    NEEDS_INPUT = "NEEDS_INPUT"  # The user must clarify first.
+    NOT_APPLICABLE = "NOT_APPLICABLE"  # Informational answer, no action proposed.
 
 
 class MatchTier(str, Enum):
@@ -189,6 +211,18 @@ class BusinessIntent(BaseModel):
     unresolved_terms: List[str] = Field(default_factory=list, description="Metrics the request states that have no catalog KPI, as proposed by the LLM")
     resolution: Optional[IntentResolution] = Field(default=None, description="Audit record of the baseline, LLM proposal and each validation outcome")
     geography: Optional[GeographyResolution] = Field(default=None, description="Requested geography kept separately from the markets it resolved to")
+    request_types: List[RequestType] = Field(
+        default_factory=list,
+        description="Every request type detected, primary first. Set by the deterministic request router.",
+    )
+    request_type_evidence: List[str] = Field(default_factory=list, description="The phrases that decided request_types")
+    asset_ids_mentioned: List[str] = Field(default_factory=list, description="AST-/SM- identifiers stated in the request")
+    duplication_question: bool = Field(default=False, description="The request asks about existing similar or duplicate assets")
+    title_topics: List[str] = Field(default_factory=list, description="Asset-title topics stated in the request, e.g. 'Budget Mgmt'")
+
+    @property
+    def primary_request_type(self) -> RequestType:
+        return self.request_types[0] if self.request_types else RequestType.ASSET_REQUEST
 
 
 class DiscoveredAsset(BaseModel):
@@ -216,6 +250,11 @@ class DiscoveryResult(BaseModel):
     weak_candidates: List[DiscoveredAsset] = Field(default_factory=list)
     total_searched: int = 0
     search_notes: str = ""
+    # Evidence retrieved for question-type requests. Computed deterministically from source records.
+    data_answer: Optional["DataAnswer"] = None
+    governance_answer: Optional["GovernanceAnswer"] = None
+    migration_answer: Optional["MigrationAnswer"] = None
+    title_topic_matches: List[str] = Field(default_factory=list, description="Asset IDs whose title carries a requested topic")
 
 
 class KpiMatch(BaseModel):
@@ -263,6 +302,15 @@ class DuplicationResult(BaseModel):
     highest_similarity_score: float = 0.0
     primary_duplicate_asset_id: Optional[str] = None
     explanation: str = ""
+    gate_evaluations: List[Dict[str, Any]] = Field(
+        default_factory=list,
+        description="Staged G1-G4 pair evaluations among existing in-scope assets (estate duplicates)",
+    )
+    consolidation_eligible_pairs: List[List[str]] = Field(default_factory=list)
+    title_alike_groups: List[Dict[str, Any]] = Field(
+        default_factory=list,
+        description="Assets that share a title but were evaluated by the gates; title similarity alone never justifies consolidation",
+    )
 
 
 class GovernanceAgentResult(BaseModel):
@@ -311,6 +359,127 @@ class DecisionResult(BaseModel):
         default=None,
         description="Advisory plain-language summary. Every other field is computed deterministically.",
     )
+    action_status: ActionStatus = Field(
+        default=ActionStatus.REQUIRES_APPROVAL,
+        description="Whether the recommended action can proceed, after governance blockers on the target are applied.",
+    )
+    ineligible_targets: List[Dict[str, Any]] = Field(
+        default_factory=list,
+        description="Candidate targets rejected because a governance control forbids acting on them, with the reason.",
+    )
+    validation_notes: List[str] = Field(
+        default_factory=list,
+        description="Outcome of the mandatory deterministic post-decision validation (answering/final_validation.py).",
+    )
+
+
+# ---------------------------------------------------------------------------
+# Structured answers (Final AI Intelligence Transformation). Every value here is computed
+# deterministically from source records; nothing is produced by an LLM.
+# ---------------------------------------------------------------------------
+class DataFigure(BaseModel):
+    label: str
+    value: Optional[float] = None
+    unit: str = ""
+    detail: str = ""
+
+
+class DataCoverage(BaseModel):
+    records_used: int = 0
+    records_expected: int = 0
+    months_covered: List[str] = Field(default_factory=list)
+    months_missing_in_requested_range: List[str] = Field(default_factory=list)
+    null_values_excluded: int = 0
+    value_type_counts: Dict[str, int] = Field(default_factory=dict)
+    dataset_period: str = ""
+
+
+class DataAnswer(BaseModel):
+    status: str = Field(description="ANSWERED, PARTIAL, NO_DATA, NEEDS_CLARIFICATION or UNSUPPORTED")
+    operation: str = Field(description="TOTAL, AVERAGE, TREND, COMPARE, RANK, FORECAST_VS_ACTUAL, CHANGE or NONE")
+    measure_field: Optional[str] = None
+    measure_label: str = ""
+    unit: str = ""
+    aggregation: str = ""
+    products: List[str] = Field(default_factory=list)
+    markets: List[str] = Field(default_factory=list)
+    period_start: Optional[str] = None
+    period_end: Optional[str] = None
+    headline: str = ""
+    figures: List[DataFigure] = Field(default_factory=list)
+    series: List[Dict[str, Any]] = Field(default_factory=list)
+    comparison: str = ""
+    coverage: DataCoverage = Field(default_factory=DataCoverage)
+    source: Dict[str, Any] = Field(default_factory=dict)
+    caveats: List[str] = Field(default_factory=list)
+    clarification: List[str] = Field(default_factory=list)
+
+
+class FindingView(BaseModel):
+    """One governance finding as shown to a business user. Deduplicated by (rule, asset, control)."""
+    rule_id: str
+    severity: str
+    asset_id: Optional[str] = None
+    kind: str = Field(description="BLOCKER, WARNING or DIRECTIVE")
+    effect: str = Field(description="PREVENTS_ACTION, REQUIRES_REVIEW or INFORMATIONAL")
+    message: str
+    required_action: str = ""
+    finding_ids: List[str] = Field(default_factory=list)
+    sources: List[str] = Field(default_factory=list, description="Backend strings merged into this entry")
+    affects_target: bool = False
+
+
+class GovernanceAnswer(BaseModel):
+    status: str = Field(description="ANSWERED, NO_MATCH, NOT_FOUND or NEEDS_CLARIFICATION")
+    question_kind: str
+    headline: str = ""
+    explanation: List[str] = Field(default_factory=list)
+    rules: List[Dict[str, str]] = Field(default_factory=list)
+    assets: List[Dict[str, Any]] = Field(default_factory=list)
+    total_matching: int = 0
+    findings: List[FindingView] = Field(default_factory=list)
+    kpis: List[Dict[str, Any]] = Field(default_factory=list)
+    filters: Dict[str, Any] = Field(default_factory=dict)
+    source: Dict[str, Any] = Field(default_factory=dict)
+
+
+class MigrationAnswer(BaseModel):
+    status: str = Field(description="ANSWERED, NO_MATCH or NEEDS_CLARIFICATION")
+    headline: str = ""
+    groups: Dict[str, List[Dict[str, Any]]] = Field(default_factory=dict)
+    total_matching: int = 0
+    explanation: List[str] = Field(default_factory=list)
+    filters: Dict[str, Any] = Field(default_factory=dict)
+    approval_note: str = ""
+    source: Dict[str, Any] = Field(default_factory=dict)
+
+
+class GovernancePresentation(BaseModel):
+    blockers: List[FindingView] = Field(default_factory=list)
+    warnings: List[FindingView] = Field(default_factory=list)
+    directives: List[FindingView] = Field(default_factory=list)
+    backend_blocker_count: int = 0
+    backend_warning_count: int = 0
+    displayed_blocker_count: int = 0
+    displayed_warning_count: int = 0
+    displayed_directive_count: int = 0
+    out_of_scope_count: int = 0
+
+
+class AssistantPresentation(BaseModel):
+    """The business-facing answer. Governance is always rendered last."""
+    response_type: str = Field(description="DATA_ANSWER, ASSET_RECOMMENDATION, GOVERNANCE_ANSWER, MIGRATION_RECOMMENDATION or CLARIFICATION")
+    recommended_action: str
+    action_label: str
+    action_status: str
+    direct_answer: str
+    why: List[str] = Field(default_factory=list)
+    matching_assets: List[Dict[str, Any]] = Field(default_factory=list)
+    next_steps: List[str] = Field(default_factory=list)
+    human_approval_required: bool = False
+    approval_explanation: str = ""
+    confidence_explanation: str = ""
+    governance: GovernancePresentation = Field(default_factory=GovernancePresentation)
 
 
 # API Schema Models
@@ -374,4 +543,12 @@ class AssistantWorkflowResponse(BaseModel):
     duplication: DuplicationResult
     governance: GovernanceAgentResult
     traces: List[AgentTraceOut]
+    request_types: List[RequestType] = Field(default_factory=list)
+    data_answer: Optional[DataAnswer] = None
+    governance_answer: Optional[GovernanceAnswer] = None
+    migration_answer: Optional[MigrationAnswer] = None
+    presentation: Optional[AssistantPresentation] = None
 
+
+
+DiscoveryResult.model_rebuild()

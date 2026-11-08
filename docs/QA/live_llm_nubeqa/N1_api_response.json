@@ -1,0 +1,1994 @@
+{
+ "request_id": "REQ-20261107183437-A3DB0D",
+ "raw_prompt": "check nubeqa sales in germany",
+ "status": "completed",
+ "intent": {
+  "raw_prompt": "check nubeqa sales in germany",
+  "products": [
+   "Nubeqa"
+  ],
+  "markets": [
+   "DE"
+  ],
+  "kpis": [
+   "sales"
+  ],
+  "dimensions": [],
+  "time_periods": [],
+  "business_purpose": "To check Nubeqa sales in Germany.",
+  "missing_or_ambiguous": [
+   "Time horizon or refresh frequency is unspecified (e.g. monthly, YTD)."
+  ],
+  "confidence": 0.85,
+  "ambiguities": [],
+  "interpretation_notes": [],
+  "unresolved_terms": [],
+  "resolution": {
+   "original_request": "check nubeqa sales in germany",
+   "deterministic_intent": {
+    "products": [
+     "Nubeqa"
+    ],
+    "markets": [
+     "DE"
+    ],
+    "kpis": [
+     "sales"
+    ],
+    "dimensions": [],
+    "time_periods": [],
+    "business_purpose": "Analytics request for Nubeqa across DE covering sales",
+    "missing_or_ambiguous": [
+     "Time horizon or refresh frequency is unspecified (e.g. monthly, YTD)."
+    ],
+    "confidence": 0.85
+   },
+   "llm_proposal": {
+    "products": [
+     "Nubeqa"
+    ],
+    "markets": [
+     "DE"
+    ],
+    "kpi_mappings": [
+     {
+      "requested_phrase": "sales",
+      "catalog_kpi_name": "Net Sales"
+     }
+    ],
+    "unmapped_metrics": [],
+    "dimensions": [
+     "country"
+    ],
+    "time_periods": [],
+    "business_purpose": "To check Nubeqa sales in Germany."
+   },
+   "accepted": [
+    {
+     "category": "business_purpose",
+     "proposed": "To check Nubeqa sales in Germany.",
+     "normalized": "To check Nubeqa sales in Germany.",
+     "status": "accepted",
+     "reason": "Descriptive only. It doesn't affect any decision."
+    }
+   ],
+   "confirmed": [
+    {
+     "category": "product",
+     "proposed": "Nubeqa",
+     "normalized": "Nubeqa",
+     "status": "confirmed_baseline",
+     "reason": "Already in the deterministic baseline."
+    },
+    {
+     "category": "market",
+     "proposed": "DE",
+     "normalized": "DE",
+     "status": "confirmed_baseline",
+     "reason": "Already in the deterministic baseline."
+    },
+    {
+     "category": "kpi",
+     "proposed": "sales -> Net Sales",
+     "normalized": "Net Sales",
+     "status": "confirmed_baseline",
+     "reason": "Already in the deterministic baseline."
+    }
+   ],
+   "rejected": [
+    {
+     "category": "dimension",
+     "proposed": "country",
+     "normalized": null,
+     "status": "rejected",
+     "reason": "Not stated in the request."
+    }
+   ]
+  },
+  "geography": {
+   "status": "RESOLVED",
+   "phrases": [
+    {
+     "original_phrase": "germany",
+     "normalized_scope": "DE",
+     "resolved_market_ids": [
+      "DE"
+     ],
+     "suggested_market_ids": [],
+     "catalog_evidence": [],
+     "external_context": [],
+     "status": "RESOLVED",
+     "explanation": "'germany' matches catalog scope 'DE'."
+    }
+   ],
+   "resolved_market_ids": [
+    "DE"
+   ],
+   "unresolved_geography": [],
+   "explanation": "All requested geography matched catalog records."
+  },
+  "request_types": [
+   "DATA_QUESTION"
+  ],
+  "request_type_evidence": [
+   "Asks for measure 'sales' ('check')."
+  ],
+  "asset_ids_mentioned": [],
+  "duplication_question": false,
+  "title_topics": []
+ },
+ "recommendation": {
+  "decision": "INFORMATIONAL",
+  "confidence": 1.0,
+  "primary_recommendation": "Nubeqa net sales in Germany (DE) were €237.10M in Jan–Oct 2026.",
+  "rationale": "Business data question answered from Product_Market_Monthly (ANSWERED). No analytics asset action was requested, so none is recommended. 13 governance finding(s) on assets outside the requested scope are reported separately and aren't blockers for this request.",
+  "target_asset_ids": [],
+  "target_model_ids": [],
+  "alternatives": [],
+  "blockers": [],
+  "warnings": [],
+  "human_approval_required": false,
+  "next_steps": [],
+  "active_finding_ids": [
+   "FND-RULE001-F8A6871DD345",
+   "FND-RULE001-1171669A47DB",
+   "FND-RULE001-EB2AE3EE281D",
+   "FND-RULE001-719469BD9E8D",
+   "FND-RULE002-A4A9CEA3EA51",
+   "FND-RULE002-041FE027EEF6",
+   "FND-RULE002-9D7F8E810EAB",
+   "FND-RULE002-5CF87B52E010",
+   "FND-RULE002-E42C6892AB53",
+   "FND-RULE002-73ACC21A2176",
+   "FND-RULE002-E4D813EB05F5",
+   "FND-RULE002-11783578F355",
+   "FND-RULE002-AFA6EBF301C6",
+   "FND-RULE003-2DA8B175F755",
+   "FND-RULE003-4DB9EFEF96B4",
+   "FND-RULE003-27E5ED099AB0",
+   "FND-RULE003-6248BB0063D7",
+   "FND-RULE005-C2F1E6DB495D",
+   "FND-RULE005-7C1D81E2E983",
+   "FND-RULE005-0914F7E32EC7",
+   "FND-RULE005-64F9B149B9CC",
+   "FND-RULE006-CD53C4317188",
+   "FND-RULE008-2D3CC8B9D98E",
+   "FND-RULE008-165B198D40EA",
+   "FND-RULE008-9FD4C97582D6",
+   "FND-RULE008-63B76BE62EA8"
+  ],
+  "out_of_scope_warnings": [
+   "RULE-002 on AST-0239, outside the requested scope: Asset uses 6 non-canonical KPI(s).",
+   "RULE-002 on AST-0112, outside the requested scope: Asset uses 2 non-canonical KPI(s).",
+   "RULE-002 on AST-0256, outside the requested scope: Asset uses 2 non-canonical KPI(s).",
+   "RULE-002 on AST-0237, outside the requested scope: Asset uses 2 non-canonical KPI(s).",
+   "RULE-003 on AST-0239, outside the requested scope: Missing accountable owner on asset AST-0239.",
+   "RULE-003 on AST-0132, outside the requested scope: Assigned owner inactive on asset AST-0132.",
+   "RULE-003 on AST-0112, outside the requested scope: Assigned owner inactive on asset AST-0112.",
+   "RULE-008 on AST-0239, outside the requested scope: Unjustified retirement risk: AST-0239 has active usage."
+  ],
+  "llm_narrative": "This decision provides factual data on Nubeqa net sales in Germany (€237.10M for Jan–Oct 2026) based on the Product_Market_Monthly asset without requiring any action or human approval. No blockers exist for this request, and while 13 governance findings were reported on assets outside the requested scope, they do not impact this outcome. The decision is final and requires no further steps.",
+  "action_status": "NOT_APPLICABLE",
+  "ineligible_targets": [],
+  "validation_notes": [
+   "Final decision passed deterministic validation unchanged."
+  ]
+ },
+ "discovery": {
+  "exact_matches": [
+   {
+    "asset_id": "AST-0157",
+    "asset_name": "Nubeqa Budget Mgmt",
+    "match_tier": "EXACT",
+    "product_scope": "Nubeqa",
+    "market_scope": "DE",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "legacy",
+    "match_score": 0.9,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Market scope aligns with 'DE'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-051",
+    "model_name": "Regional Commercial 51",
+    "model_endorsement": "promoted",
+    "owner_name": "Nina Andersson",
+    "estimated_audience": 2048,
+    "evidence": {
+     "asset_id": "AST-0157",
+     "workspace_id": "WS-012",
+     "model_id": "SM-051",
+     "product_scope": "Nubeqa",
+     "market_scope": "DE",
+     "endorsement": "promoted",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0240",
+    "asset_name": "Nubeqa Gross-to-Net - EMEA",
+    "match_tier": "EXACT",
+    "product_scope": "Nubeqa",
+    "market_scope": "DE",
+    "platform": "Power BI",
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Market scope aligns with 'DE'"
+    ],
+    "model_id": "SM-068",
+    "model_name": "Demand Forecast 68",
+    "model_endorsement": "certified",
+    "owner_name": "Nina Virtanen",
+    "estimated_audience": 965,
+    "evidence": {
+     "asset_id": "AST-0240",
+     "workspace_id": "WS-013",
+     "model_id": "SM-068",
+     "product_scope": "Nubeqa",
+     "market_scope": "DE",
+     "endorsement": "none",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0268",
+    "asset_name": "Nubeqa Budget Monthly",
+    "match_tier": "EXACT",
+    "product_scope": "Nubeqa",
+    "market_scope": "DE",
+    "platform": "Tableau",
+    "endorsement": "none",
+    "lifecycle_status": "legacy",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Market scope aligns with 'DE'"
+    ],
+    "model_id": "SM-007",
+    "model_name": "Portfolio Performance 07",
+    "model_endorsement": "promoted",
+    "owner_name": null,
+    "estimated_audience": 1199,
+    "evidence": {
+     "asset_id": "AST-0268",
+     "workspace_id": "WS-013",
+     "model_id": "SM-007",
+     "product_scope": "Nubeqa",
+     "market_scope": "DE",
+     "endorsement": "none",
+     "lifecycle_status": "legacy",
+     "owner_status": "missing",
+     "missing_evidence": [
+      "No active owner assigned (RULE-004 accountability defect)"
+     ],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0270",
+    "asset_name": "Nubeqa Commercial Reach Legacy",
+    "match_tier": "EXACT",
+    "product_scope": "Nubeqa",
+    "market_scope": "DE",
+    "platform": "Power BI",
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Market scope aligns with 'DE'"
+    ],
+    "model_id": "SM-062",
+    "model_name": "Channel Performance 62",
+    "model_endorsement": "none",
+    "owner_name": "Anna Novak",
+    "estimated_audience": 1615,
+    "evidence": {
+     "asset_id": "AST-0270",
+     "workspace_id": "WS-008",
+     "model_id": "SM-062",
+     "product_scope": "Nubeqa",
+     "market_scope": "DE",
+     "endorsement": "none",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   }
+  ],
+  "partial_matches": [
+   {
+    "asset_id": "AST-0112",
+    "asset_name": "Nubeqa Net Sales Mgmt",
+    "match_tier": "PARTIAL",
+    "product_scope": "Nubeqa",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Title keywords match requested concepts: sales",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-043",
+    "model_name": "Executive Pharma 43",
+    "model_endorsement": "none",
+    "owner_name": "Felix Virtanen",
+    "estimated_audience": 642,
+    "evidence": {
+     "asset_id": "AST-0112",
+     "workspace_id": "WS-006",
+     "model_id": "SM-043",
+     "product_scope": "Nubeqa",
+     "market_scope": "JP",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "inactive",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Assigned owner is 'inactive'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0237",
+    "asset_name": "Nubeqa Net Sales Final",
+    "match_tier": "PARTIAL",
+    "product_scope": "Nubeqa",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Title keywords match requested concepts: sales",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-010",
+    "model_name": "Supply & Inventory 10",
+    "model_endorsement": "promoted",
+    "owner_name": "Nina Andersson",
+    "estimated_audience": 2142,
+    "evidence": {
+     "asset_id": "AST-0237",
+     "workspace_id": "WS-007",
+     "model_id": "SM-010",
+     "product_scope": "Nubeqa",
+     "market_scope": "JP",
+     "endorsement": "promoted",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0239",
+    "asset_name": "Nubeqa Net Sales Copy",
+    "match_tier": "PARTIAL",
+    "product_scope": "Nubeqa",
+    "market_scope": "Global",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Title keywords match requested concepts: sales",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-062",
+    "model_name": "Channel Performance 62",
+    "model_endorsement": "none",
+    "owner_name": null,
+    "estimated_audience": 1206,
+    "evidence": {
+     "asset_id": "AST-0239",
+     "workspace_id": "WS-010",
+     "model_id": "SM-062",
+     "product_scope": "Nubeqa",
+     "market_scope": "Global",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "missing",
+     "missing_evidence": [
+      "No active owner assigned (RULE-004 accountability defect)"
+     ],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0256",
+    "asset_name": "Nubeqa Net Sales Mgmt",
+    "match_tier": "PARTIAL",
+    "product_scope": "Nubeqa",
+    "market_scope": "FI",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Title keywords match requested concepts: sales",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-054",
+    "model_name": "Executive Pharma 54",
+    "model_endorsement": "promoted",
+    "owner_name": "Anna Brown",
+    "estimated_audience": 1984,
+    "evidence": {
+     "asset_id": "AST-0256",
+     "workspace_id": "WS-001",
+     "model_id": "SM-054",
+     "product_scope": "Nubeqa",
+     "market_scope": "FI",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0132",
+    "asset_name": "Nubeqa Net Sales",
+    "match_tier": "PARTIAL",
+    "product_scope": "Nubeqa",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "match_score": 0.7,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Title keywords match requested concepts: sales"
+    ],
+    "model_id": "SM-038",
+    "model_name": "Supply & Inventory 38",
+    "model_endorsement": "certified",
+    "owner_name": "Leo Andersson",
+    "estimated_audience": 840,
+    "evidence": {
+     "asset_id": "AST-0132",
+     "workspace_id": "WS-002",
+     "model_id": "SM-038",
+     "product_scope": "Nubeqa",
+     "market_scope": "US",
+     "endorsement": "none",
+     "lifecycle_status": "active",
+     "owner_status": "inactive",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Assigned owner is 'inactive'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0037",
+    "asset_name": "Nubeqa Digital Engagement",
+    "match_tier": "PARTIAL",
+    "product_scope": "Nubeqa",
+    "market_scope": "IT",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-041",
+    "model_name": "Launch Excellence 41",
+    "model_endorsement": "none",
+    "owner_name": "Felix Meyer",
+    "estimated_audience": 1638,
+    "evidence": {
+     "asset_id": "AST-0037",
+     "workspace_id": "WS-014",
+     "model_id": "SM-041",
+     "product_scope": "Nubeqa",
+     "market_scope": "IT",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0051",
+    "asset_name": "Nubeqa Product Performance Copy",
+    "match_tier": "PARTIAL",
+    "product_scope": "Nubeqa",
+    "market_scope": "IT",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-031",
+    "model_name": "Launch Excellence 31",
+    "model_endorsement": "none",
+    "owner_name": "Nina Andersson",
+    "estimated_audience": 20,
+    "evidence": {
+     "asset_id": "AST-0051",
+     "workspace_id": "WS-016",
+     "model_id": "SM-031",
+     "product_scope": "Nubeqa",
+     "market_scope": "IT",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0066",
+    "asset_name": "Nubeqa Executive Final",
+    "match_tier": "PARTIAL",
+    "product_scope": "Nubeqa",
+    "market_scope": "CA",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-051",
+    "model_name": "Regional Commercial 51",
+    "model_endorsement": "promoted",
+    "owner_name": "Daniel Fischer",
+    "estimated_audience": 1177,
+    "evidence": {
+     "asset_id": "AST-0066",
+     "workspace_id": "WS-009",
+     "model_id": "SM-051",
+     "product_scope": "Nubeqa",
+     "market_scope": "CA",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0073",
+    "asset_name": "Nubeqa Budget Mgmt",
+    "match_tier": "PARTIAL",
+    "product_scope": "Nubeqa",
+    "market_scope": "CA",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-047",
+    "model_name": "Regional Commercial 47",
+    "model_endorsement": "none",
+    "owner_name": "Leo Andersson",
+    "estimated_audience": 2074,
+    "evidence": {
+     "asset_id": "AST-0073",
+     "workspace_id": "WS-012",
+     "model_id": "SM-047",
+     "product_scope": "Nubeqa",
+     "market_scope": "CA",
+     "endorsement": "certified",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "inactive",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Assigned owner is 'inactive'",
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0090",
+    "asset_name": "Nubeqa Supply Mgmt",
+    "match_tier": "PARTIAL",
+    "product_scope": "Nubeqa",
+    "market_scope": "US",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Nubeqa'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-013",
+    "model_name": "Pharma Finance 13",
+    "model_endorsement": "promoted",
+    "owner_name": "Sofia Brown",
+    "estimated_audience": 215,
+    "evidence": {
+     "asset_id": "AST-0090",
+     "workspace_id": "WS-004",
+     "model_id": "SM-013",
+     "product_scope": "Nubeqa",
+     "market_scope": "US",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   }
+  ],
+  "weak_candidates": [
+   {
+    "asset_id": "AST-0011",
+    "asset_name": "Kerendia Supply Final",
+    "match_tier": "WEAK",
+    "product_scope": "Kerendia",
+    "market_scope": "DE",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'DE'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-004",
+    "model_name": "Launch Excellence 04",
+    "model_endorsement": "none",
+    "owner_name": "Felix Fischer",
+    "estimated_audience": 1504,
+    "evidence": {
+     "asset_id": "AST-0011",
+     "workspace_id": "WS-015",
+     "model_id": "SM-004",
+     "product_scope": "Kerendia",
+     "market_scope": "DE",
+     "endorsement": "certified",
+     "lifecycle_status": "active",
+     "owner_status": "inactive",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Kerendia' does not match requested 'Nubeqa'",
+      "Assigned owner is 'inactive'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0077",
+    "asset_name": "Beyonttra Market Access v2",
+    "match_tier": "WEAK",
+    "product_scope": "Beyonttra",
+    "market_scope": "DE",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'DE'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-001",
+    "model_name": "Executive Pharma 01",
+    "model_endorsement": "certified",
+    "owner_name": "Laura Martin",
+    "estimated_audience": 63,
+    "evidence": {
+     "asset_id": "AST-0077",
+     "workspace_id": "WS-016",
+     "model_id": "SM-001",
+     "product_scope": "Beyonttra",
+     "market_scope": "DE",
+     "endorsement": "certified",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "inactive",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Beyonttra' does not match requested 'Nubeqa'",
+      "Assigned owner is 'inactive'",
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0223",
+    "asset_name": "Beyonttra Supply v2",
+    "match_tier": "WEAK",
+    "product_scope": "Beyonttra",
+    "market_scope": "DE",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'DE'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-034",
+    "model_name": "Regional Commercial 34",
+    "model_endorsement": "promoted",
+    "owner_name": "Daniel Fischer",
+    "estimated_audience": 929,
+    "evidence": {
+     "asset_id": "AST-0223",
+     "workspace_id": "WS-002",
+     "model_id": "SM-034",
+     "product_scope": "Beyonttra",
+     "market_scope": "DE",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Beyonttra' does not match requested 'Nubeqa'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0304",
+    "asset_name": "Kerendia Launch - US",
+    "match_tier": "WEAK",
+    "product_scope": "Kerendia",
+    "market_scope": "DE",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'DE'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-040",
+    "model_name": "Launch Excellence 40",
+    "model_endorsement": "none",
+    "owner_name": "Mika Virtanen",
+    "estimated_audience": 70,
+    "evidence": {
+     "asset_id": "AST-0304",
+     "workspace_id": "WS-004",
+     "model_id": "SM-040",
+     "product_scope": "Kerendia",
+     "market_scope": "DE",
+     "endorsement": "promoted",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "inactive",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Kerendia' does not match requested 'Nubeqa'",
+      "Assigned owner is 'inactive'",
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0353",
+    "asset_name": "All Pharma Market Access Final",
+    "match_tier": "WEAK",
+    "product_scope": "All Pharma",
+    "market_scope": "DE",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'DE'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-049",
+    "model_name": "Pharma Commercial Core 49",
+    "model_endorsement": "promoted",
+    "owner_name": "Nina Garcia",
+    "estimated_audience": 2146,
+    "evidence": {
+     "asset_id": "AST-0353",
+     "workspace_id": "WS-010",
+     "model_id": "SM-049",
+     "product_scope": "All Pharma",
+     "market_scope": "DE",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'All Pharma' does not match requested 'Nubeqa'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0022",
+    "asset_name": "All Pharma Net Sales Final",
+    "match_tier": "WEAK",
+    "product_scope": "All Pharma",
+    "market_scope": "FI",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: sales",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-007",
+    "model_name": "Portfolio Performance 07",
+    "model_endorsement": "promoted",
+    "owner_name": "Nina Garcia",
+    "estimated_audience": 1479,
+    "evidence": {
+     "asset_id": "AST-0022",
+     "workspace_id": "WS-012",
+     "model_id": "SM-007",
+     "product_scope": "All Pharma",
+     "market_scope": "FI",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'All Pharma' does not match requested 'Nubeqa'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0042",
+    "asset_name": "Eylea Net Sales Final",
+    "match_tier": "WEAK",
+    "product_scope": "Eylea",
+    "market_scope": "SE",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: sales",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-045",
+    "model_name": "Demand Forecast 45",
+    "model_endorsement": "none",
+    "owner_name": "Sofia Rossi",
+    "estimated_audience": 1980,
+    "evidence": {
+     "asset_id": "AST-0042",
+     "workspace_id": "WS-009",
+     "model_id": "SM-045",
+     "product_scope": "Eylea",
+     "market_scope": "SE",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Eylea' does not match requested 'Nubeqa'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0059",
+    "asset_name": "Xarelto Launch - US",
+    "match_tier": "WEAK",
+    "product_scope": "Xarelto",
+    "market_scope": "DE",
+    "platform": "Tableau",
+    "endorsement": "none",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Market scope aligns with 'DE'"
+    ],
+    "model_id": "SM-035",
+    "model_name": "Launch Excellence 35",
+    "model_endorsement": "none",
+    "owner_name": "Elias Rossi",
+    "estimated_audience": 110,
+    "evidence": {
+     "asset_id": "AST-0059",
+     "workspace_id": "WS-010",
+     "model_id": "SM-035",
+     "product_scope": "Xarelto",
+     "market_scope": "DE",
+     "endorsement": "none",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Xarelto' does not match requested 'Nubeqa'",
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0061",
+    "asset_name": "Eylea Budget Copy",
+    "match_tier": "WEAK",
+    "product_scope": "Eylea",
+    "market_scope": "DE",
+    "platform": "Power BI",
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Market scope aligns with 'DE'"
+    ],
+    "model_id": "SM-061",
+    "model_name": "Pharma Finance 61",
+    "model_endorsement": "none",
+    "owner_name": "Felix Andersson",
+    "estimated_audience": 1014,
+    "evidence": {
+     "asset_id": "AST-0061",
+     "workspace_id": "WS-004",
+     "model_id": "SM-061",
+     "product_scope": "Eylea",
+     "market_scope": "DE",
+     "endorsement": "none",
+     "lifecycle_status": "active",
+     "owner_status": "inactive",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Eylea' does not match requested 'Nubeqa'",
+      "Assigned owner is 'inactive'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0075",
+    "asset_name": "Hyrnuo Net Sales Final",
+    "match_tier": "WEAK",
+    "product_scope": "Hyrnuo",
+    "market_scope": "AU",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: sales",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-067",
+    "model_name": "Market Access 67",
+    "model_endorsement": "promoted",
+    "owner_name": "Julia Martin",
+    "estimated_audience": 1105,
+    "evidence": {
+     "asset_id": "AST-0075",
+     "workspace_id": "WS-016",
+     "model_id": "SM-067",
+     "product_scope": "Hyrnuo",
+     "market_scope": "AU",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Hyrnuo' does not match requested 'Nubeqa'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   }
+  ],
+  "total_searched": 360,
+  "search_notes": "Searched 360 assets. Found 4 exact matches, 53 partial matches, and 26 weak candidates. Data question answered from Product_Market_Monthly (ANSWERED).",
+  "data_answer": {
+   "status": "ANSWERED",
+   "operation": "TOTAL",
+   "measure_field": "net_sales_m_eur_syn",
+   "measure_label": "Net sales",
+   "unit": "M EUR",
+   "aggregation": "sum of net_sales_m_eur_syn over matching product-market-month records",
+   "products": [
+    "Nubeqa"
+   ],
+   "markets": [
+    "DE"
+   ],
+   "period_start": "2026-01",
+   "period_end": "2026-10",
+   "headline": "Nubeqa net sales in Germany (DE) were €237.10M in Jan–Oct 2026.",
+   "figures": [
+    {
+     "label": "Total net sales, Jan–Oct 2026",
+     "value": 237.1,
+     "unit": "M EUR",
+     "detail": ""
+    }
+   ],
+   "series": [
+    {
+     "month": "2026-01",
+     "value": 19.66
+    },
+    {
+     "month": "2026-02",
+     "value": 25.67
+    },
+    {
+     "month": "2026-03",
+     "value": 14.19
+    },
+    {
+     "month": "2026-04",
+     "value": 26.83
+    },
+    {
+     "month": "2026-05",
+     "value": 26.34
+    },
+    {
+     "month": "2026-06",
+     "value": 15.38
+    },
+    {
+     "month": "2026-07",
+     "value": 13.54
+    },
+    {
+     "month": "2026-08",
+     "value": 37.03
+    },
+    {
+     "month": "2026-09",
+     "value": 44.5
+    },
+    {
+     "month": "2026-10",
+     "value": 13.96
+    }
+   ],
+   "comparison": "Across the 10 months, the highest was Sep 2026 at €44.50M.",
+   "coverage": {
+    "records_used": 10,
+    "records_expected": 10,
+    "months_covered": [
+     "2026-01",
+     "2026-02",
+     "2026-03",
+     "2026-04",
+     "2026-05",
+     "2026-06",
+     "2026-07",
+     "2026-08",
+     "2026-09",
+     "2026-10"
+    ],
+    "months_missing_in_requested_range": [],
+    "null_values_excluded": 0,
+    "value_type_counts": {
+     "forecast_like_synthetic": 4,
+     "actual_like_synthetic": 6
+    },
+    "dataset_period": "Jan–Oct 2026"
+   },
+   "source": {
+    "table": "product_market_monthly",
+    "sheet": "Product_Market_Monthly",
+    "workbook": "data/source/Bayer_Pharmaceuticals_SinceAI_2026_FINAL_Builder_Data_Pack.xlsx",
+    "dataset_period": "Jan–Oct 2026",
+    "synthetic": true,
+    "fields": [
+     "net_sales_m_eur_syn"
+    ],
+    "filters": {
+     "product_id": [
+      "P-NUB"
+     ],
+     "market_id": [
+      "DE"
+     ],
+     "month": [
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08",
+      "2026-09",
+      "2026-10"
+     ]
+    }
+   },
+   "caveats": [
+    "No period was stated, so BIOS used the full dataset period, Jan–Oct 2026."
+   ],
+   "clarification": []
+  },
+  "governance_answer": null,
+  "migration_answer": null,
+  "title_topic_matches": []
+ },
+ "kpi_analysis": {
+  "matches": [
+   {
+    "requested_metric": "sales",
+    "matched_kpi_id": "KPI-001",
+    "matched_kpi_name": "Net Sales",
+    "domain": "Commercial",
+    "approval_status": "approved",
+    "definition_status": "canonical",
+    "is_canonical": true,
+    "is_approved": true,
+    "semantic_equivalence_notes": "Semantic equivalence: requested 'sales' mapped to canonical concept 'Net Sales' (KPI-001)",
+    "conflicts": [],
+    "alternative_kpis": []
+   }
+  ],
+  "canonical_approved_kpi_ids": [
+   "KPI-001"
+  ],
+  "unapproved_or_conflicted_kpi_ids": [],
+  "unmatched_requested_metrics": [],
+  "has_conflicts": false,
+  "summary": "Evaluated 1 requested metrics: 1 canonical approved, 0 unapproved/conflicted, 0 unmatched.",
+  "llm_review": [
+   {
+    "requested_metric": "sales",
+    "matched_kpi_id": "KPI-001",
+    "assessment": "uncertain",
+    "note": "The catalog description confirms a definition exists but does not specify whether Net Sales is equivalent to the requested metric."
+   }
+  ]
+ },
+ "duplication": {
+  "has_duplicates": true,
+  "candidates": [
+   {
+    "asset_id": "AST-0268",
+    "asset_name": "Nubeqa Budget Monthly",
+    "similarity_score": 0.96,
+    "structural_similarity": 1.0,
+    "kpi_similarity": 1.0,
+    "semantic_similarity": 0.8,
+    "endorsement": "none",
+    "lifecycle_status": "legacy",
+    "evidence": {
+     "scope_compatible": true,
+     "metric_drift_detected": false,
+     "structural_reasons": [
+      "Shares product semantic model SM-007 ('Portfolio Performance 07')",
+      "Semantic model is endorsed as 'promoted'"
+     ],
+     "kpi_reasons": [
+      "Shares 1 requested KPI(s): KPI-001"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Nubeqa'",
+      "Market scope aligns with 'DE'"
+     ],
+     "mapped_kpi_count": 5
+    }
+   },
+   {
+    "asset_id": "AST-0157",
+    "asset_name": "Nubeqa Budget Mgmt",
+    "similarity_score": 0.36,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.9,
+    "endorsement": "promoted",
+    "lifecycle_status": "legacy",
+    "evidence": {
+     "scope_compatible": true,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'promoted'"
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Nubeqa'",
+      "Market scope aligns with 'DE'",
+      "Endorsement level is 'promoted'"
+     ],
+     "mapped_kpi_count": 3
+    }
+   },
+   {
+    "asset_id": "AST-0237",
+    "asset_name": "Nubeqa Net Sales Final",
+    "similarity_score": 0.35,
+    "structural_similarity": 1.0,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.8,
+    "endorsement": "promoted",
+    "lifecycle_status": "candidate_retire",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Shares product semantic model SM-010 ('Supply & Inventory 10')",
+      "Semantic model is endorsed as 'promoted'",
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Nubeqa'",
+      "Title keywords match requested concepts: sales",
+      "Endorsement level is 'promoted'"
+     ],
+     "mapped_kpi_count": 6
+    }
+   },
+   {
+    "asset_id": "AST-0037",
+    "asset_name": "Nubeqa Digital Engagement",
+    "similarity_score": 0.35,
+    "structural_similarity": 0.0,
+    "kpi_similarity": 1.0,
+    "semantic_similarity": 0.6,
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": false,
+     "structural_reasons": [
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Shares 1 requested KPI(s): KPI-001"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Nubeqa'",
+      "Endorsement level is 'certified'"
+     ],
+     "mapped_kpi_count": 6
+    }
+   },
+   {
+    "asset_id": "AST-0090",
+    "asset_name": "Nubeqa Supply Mgmt",
+    "similarity_score": 0.35,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 1.0,
+    "semantic_similarity": 0.6,
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": false,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'promoted'",
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Shares 1 requested KPI(s): KPI-001"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Nubeqa'",
+      "Endorsement level is 'certified'"
+     ],
+     "mapped_kpi_count": 6
+    }
+   },
+   {
+    "asset_id": "AST-0240",
+    "asset_name": "Nubeqa Gross-to-Net - EMEA",
+    "similarity_score": 0.34,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.8,
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": true,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'certified'"
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Nubeqa'",
+      "Market scope aligns with 'DE'"
+     ],
+     "mapped_kpi_count": 4
+    }
+   },
+   {
+    "asset_id": "AST-0256",
+    "asset_name": "Nubeqa Net Sales Mgmt",
+    "similarity_score": 0.34,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.8,
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'promoted'",
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Nubeqa'",
+      "Title keywords match requested concepts: sales",
+      "Endorsement level is 'promoted'"
+     ],
+     "mapped_kpi_count": 2
+    }
+   },
+   {
+    "asset_id": "AST-0132",
+    "asset_name": "Nubeqa Net Sales",
+    "similarity_score": 0.32,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.7,
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'certified'",
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Nubeqa'",
+      "Title keywords match requested concepts: sales"
+     ],
+     "mapped_kpi_count": 4
+    }
+   }
+  ],
+  "highest_similarity_score": 0.96,
+  "primary_duplicate_asset_id": "AST-0268",
+  "explanation": "Found 1 high-confidence duplicate asset(s) (similarity >= 0.65). Top match: AST-0268 ('Nubeqa Budget Monthly') with composite similarity 0.96. Staged G1-G4 gates over 4 in-scope asset(s): 0 consolidation-eligible pair(s); 0 same-title group(s) checked.",
+  "gate_evaluations": [],
+  "consolidation_eligible_pairs": [],
+  "title_alike_groups": []
+ },
+ "governance": {
+  "blockers": [
+   "RULE-003 BLOCKER on AST-0268: Missing accountable owner on asset AST-0268. Rationale: Asset AST-0268 ('Nubeqa Budget Monthly') in workspace WS-013 has no accountable owner assigned (owner_id is NULL). Unowned assets cannot be certified, audited, or safely modified.",
+   "RULE-003 BLOCKER: Asset AST-0268 has no assigned owner. Unowned assets cannot be extended."
+  ],
+  "warnings": [
+   "RULE-002 HIGH WARNING on AST-0157: Asset uses 3 non-canonical KPI(s).",
+   "RULE-005 HIGH WARNING on AST-0268: Unendorsed high-reach asset AST-0268 (audience: 1199).",
+   "RULE-005 HIGH WARNING on AST-0270: Unendorsed high-reach asset AST-0270 (audience: 1615).",
+   "RULE-001 DIRECTIVE: Promoted asset AST-0157 ('Nubeqa Budget Mgmt') already serves this exact scope. Reuse must be prioritized before building new analytics."
+  ],
+  "applicable_rule_ids": [
+   "RULE-001",
+   "RULE-002",
+   "RULE-003",
+   "RULE-005",
+   "RULE-006",
+   "RULE-008"
+  ],
+  "active_finding_ids": [
+   "FND-RULE001-F8A6871DD345",
+   "FND-RULE001-1171669A47DB",
+   "FND-RULE001-EB2AE3EE281D",
+   "FND-RULE001-719469BD9E8D",
+   "FND-RULE002-A4A9CEA3EA51",
+   "FND-RULE002-041FE027EEF6",
+   "FND-RULE002-9D7F8E810EAB",
+   "FND-RULE002-5CF87B52E010",
+   "FND-RULE002-E42C6892AB53",
+   "FND-RULE002-73ACC21A2176",
+   "FND-RULE002-E4D813EB05F5",
+   "FND-RULE002-11783578F355",
+   "FND-RULE002-AFA6EBF301C6",
+   "FND-RULE003-2DA8B175F755",
+   "FND-RULE003-4DB9EFEF96B4",
+   "FND-RULE003-27E5ED099AB0",
+   "FND-RULE003-6248BB0063D7",
+   "FND-RULE005-C2F1E6DB495D",
+   "FND-RULE005-7C1D81E2E983",
+   "FND-RULE005-0914F7E32EC7",
+   "FND-RULE005-64F9B149B9CC",
+   "FND-RULE006-CD53C4317188",
+   "FND-RULE008-2D3CC8B9D98E",
+   "FND-RULE008-165B198D40EA",
+   "FND-RULE008-9FD4C97582D6",
+   "FND-RULE008-63B76BE62EA8"
+  ],
+  "human_approval_required": true,
+  "evidence_references": [
+   {
+    "finding_id": "FND-RULE001-F8A6871DD345",
+    "target_id": "AST-0157",
+    "rule_id": "RULE-001",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE001-1171669A47DB",
+    "target_id": "AST-0268",
+    "rule_id": "RULE-001",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE001-EB2AE3EE281D",
+    "target_id": "AST-0112",
+    "rule_id": "RULE-001",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE001-719469BD9E8D",
+    "target_id": "AST-0256",
+    "rule_id": "RULE-001",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-A4A9CEA3EA51",
+    "target_id": "AST-0239",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-041FE027EEF6",
+    "target_id": "AST-0268",
+    "rule_id": "RULE-002",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-9D7F8E810EAB",
+    "target_id": "AST-0112",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-5CF87B52E010",
+    "target_id": "AST-0256",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-E42C6892AB53",
+    "target_id": "AST-0157",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-73ACC21A2176",
+    "target_id": "AST-0237",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-E4D813EB05F5",
+    "target_id": "AST-0132",
+    "rule_id": "RULE-002",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-11783578F355",
+    "target_id": "AST-0240",
+    "rule_id": "RULE-002",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-AFA6EBF301C6",
+    "target_id": "AST-0270",
+    "rule_id": "RULE-002",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE003-2DA8B175F755",
+    "target_id": "AST-0239",
+    "rule_id": "RULE-003",
+    "severity": "critical",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE003-4DB9EFEF96B4",
+    "target_id": "AST-0268",
+    "rule_id": "RULE-003",
+    "severity": "critical",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE003-27E5ED099AB0",
+    "target_id": "AST-0132",
+    "rule_id": "RULE-003",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE003-6248BB0063D7",
+    "target_id": "AST-0112",
+    "rule_id": "RULE-003",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE005-C2F1E6DB495D",
+    "target_id": "AST-0132",
+    "rule_id": "RULE-005",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE005-7C1D81E2E983",
+    "target_id": "AST-0240",
+    "rule_id": "RULE-005",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE005-0914F7E32EC7",
+    "target_id": "AST-0268",
+    "rule_id": "RULE-005",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE005-64F9B149B9CC",
+    "target_id": "AST-0270",
+    "rule_id": "RULE-005",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE006-CD53C4317188",
+    "target_id": "AST-0268",
+    "rule_id": "RULE-006",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE008-2D3CC8B9D98E",
+    "target_id": "AST-0157",
+    "rule_id": "RULE-008",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE008-165B198D40EA",
+    "target_id": "AST-0237",
+    "rule_id": "RULE-008",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE008-9FD4C97582D6",
+    "target_id": "AST-0239",
+    "rule_id": "RULE-008",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE008-63B76BE62EA8",
+    "target_id": "AST-0268",
+    "rule_id": "RULE-008",
+    "severity": "medium",
+    "scope": "request"
+   }
+  ],
+  "request_finding_ids": [
+   "FND-RULE001-F8A6871DD345",
+   "FND-RULE001-1171669A47DB",
+   "FND-RULE002-041FE027EEF6",
+   "FND-RULE002-E42C6892AB53",
+   "FND-RULE002-11783578F355",
+   "FND-RULE002-AFA6EBF301C6",
+   "FND-RULE003-4DB9EFEF96B4",
+   "FND-RULE005-7C1D81E2E983",
+   "FND-RULE005-0914F7E32EC7",
+   "FND-RULE005-64F9B149B9CC",
+   "FND-RULE006-CD53C4317188",
+   "FND-RULE008-2D3CC8B9D98E",
+   "FND-RULE008-63B76BE62EA8"
+  ],
+  "out_of_scope_finding_ids": [
+   "FND-RULE001-EB2AE3EE281D",
+   "FND-RULE001-719469BD9E8D",
+   "FND-RULE002-A4A9CEA3EA51",
+   "FND-RULE002-9D7F8E810EAB",
+   "FND-RULE002-5CF87B52E010",
+   "FND-RULE002-73ACC21A2176",
+   "FND-RULE002-E4D813EB05F5",
+   "FND-RULE003-2DA8B175F755",
+   "FND-RULE003-27E5ED099AB0",
+   "FND-RULE003-6248BB0063D7",
+   "FND-RULE005-C2F1E6DB495D",
+   "FND-RULE008-165B198D40EA",
+   "FND-RULE008-9FD4C97582D6"
+  ],
+  "out_of_scope_warnings": [
+   "RULE-002 on AST-0239, outside the requested scope: Asset uses 6 non-canonical KPI(s).",
+   "RULE-002 on AST-0112, outside the requested scope: Asset uses 2 non-canonical KPI(s).",
+   "RULE-002 on AST-0256, outside the requested scope: Asset uses 2 non-canonical KPI(s).",
+   "RULE-002 on AST-0237, outside the requested scope: Asset uses 2 non-canonical KPI(s).",
+   "RULE-003 on AST-0239, outside the requested scope: Missing accountable owner on asset AST-0239.",
+   "RULE-003 on AST-0132, outside the requested scope: Assigned owner inactive on asset AST-0132.",
+   "RULE-003 on AST-0112, outside the requested scope: Assigned owner inactive on asset AST-0112.",
+   "RULE-008 on AST-0239, outside the requested scope: Unjustified retirement risk: AST-0239 has active usage."
+  ]
+ },
+ "traces": [
+  {
+   "trace_id": "TRC-1401F71C88DF",
+   "request_id": "REQ-20261107183437-A3DB0D",
+   "agent_name": "IntentAgent",
+   "step_order": 1,
+   "status": "success",
+   "duration_ms": 2071.32,
+   "input_json": "{\"prompt\": \"check nubeqa sales in germany\"}",
+   "output_json": "{\"raw_prompt\": \"check nubeqa sales in germany\", \"products\": [\"Nubeqa\"], \"markets\": [\"DE\"], \"kpis\": [\"sales\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"To check Nubeqa sales in Germany.\", \"missing_or_ambiguous\": [\"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.85, \"ambiguities\": [], \"interpretation_notes\": [], \"unresolved_terms\": [], \"resolution\": {\"original_request\": \"check nubeqa sales in germany\", \"deterministic_intent\": {\"products\": [\"Nubeqa\"], \"markets\": [\"DE\"], \"kpis\": [\"sales\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for Nubeqa across DE covering sales\", \"missing_or_ambiguous\": [\"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.85}, \"llm_proposal\": {\"products\": [\"Nubeqa\"], \"markets\": [\"DE\"], \"kpi_mappings\": [{\"requested_phrase\": \"sales\", \"catalog_kpi_name\": \"Net Sales\"}], \"unmapped_metrics\": [], \"dimensions\": [\"country\"], \"time_periods\": [], \"business_purpose\": \"To check Nubeqa sales in Germany.\"}, \"accepted\": [{\"category\": \"business_purpose\", \"proposed\": \"To check Nubeqa sales in Germany.\", \"normalized\": \"To check Nubeqa sales in Germany.\", \"status\": \"accepted\", \"reason\": \"Descriptive only. It doesn't affect any decision.\"}], \"confirmed\": [{\"category\": \"product\", \"proposed\": \"Nubeqa\", \"normalized\": \"Nubeqa\", \"status\": \"confirmed_baseline\", \"reason\": \"Already in the deterministic baseline.\"}, {\"category\": \"market\", \"proposed\": \"DE\", \"normalized\": \"DE\", \"status\": \"confirmed_baseline\", \"reason\": \"Already in the deterministic baseline.\"}, {\"category\": \"kpi\", \"proposed\": \"sales -> Net Sales\", \"normalized\": \"Net Sales\", \"status\": \"confirmed_baseline\", \"reason\": \"Already in the deterministic baseline.\"}], \"rejected\": [{\"category\": \"dimension\", \"proposed\": \"country\", \"normalized\": null, \"status\": \"rejected\", \"reason\": \"Not stated in the request.\"}]}, \"geography\": {\"status\": \"RESOLVED\", \"phrases\": [{\"original_phrase\": \"germany\", \"normalized_scope\": \"DE\", \"resolved_market_ids\": [\"DE\"], \"suggested_market_ids\": [], \"catalog_evidence\": [], \"external_context\": [], \"status\": \"RESOLVED\", \"explanation\": \"'germany' matches catalog scope 'DE'.\"}], \"resolved_market_ids\": [\"DE\"], \"unresolved_geography\": [], \"explanation\": \"All requested geography matched catalog records.\"}, \"request_types\": [\"DATA_QUESTION\"], \"request_type_evidence\": [\"Asks for measure 'sales' ('check').\"], \"asset_ids_mentioned\": [], \"duplication_question\": false, \"title_topics\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"LLM_ASSISTED\",\"provider\":\"ollama\",\"model\":\"qwen3.5:4b\",\"fallback_reason\":null,\"llm_calls\":[{\"provider\":\"ollama\",\"model\":\"qwen3.5:4b\",\"schema_name\":\"IntentExtraction\",\"status\":\"success\",\"attempts\":1,\"duration_ms\":2017.27,\"prompt_tokens\":418,\"completion_tokens\":100,\"total_tokens\":518,\"model_load_ms\":4.18,\"processor\":\"gpu\",\"size_vram_bytes\":3364911840,\"size_bytes\":3364911840,\"error\":null}]}",
+   "executed_at": "2026-11-07T18:34:39.515254"
+  },
+  {
+   "trace_id": "TRC-03F548AF2FEE",
+   "request_id": "REQ-20261107183437-A3DB0D",
+   "agent_name": "DiscoveryAgent",
+   "step_order": 2,
+   "status": "success",
+   "duration_ms": 46.42,
+   "input_json": "{\"raw_prompt\": \"check nubeqa sales in germany\", \"products\": [\"Nubeqa\"], \"markets\": [\"DE\"], \"kpis\": [\"sales\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"To check Nubeqa sales in Germany.\", \"missing_or_ambiguous\": [\"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.85, \"ambiguities\": [], \"interpretation_notes\": [], \"unresolved_terms\": [], \"resolution\": {\"original_request\": \"check nubeqa sales in germany\", \"deterministic_intent\": {\"products\": [\"Nubeqa\"], \"markets\": [\"DE\"], \"kpis\": [\"sales\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for Nubeqa across DE covering sales\", \"missing_or_ambiguous\": [\"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.85}, \"llm_proposal\": {\"products\": [\"Nubeqa\"], \"markets\": [\"DE\"], \"kpi_mappings\": [{\"requested_phrase\": \"sales\", \"catalog_kpi_name\": \"Net Sales\"}], \"unmapped_metrics\": [], \"dimensions\": [\"country\"], \"time_periods\": [], \"business_purpose\": \"To check Nubeqa sales in Germany.\"}, \"accepted\": [{\"category\": \"business_purpose\", \"proposed\": \"To check Nubeqa sales in Germany.\", \"normalized\": \"To check Nubeqa sales in Germany.\", \"status\": \"accepted\", \"reason\": \"Descriptive only. It doesn't affect any decision.\"}], \"confirmed\": [{\"category\": \"product\", \"proposed\": \"Nubeqa\", \"normalized\": \"Nubeqa\", \"status\": \"confirmed_baseline\", \"reason\": \"Already in the deterministic baseline.\"}, {\"category\": \"market\", \"proposed\": \"DE\", \"normalized\": \"DE\", \"status\": \"confirmed_baseline\", \"reason\": \"Already in the deterministic baseline.\"}, {\"category\": \"kpi\", \"proposed\": \"sales -> Net Sales\", \"normalized\": \"Net Sales\", \"status\": \"confirmed_baseline\", \"reason\": \"Already in the deterministic baseline.\"}], \"rejected\": [{\"category\": \"dimension\", \"proposed\": \"country\", \"normalized\": null, \"status\": \"rejected\", \"reason\": \"Not stated in the request.\"}]}, \"geography\": {\"status\": \"RESOLVED\", \"phrases\": [{\"original_phrase\": \"germany\", \"normalized_scope\": \"DE\", \"resolved_market_ids\": [\"DE\"], \"suggested_market_ids\": [], \"catalog_evidence\": [], \"external_context\": [], \"status\": \"RESOLVED\", \"explanation\": \"'germany' matches catalog scope 'DE'.\"}], \"resolved_market_ids\": [\"DE\"], \"unresolved_geography\": [], \"explanation\": \"All requested geography matched catalog records.\"}, \"request_types\": [\"DATA_QUESTION\"], \"request_type_evidence\": [\"Asks for measure 'sales' ('check').\"], \"asset_ids_mentioned\": [], \"duplication_question\": false, \"title_topics\": []}",
+   "output_json": "{\"exact_matches\": [{\"asset_id\": \"AST-0157\", \"asset_name\": \"Nubeqa Budget Mgmt\", \"match_tier\": \"EXACT\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"DE\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.9, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Market scope aligns with 'DE'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-051\", \"model_name\": \"Regional Commercial 51\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Nina Andersson\", \"estimated_audience\": 2048, \"evidence\": {\"asset_id\": \"AST-0157\", \"workspace_id\": \"WS-012\", \"model_id\": \"SM-051\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"DE\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0240\", \"asset_name\": \"Nubeqa Gross-to-Net - EMEA\", \"match_tier\": \"EXACT\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"DE\", \"platform\": \"Power BI\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Market scope aligns with 'DE'\"], \"model_id\": \"SM-068\", \"model_name\": \"Demand Forecast 68\", \"model_endorsement\": \"certified\", \"owner_name\": \"Nina Virtanen\", \"estimated_audience\": 965, \"evidence\": {\"asset_id\": \"AST-0240\", \"workspace_id\": \"WS-013\", \"model_id\": \"SM-068\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"DE\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0268\", \"asset_name\": \"Nubeqa Budget Monthly\", \"match_tier\": \"EXACT\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"DE\", \"platform\": \"Tableau\", \"endorsement\": \"none\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Market scope aligns with 'DE'\"], \"model_id\": \"SM-007\", \"model_name\": \"Portfolio Performance 07\", \"model_endorsement\": \"promoted\", \"owner_name\": null, \"estimated_audience\": 1199, \"evidence\": {\"asset_id\": \"AST-0268\", \"workspace_id\": \"WS-013\", \"model_id\": \"SM-007\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"DE\", \"endorsement\": \"none\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"missing\", \"missing_evidence\": [\"No active owner assigned (RULE-004 accountability defect)\"], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0270\", \"asset_name\": \"Nubeqa Commercial Reach Legacy\", \"match_tier\": \"EXACT\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"DE\", \"platform\": \"Power BI\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Market scope aligns with 'DE'\"], \"model_id\": \"SM-062\", \"model_name\": \"Channel Performance 62\", \"model_endorsement\": \"none\", \"owner_name\": \"Anna Novak\", \"estimated_audience\": 1615, \"evidence\": {\"asset_id\": \"AST-0270\", \"workspace_id\": \"WS-008\", \"model_id\": \"SM-062\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"DE\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}], \"partial_matches\": [{\"asset_id\": \"AST-0112\", \"asset_name\": \"Nubeqa Net Sales Mgmt\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-043\", \"model_name\": \"Executive Pharma 43\", \"model_endorsement\": \"none\", \"owner_name\": \"Felix Virtanen\", \"estimated_audience\": 642, \"evidence\": {\"asset_id\": \"AST-0112\", \"workspace_id\": \"WS-006\", \"model_id\": \"SM-043\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"JP\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"inactive\", \"missing_evidence\": [], \"negative_evidence\": [\"Assigned owner is 'inactive'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0237\", \"asset_name\": \"Nubeqa Net Sales Final\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-010\", \"model_name\": \"Supply & Inventory 10\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Nina Andersson\", \"estimated_audience\": 2142, \"evidence\": {\"asset_id\": \"AST-0237\", \"workspace_id\": \"WS-007\", \"model_id\": \"SM-010\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"JP\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0239\", \"asset_name\": \"Nubeqa Net Sales Copy\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"Global\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Title keywords match requested concepts: sales\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-062\", \"model_name\": \"Channel Performance 62\", \"model_endorsement\": \"none\", \"owner_name\": null, \"estimated_audience\": 1206, \"evidence\": {\"asset_id\": \"AST-0239\", \"workspace_id\": \"WS-010\", \"model_id\": \"SM-062\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"Global\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"missing\", \"missing_evidence\": [\"No active owner assigned (RULE-004 accountability defect)\"], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0256\", \"asset_name\": \"Nubeqa Net Sales Mgmt\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"FI\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-054\", \"model_name\": \"Executive Pharma 54\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Anna Brown\", \"estimated_audience\": 1984, \"evidence\": {\"asset_id\": \"AST-0256\", \"workspace_id\": \"WS-001\", \"model_id\": \"SM-054\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"FI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0132\", \"asset_name\": \"Nubeqa Net Sales\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"US\", \"platform\": \"Power BI\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"match_score\": 0.7, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Title keywords match requested concepts: sales\"], \"model_id\": \"SM-038\", \"model_name\": \"Supply & Inventory 38\", \"model_endorsement\": \"certified\", \"owner_name\": \"Leo Andersson\", \"estimated_audience\": 840, \"evidence\": {\"asset_id\": \"AST-0132\", \"workspace_id\": \"WS-002\", \"model_id\": \"SM-038\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"US\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"owner_status\": \"inactive\", \"missing_evidence\": [], \"negative_evidence\": [\"Assigned owner is 'inactive'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0037\", \"asset_name\": \"Nubeqa Digital Engagement\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"IT\", \"platform\": \"Tableau\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-041\", \"model_name\": \"Launch Excellence 41\", \"model_endorsement\": \"none\", \"owner_name\": \"Felix Meyer\", \"estimated_audience\": 1638, \"evidence\": {\"asset_id\": \"AST-0037\", \"workspace_id\": \"WS-014\", \"model_id\": \"SM-041\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"IT\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0051\", \"asset_name\": \"Nubeqa Product Performance Copy\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"IT\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-031\", \"model_name\": \"Launch Excellence 31\", \"model_endorsement\": \"none\", \"owner_name\": \"Nina Andersson\", \"estimated_audience\": 20, \"evidence\": {\"asset_id\": \"AST-0051\", \"workspace_id\": \"WS-016\", \"model_id\": \"SM-031\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"IT\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0066\", \"asset_name\": \"Nubeqa Executive Final\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"CA\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-051\", \"model_name\": \"Regional Commercial 51\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Daniel Fischer\", \"estimated_audience\": 1177, \"evidence\": {\"asset_id\": \"AST-0066\", \"workspace_id\": \"WS-009\", \"model_id\": \"SM-051\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"CA\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0073\", \"asset_name\": \"Nubeqa Budget Mgmt\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"CA\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-047\", \"model_name\": \"Regional Commercial 47\", \"model_endorsement\": \"none\", \"owner_name\": \"Leo Andersson\", \"estimated_audience\": 2074, \"evidence\": {\"asset_id\": \"AST-0073\", \"workspace_id\": \"WS-012\", \"model_id\": \"SM-047\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"CA\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"inactive\", \"missing_evidence\": [], \"negative_evidence\": [\"Assigned owner is 'inactive'\", \"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0090\", \"asset_name\": \"Nubeqa Supply Mgmt\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"US\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Nubeqa'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-013\", \"model_name\": \"Pharma Finance 13\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Sofia Brown\", \"estimated_audience\": 215, \"evidence\": {\"asset_id\": \"AST-0090\", \"workspace_id\": \"WS-004\", \"model_id\": \"SM-013\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"US\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}], \"weak_candidates\": [{\"asset_id\": \"AST-0011\", \"asset_name\": \"Kerendia Supply Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"Kerendia\", \"market_scope\": \"DE\", \"platform\": \"Tableau\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'DE'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-004\", \"model_name\": \"Launch Excellence 04\", \"model_endorsement\": \"none\", \"owner_name\": \"Felix Fischer\", \"estimated_audience\": 1504, \"evidence\": {\"asset_id\": \"AST-0011\", \"workspace_id\": \"WS-015\", \"model_id\": \"SM-004\", \"product_scope\": \"Kerendia\", \"market_scope\": \"DE\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"owner_status\": \"inactive\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Kerendia' does not match requested 'Nubeqa'\", \"Assigned owner is 'inactive'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0077\", \"asset_name\": \"Beyonttra Market Access v2\", \"match_tier\": \"WEAK\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"DE\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'DE'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-001\", \"model_name\": \"Executive Pharma 01\", \"model_endorsement\": \"certified\", \"owner_name\": \"Laura Martin\", \"estimated_audience\": 63, \"evidence\": {\"asset_id\": \"AST-0077\", \"workspace_id\": \"WS-016\", \"model_id\": \"SM-001\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"DE\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"inactive\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Beyonttra' does not match requested 'Nubeqa'\", \"Assigned owner is 'inactive'\", \"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0223\", \"asset_name\": \"Beyonttra Supply v2\", \"match_tier\": \"WEAK\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"DE\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'DE'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-034\", \"model_name\": \"Regional Commercial 34\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Daniel Fischer\", \"estimated_audience\": 929, \"evidence\": {\"asset_id\": \"AST-0223\", \"workspace_id\": \"WS-002\", \"model_id\": \"SM-034\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"DE\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Beyonttra' does not match requested 'Nubeqa'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0304\", \"asset_name\": \"Kerendia Launch - US\", \"match_tier\": \"WEAK\", \"product_scope\": \"Kerendia\", \"market_scope\": \"DE\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'DE'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-040\", \"model_name\": \"Launch Excellence 40\", \"model_endorsement\": \"none\", \"owner_name\": \"Mika Virtanen\", \"estimated_audience\": 70, \"evidence\": {\"asset_id\": \"AST-0304\", \"workspace_id\": \"WS-004\", \"model_id\": \"SM-040\", \"product_scope\": \"Kerendia\", \"market_scope\": \"DE\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"inactive\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Kerendia' does not match requested 'Nubeqa'\", \"Assigned owner is 'inactive'\", \"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0353\", \"asset_name\": \"All Pharma Market Access Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"All Pharma\", \"market_scope\": \"DE\", \"platform\": \"Tableau\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'DE'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-049\", \"model_name\": \"Pharma Commercial Core 49\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Nina Garcia\", \"estimated_audience\": 2146, \"evidence\": {\"asset_id\": \"AST-0353\", \"workspace_id\": \"WS-010\", \"model_id\": \"SM-049\", \"product_scope\": \"All Pharma\", \"market_scope\": \"DE\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'All Pharma' does not match requested 'Nubeqa'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0022\", \"asset_name\": \"All Pharma Net Sales Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"All Pharma\", \"market_scope\": \"FI\", \"platform\": \"Tableau\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-007\", \"model_name\": \"Portfolio Performance 07\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Nina Garcia\", \"estimated_audience\": 1479, \"evidence\": {\"asset_id\": \"AST-0022\", \"workspace_id\": \"WS-012\", \"model_id\": \"SM-007\", \"product_scope\": \"All Pharma\", \"market_scope\": \"FI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'All Pharma' does not match requested 'Nubeqa'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0042\", \"asset_name\": \"Eylea Net Sales Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"Eylea\", \"market_scope\": \"SE\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-045\", \"model_name\": \"Demand Forecast 45\", \"model_endorsement\": \"none\", \"owner_name\": \"Sofia Rossi\", \"estimated_audience\": 1980, \"evidence\": {\"asset_id\": \"AST-0042\", \"workspace_id\": \"WS-009\", \"model_id\": \"SM-045\", \"product_scope\": \"Eylea\", \"market_scope\": \"SE\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Eylea' does not match requested 'Nubeqa'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0059\", \"asset_name\": \"Xarelto Launch - US\", \"match_tier\": \"WEAK\", \"product_scope\": \"Xarelto\", \"market_scope\": \"DE\", \"platform\": \"Tableau\", \"endorsement\": \"none\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.3, \"match_reasons\": [\"Market scope aligns with 'DE'\"], \"model_id\": \"SM-035\", \"model_name\": \"Launch Excellence 35\", \"model_endorsement\": \"none\", \"owner_name\": \"Elias Rossi\", \"estimated_audience\": 110, \"evidence\": {\"asset_id\": \"AST-0059\", \"workspace_id\": \"WS-010\", \"model_id\": \"SM-035\", \"product_scope\": \"Xarelto\", \"market_scope\": \"DE\", \"endorsement\": \"none\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Xarelto' does not match requested 'Nubeqa'\", \"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0061\", \"asset_name\": \"Eylea Budget Copy\", \"match_tier\": \"WEAK\", \"product_scope\": \"Eylea\", \"market_scope\": \"DE\", \"platform\": \"Power BI\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Market scope aligns with 'DE'\"], \"model_id\": \"SM-061\", \"model_name\": \"Pharma Finance 61\", \"model_endorsement\": \"none\", \"owner_name\": \"Felix Andersson\", \"estimated_audience\": 1014, \"evidence\": {\"asset_id\": \"AST-0061\", \"workspace_id\": \"WS-004\", \"model_id\": \"SM-061\", \"product_scope\": \"Eylea\", \"market_scope\": \"DE\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"owner_status\": \"inactive\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Eylea' does not match requested 'Nubeqa'\", \"Assigned owner is 'inactive'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0075\", \"asset_name\": \"Hyrnuo Net Sales Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"AU\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-067\", \"model_name\": \"Market Access 67\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Julia Martin\", \"estimated_audience\": 1105, \"evidence\": {\"asset_id\": \"AST-0075\", \"workspace_id\": \"WS-016\", \"model_id\": \"SM-067\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"AU\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Hyrnuo' does not match requested 'Nubeqa'\"], \"title_topic_match\": [], \"named_in_request\": false}}], \"total_searched\": 360, \"search_notes\": \"Searched 360 assets. Found 4 exact matches, 53 partial matches, and 26 weak candidates. Data question answered from Product_Market_Monthly (ANSWERED).\", \"data_answer\": {\"status\": \"ANSWERED\", \"operation\": \"TOTAL\", \"measure_field\": \"net_sales_m_eur_syn\", \"measure_label\": \"Net sales\", \"unit\": \"M EUR\", \"aggregation\": \"sum of net_sales_m_eur_syn over matching product-market-month records\", \"products\": [\"Nubeqa\"], \"markets\": [\"DE\"], \"period_start\": \"2026-01\", \"period_end\": \"2026-10\", \"headline\": \"Nubeqa net sales in Germany (DE) were \\u20ac237.10M in Jan\\u2013Oct 2026.\", \"figures\": [{\"label\": \"Total net sales, Jan\\u2013Oct 2026\", \"value\": 237.1, \"unit\": \"M EUR\", \"detail\": \"\"}], \"series\": [{\"month\": \"2026-01\", \"value\": 19.66}, {\"month\": \"2026-02\", \"value\": 25.67}, {\"month\": \"2026-03\", \"value\": 14.19}, {\"month\": \"2026-04\", \"value\": 26.83}, {\"month\": \"2026-05\", \"value\": 26.34}, {\"month\": \"2026-06\", \"value\": 15.38}, {\"month\": \"2026-07\", \"value\": 13.54}, {\"month\": \"2026-08\", \"value\": 37.03}, {\"month\": \"2026-09\", \"value\": 44.5}, {\"month\": \"2026-10\", \"value\": 13.96}], \"comparison\": \"Across the 10 months, the highest was Sep 2026 at \\u20ac44.50M.\", \"coverage\": {\"records_used\": 10, \"records_expected\": 10, \"months_covered\": [\"2026-01\", \"2026-02\", \"2026-03\", \"2026-04\", \"2026-05\", \"2026-06\", \"2026-07\", \"2026-08\", \"2026-09\", \"2026-10\"], \"months_missing_in_requested_range\": [], \"null_values_excluded\": 0, \"value_type_counts\": {\"forecast_like_synthetic\": 4, \"actual_like_synthetic\": 6}, \"dataset_period\": \"Jan\\u2013Oct 2026\"}, \"source\": {\"table\": \"product_market_monthly\", \"sheet\": \"Product_Market_Monthly\", \"workbook\": \"data/source/Bayer_Pharmaceuticals_SinceAI_2026_FINAL_Builder_Data_Pack.xlsx\", \"dataset_period\": \"Jan\\u2013Oct 2026\", \"synthetic\": true, \"fields\": [\"net_sales_m_eur_syn\"], \"filters\": {\"product_id\": [\"P-NUB\"], \"market_id\": [\"DE\"], \"month\": [\"2026-01\", \"2026-02\", \"2026-03\", \"2026-04\", \"2026-05\", \"2026-06\", \"2026-07\", \"2026-08\", \"2026-09\", \"2026-10\"]}}, \"caveats\": [\"No period was stated, so BIOS used the full dataset period, Jan\\u2013Oct 2026.\"], \"clarification\": []}, \"governance_answer\": null, \"migration_answer\": null, \"title_topic_matches\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:34:39.579074"
+  },
+  {
+   "trace_id": "TRC-C8D2124B8995",
+   "request_id": "REQ-20261107183437-A3DB0D",
+   "agent_name": "KpiIntelligenceAgent",
+   "step_order": 3,
+   "status": "success",
+   "duration_ms": 1420.1,
+   "input_json": "{\"requested_kpis\": [\"sales\"]}",
+   "output_json": "{\"matches\": [{\"requested_metric\": \"sales\", \"matched_kpi_id\": \"KPI-001\", \"matched_kpi_name\": \"Net Sales\", \"domain\": \"Commercial\", \"approval_status\": \"approved\", \"definition_status\": \"canonical\", \"is_canonical\": true, \"is_approved\": true, \"semantic_equivalence_notes\": \"Semantic equivalence: requested 'sales' mapped to canonical concept 'Net Sales' (KPI-001)\", \"conflicts\": [], \"alternative_kpis\": []}], \"canonical_approved_kpi_ids\": [\"KPI-001\"], \"unapproved_or_conflicted_kpi_ids\": [], \"unmatched_requested_metrics\": [], \"has_conflicts\": false, \"summary\": \"Evaluated 1 requested metrics: 1 canonical approved, 0 unapproved/conflicted, 0 unmatched.\", \"llm_review\": [{\"requested_metric\": \"sales\", \"matched_kpi_id\": \"KPI-001\", \"assessment\": \"uncertain\", \"note\": \"The catalog description confirms a definition exists but does not specify whether Net Sales is equivalent to the requested metric.\"}]}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"LLM_ASSISTED\",\"provider\":\"ollama\",\"model\":\"qwen3.5:4b\",\"fallback_reason\":null,\"llm_calls\":[{\"provider\":\"ollama\",\"model\":\"qwen3.5:4b\",\"schema_name\":\"KpiReviewOutput\",\"status\":\"success\",\"attempts\":1,\"duration_ms\":1380.28,\"prompt_tokens\":156,\"completion_tokens\":81,\"total_tokens\":237,\"model_load_ms\":3.63,\"processor\":\"gpu\",\"size_vram_bytes\":3364911840,\"size_bytes\":3364911840,\"error\":null}]}",
+   "executed_at": "2026-11-07T18:34:41.007423"
+  },
+  {
+   "trace_id": "TRC-840E0CC26029",
+   "request_id": "REQ-20261107183437-A3DB0D",
+   "agent_name": "DuplicationAgent",
+   "step_order": 4,
+   "status": "success",
+   "duration_ms": 62.81,
+   "input_json": "{\"products\": [\"Nubeqa\"], \"exact_matches\": 4, \"canonical_kpis\": [\"KPI-001\"]}",
+   "output_json": "{\"has_duplicates\": true, \"candidates\": [{\"asset_id\": \"AST-0268\", \"asset_name\": \"Nubeqa Budget Monthly\", \"similarity_score\": 0.96, \"structural_similarity\": 1.0, \"kpi_similarity\": 1.0, \"semantic_similarity\": 0.8, \"endorsement\": \"none\", \"lifecycle_status\": \"legacy\", \"evidence\": {\"scope_compatible\": true, \"metric_drift_detected\": false, \"structural_reasons\": [\"Shares product semantic model SM-007 ('Portfolio Performance 07')\", \"Semantic model is endorsed as 'promoted'\"], \"kpi_reasons\": [\"Shares 1 requested KPI(s): KPI-001\"], \"semantic_reasons\": [\"Product scope matches 'Nubeqa'\", \"Market scope aligns with 'DE'\"], \"mapped_kpi_count\": 5}}, {\"asset_id\": \"AST-0157\", \"asset_name\": \"Nubeqa Budget Mgmt\", \"similarity_score\": 0.36, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.9, \"endorsement\": \"promoted\", \"lifecycle_status\": \"legacy\", \"evidence\": {\"scope_compatible\": true, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'promoted'\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Nubeqa'\", \"Market scope aligns with 'DE'\", \"Endorsement level is 'promoted'\"], \"mapped_kpi_count\": 3}}, {\"asset_id\": \"AST-0237\", \"asset_name\": \"Nubeqa Net Sales Final\", \"similarity_score\": 0.35, \"structural_similarity\": 1.0, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.8, \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": true, \"structural_reasons\": [\"Shares product semantic model SM-010 ('Supply & Inventory 10')\", \"Semantic model is endorsed as 'promoted'\", \"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Nubeqa'\", \"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"mapped_kpi_count\": 6}}, {\"asset_id\": \"AST-0037\", \"asset_name\": \"Nubeqa Digital Engagement\", \"similarity_score\": 0.35, \"structural_similarity\": 0.0, \"kpi_similarity\": 1.0, \"semantic_similarity\": 0.6, \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": false, \"structural_reasons\": [\"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Shares 1 requested KPI(s): KPI-001\"], \"semantic_reasons\": [\"Product scope matches 'Nubeqa'\", \"Endorsement level is 'certified'\"], \"mapped_kpi_count\": 6}}, {\"asset_id\": \"AST-0090\", \"asset_name\": \"Nubeqa Supply Mgmt\", \"similarity_score\": 0.35, \"structural_similarity\": 0.4, \"kpi_similarity\": 1.0, \"semantic_similarity\": 0.6, \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": false, \"structural_reasons\": [\"Semantic model is endorsed as 'promoted'\", \"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Shares 1 requested KPI(s): KPI-001\"], \"semantic_reasons\": [\"Product scope matches 'Nubeqa'\", \"Endorsement level is 'certified'\"], \"mapped_kpi_count\": 6}}, {\"asset_id\": \"AST-0240\", \"asset_name\": \"Nubeqa Gross-to-Net - EMEA\", \"similarity_score\": 0.34, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.8, \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": true, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'certified'\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Nubeqa'\", \"Market scope aligns with 'DE'\"], \"mapped_kpi_count\": 4}}, {\"asset_id\": \"AST-0256\", \"asset_name\": \"Nubeqa Net Sales Mgmt\", \"similarity_score\": 0.34, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.8, \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'promoted'\", \"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Nubeqa'\", \"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"mapped_kpi_count\": 2}}, {\"asset_id\": \"AST-0132\", \"asset_name\": \"Nubeqa Net Sales\", \"similarity_score\": 0.32, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.7, \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'certified'\", \"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Nubeqa'\", \"Title keywords match requested concepts: sales\"], \"mapped_kpi_count\": 4}}], \"highest_similarity_score\": 0.96, \"primary_duplicate_asset_id\": \"AST-0268\", \"explanation\": \"Found 1 high-confidence duplicate asset(s) (similarity >= 0.65). Top match: AST-0268 ('Nubeqa Budget Monthly') with composite similarity 0.96. Staged G1-G4 gates over 4 in-scope asset(s): 0 consolidation-eligible pair(s); 0 same-title group(s) checked.\", \"gate_evaluations\": [], \"consolidation_eligible_pairs\": [], \"title_alike_groups\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:34:41.081853"
+  },
+  {
+   "trace_id": "TRC-3216C1D2217A",
+   "request_id": "REQ-20261107183437-A3DB0D",
+   "agent_name": "GovernanceAgent",
+   "step_order": 5,
+   "status": "success",
+   "duration_ms": 11.58,
+   "input_json": "{\"exact_candidates\": [\"AST-0157\", \"AST-0240\", \"AST-0268\", \"AST-0270\"], \"unapproved_kpis\": []}",
+   "output_json": "{\"blockers\": [\"RULE-003 BLOCKER on AST-0268: Missing accountable owner on asset AST-0268. Rationale: Asset AST-0268 ('Nubeqa Budget Monthly') in workspace WS-013 has no accountable owner assigned (owner_id is NULL). Unowned assets cannot be certified, audited, or safely modified.\", \"RULE-003 BLOCKER: Asset AST-0268 has no assigned owner. Unowned assets cannot be extended.\"], \"warnings\": [\"RULE-002 HIGH WARNING on AST-0157: Asset uses 3 non-canonical KPI(s).\", \"RULE-005 HIGH WARNING on AST-0268: Unendorsed high-reach asset AST-0268 (audience: 1199).\", \"RULE-005 HIGH WARNING on AST-0270: Unendorsed high-reach asset AST-0270 (audience: 1615).\", \"RULE-001 DIRECTIVE: Promoted asset AST-0157 ('Nubeqa Budget Mgmt') already serves this exact scope. Reuse must be prioritized before building new analytics.\"], \"applicable_rule_ids\": [\"RULE-001\", \"RULE-002\", \"RULE-003\", \"RULE-005\", \"RULE-006\", \"RULE-008\"], \"active_finding_ids\": [\"FND-RULE001-F8A6871DD345\", \"FND-RULE001-1171669A47DB\", \"FND-RULE001-EB2AE3EE281D\", \"FND-RULE001-719469BD9E8D\", \"FND-RULE002-A4A9CEA3EA51\", \"FND-RULE002-041FE027EEF6\", \"FND-RULE002-9D7F8E810EAB\", \"FND-RULE002-5CF87B52E010\", \"FND-RULE002-E42C6892AB53\", \"FND-RULE002-73ACC21A2176\", \"FND-RULE002-E4D813EB05F5\", \"FND-RULE002-11783578F355\", \"FND-RULE002-AFA6EBF301C6\", \"FND-RULE003-2DA8B175F755\", \"FND-RULE003-4DB9EFEF96B4\", \"FND-RULE003-27E5ED099AB0\", \"FND-RULE003-6248BB0063D7\", \"FND-RULE005-C2F1E6DB495D\", \"FND-RULE005-7C1D81E2E983\", \"FND-RULE005-0914F7E32EC7\", \"FND-RULE005-64F9B149B9CC\", \"FND-RULE006-CD53C4317188\", \"FND-RULE008-2D3CC8B9D98E\", \"FND-RULE008-165B198D40EA\", \"FND-RULE008-9FD4C97582D6\", \"FND-RULE008-63B76BE62EA8\"], \"human_approval_required\": true, \"evidence_references\": [{\"finding_id\": \"FND-RULE001-F8A6871DD345\", \"target_id\": \"AST-0157\", \"rule_id\": \"RULE-001\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE001-1171669A47DB\", \"target_id\": \"AST-0268\", \"rule_id\": \"RULE-001\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE001-EB2AE3EE281D\", \"target_id\": \"AST-0112\", \"rule_id\": \"RULE-001\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE001-719469BD9E8D\", \"target_id\": \"AST-0256\", \"rule_id\": \"RULE-001\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-A4A9CEA3EA51\", \"target_id\": \"AST-0239\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-041FE027EEF6\", \"target_id\": \"AST-0268\", \"rule_id\": \"RULE-002\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-9D7F8E810EAB\", \"target_id\": \"AST-0112\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-5CF87B52E010\", \"target_id\": \"AST-0256\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-E42C6892AB53\", \"target_id\": \"AST-0157\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-73ACC21A2176\", \"target_id\": \"AST-0237\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-E4D813EB05F5\", \"target_id\": \"AST-0132\", \"rule_id\": \"RULE-002\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-11783578F355\", \"target_id\": \"AST-0240\", \"rule_id\": \"RULE-002\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-AFA6EBF301C6\", \"target_id\": \"AST-0270\", \"rule_id\": \"RULE-002\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE003-2DA8B175F755\", \"target_id\": \"AST-0239\", \"rule_id\": \"RULE-003\", \"severity\": \"critical\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE003-4DB9EFEF96B4\", \"target_id\": \"AST-0268\", \"rule_id\": \"RULE-003\", \"severity\": \"critical\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE003-27E5ED099AB0\", \"target_id\": \"AST-0132\", \"rule_id\": \"RULE-003\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE003-6248BB0063D7\", \"target_id\": \"AST-0112\", \"rule_id\": \"RULE-003\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE005-C2F1E6DB495D\", \"target_id\": \"AST-0132\", \"rule_id\": \"RULE-005\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE005-7C1D81E2E983\", \"target_id\": \"AST-0240\", \"rule_id\": \"RULE-005\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE005-0914F7E32EC7\", \"target_id\": \"AST-0268\", \"rule_id\": \"RULE-005\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE005-64F9B149B9CC\", \"target_id\": \"AST-0270\", \"rule_id\": \"RULE-005\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE006-CD53C4317188\", \"target_id\": \"AST-0268\", \"rule_id\": \"RULE-006\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE008-2D3CC8B9D98E\", \"target_id\": \"AST-0157\", \"rule_id\": \"RULE-008\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE008-165B198D40EA\", \"target_id\": \"AST-0237\", \"rule_id\": \"RULE-008\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE008-9FD4C97582D6\", \"target_id\": \"AST-0239\", \"rule_id\": \"RULE-008\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE008-63B76BE62EA8\", \"target_id\": \"AST-0268\", \"rule_id\": \"RULE-008\", \"severity\": \"medium\", \"scope\": \"request\"}], \"request_finding_ids\": [\"FND-RULE001-F8A6871DD345\", \"FND-RULE001-1171669A47DB\", \"FND-RULE002-041FE027EEF6\", \"FND-RULE002-E42C6892AB53\", \"FND-RULE002-11783578F355\", \"FND-RULE002-AFA6EBF301C6\", \"FND-RULE003-4DB9EFEF96B4\", \"FND-RULE005-7C1D81E2E983\", \"FND-RULE005-0914F7E32EC7\", \"FND-RULE005-64F9B149B9CC\", \"FND-RULE006-CD53C4317188\", \"FND-RULE008-2D3CC8B9D98E\", \"FND-RULE008-63B76BE62EA8\"], \"out_of_scope_finding_ids\": [\"FND-RULE001-EB2AE3EE281D\", \"FND-RULE001-719469BD9E8D\", \"FND-RULE002-A4A9CEA3EA51\", \"FND-RULE002-9D7F8E810EAB\", \"FND-RULE002-5CF87B52E010\", \"FND-RULE002-73ACC21A2176\", \"FND-RULE002-E4D813EB05F5\", \"FND-RULE003-2DA8B175F755\", \"FND-RULE003-27E5ED099AB0\", \"FND-RULE003-6248BB0063D7\", \"FND-RULE005-C2F1E6DB495D\", \"FND-RULE008-165B198D40EA\", \"FND-RULE008-9FD4C97582D6\"], \"out_of_scope_warnings\": [\"RULE-002 on AST-0239, outside the requested scope: Asset uses 6 non-canonical KPI(s).\", \"RULE-002 on AST-0112, outside the requested scope: Asset uses 2 non-canonical KPI(s).\", \"RULE-002 on AST-0256, outside the requested scope: Asset uses 2 non-canonical KPI(s).\", \"RULE-002 on AST-0237, outside the requested scope: Asset uses 2 non-canonical KPI(s).\", \"RULE-003 on AST-0239, outside the requested scope: Missing accountable owner on asset AST-0239.\", \"RULE-003 on AST-0132, outside the requested scope: Assigned owner inactive on asset AST-0132.\", \"RULE-003 on AST-0112, outside the requested scope: Assigned owner inactive on asset AST-0112.\", \"RULE-008 on AST-0239, outside the requested scope: Unjustified retirement risk: AST-0239 has active usage.\"]}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:34:41.102547"
+  },
+  {
+   "trace_id": "TRC-500B77B8F57D",
+   "request_id": "REQ-20261107183437-A3DB0D",
+   "agent_name": "DecisionAgent",
+   "step_order": 6,
+   "status": "success",
+   "duration_ms": 2238.41,
+   "input_json": "{\"intent_confidence\": 0.85, \"exact_matches_count\": 4, \"has_duplicates\": true, \"governance_blockers_count\": 2}",
+   "output_json": "{\"decision\": \"INFORMATIONAL\", \"confidence\": 1.0, \"primary_recommendation\": \"Nubeqa net sales in Germany (DE) were \\u20ac237.10M in Jan\\u2013Oct 2026.\", \"rationale\": \"Business data question answered from Product_Market_Monthly (ANSWERED). No analytics asset action was requested, so none is recommended. 13 governance finding(s) on assets outside the requested scope are reported separately and aren't blockers for this request.\", \"target_asset_ids\": [], \"target_model_ids\": [], \"alternatives\": [], \"blockers\": [], \"warnings\": [], \"human_approval_required\": false, \"next_steps\": [], \"active_finding_ids\": [\"FND-RULE001-F8A6871DD345\", \"FND-RULE001-1171669A47DB\", \"FND-RULE001-EB2AE3EE281D\", \"FND-RULE001-719469BD9E8D\", \"FND-RULE002-A4A9CEA3EA51\", \"FND-RULE002-041FE027EEF6\", \"FND-RULE002-9D7F8E810EAB\", \"FND-RULE002-5CF87B52E010\", \"FND-RULE002-E42C6892AB53\", \"FND-RULE002-73ACC21A2176\", \"FND-RULE002-E4D813EB05F5\", \"FND-RULE002-11783578F355\", \"FND-RULE002-AFA6EBF301C6\", \"FND-RULE003-2DA8B175F755\", \"FND-RULE003-4DB9EFEF96B4\", \"FND-RULE003-27E5ED099AB0\", \"FND-RULE003-6248BB0063D7\", \"FND-RULE005-C2F1E6DB495D\", \"FND-RULE005-7C1D81E2E983\", \"FND-RULE005-0914F7E32EC7\", \"FND-RULE005-64F9B149B9CC\", \"FND-RULE006-CD53C4317188\", \"FND-RULE008-2D3CC8B9D98E\", \"FND-RULE008-165B198D40EA\", \"FND-RULE008-9FD4C97582D6\", \"FND-RULE008-63B76BE62EA8\"], \"out_of_scope_warnings\": [\"RULE-002 on AST-0239, outside the requested scope: Asset uses 6 non-canonical KPI(s).\", \"RULE-002 on AST-0112, outside the requested scope: Asset uses 2 non-canonical KPI(s).\", \"RULE-002 on AST-0256, outside the requested scope: Asset uses 2 non-canonical KPI(s).\", \"RULE-002 on AST-0237, outside the requested scope: Asset uses 2 non-canonical KPI(s).\", \"RULE-003 on AST-0239, outside the requested scope: Missing accountable owner on asset AST-0239.\", \"RULE-003 on AST-0132, outside the requested scope: Assigned owner inactive on asset AST-0132.\", \"RULE-003 on AST-0112, outside the requested scope: Assigned owner inactive on asset AST-0112.\", \"RULE-008 on AST-0239, outside the requested scope: Unjustified retirement risk: AST-0239 has active usage.\"], \"llm_narrative\": \"This decision provides factual data on Nubeqa net sales in Germany (\\u20ac237.10M for Jan\\u2013Oct 2026) based on the Product_Market_Monthly asset without requiring any action or human approval. No blockers exist for this request, and while 13 governance findings were reported on assets outside the requested scope, they do not impact this outcome. The decision is final and requires no further steps.\", \"action_status\": \"NOT_APPLICABLE\", \"ineligible_targets\": [], \"validation_notes\": [\"Final decision passed deterministic validation unchanged.\"]}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"LLM_ASSISTED\",\"provider\":\"ollama\",\"model\":\"qwen3.5:4b\",\"fallback_reason\":null,\"llm_calls\":[{\"provider\":\"ollama\",\"model\":\"qwen3.5:4b\",\"schema_name\":\"DecisionNarrative\",\"status\":\"success\",\"attempts\":1,\"duration_ms\":2182.51,\"prompt_tokens\":342,\"completion_tokens\":128,\"total_tokens\":470,\"model_load_ms\":3.79,\"processor\":\"gpu\",\"size_vram_bytes\":3364911840,\"size_bytes\":3364911840,\"error\":null}]}",
+   "executed_at": "2026-11-07T18:34:43.351354"
+  }
+ ],
+ "request_types": [
+  "DATA_QUESTION"
+ ],
+ "data_answer": {
+  "status": "ANSWERED",
+  "operation": "TOTAL",
+  "measure_field": "net_sales_m_eur_syn",
+  "measure_label": "Net sales",
+  "unit": "M EUR",
+  "aggregation": "sum of net_sales_m_eur_syn over matching product-market-month records",
+  "products": [
+   "Nubeqa"
+  ],
+  "markets": [
+   "DE"
+  ],
+  "period_start": "2026-01",
+  "period_end": "2026-10",
+  "headline": "Nubeqa net sales in Germany (DE) were €237.10M in Jan–Oct 2026.",
+  "figures": [
+   {
+    "label": "Total net sales, Jan–Oct 2026",
+    "value": 237.1,
+    "unit": "M EUR",
+    "detail": ""
+   }
+  ],
+  "series": [
+   {
+    "month": "2026-01",
+    "value": 19.66
+   },
+   {
+    "month": "2026-02",
+    "value": 25.67
+   },
+   {
+    "month": "2026-03",
+    "value": 14.19
+   },
+   {
+    "month": "2026-04",
+    "value": 26.83
+   },
+   {
+    "month": "2026-05",
+    "value": 26.34
+   },
+   {
+    "month": "2026-06",
+    "value": 15.38
+   },
+   {
+    "month": "2026-07",
+    "value": 13.54
+   },
+   {
+    "month": "2026-08",
+    "value": 37.03
+   },
+   {
+    "month": "2026-09",
+    "value": 44.5
+   },
+   {
+    "month": "2026-10",
+    "value": 13.96
+   }
+  ],
+  "comparison": "Across the 10 months, the highest was Sep 2026 at €44.50M.",
+  "coverage": {
+   "records_used": 10,
+   "records_expected": 10,
+   "months_covered": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09",
+    "2026-10"
+   ],
+   "months_missing_in_requested_range": [],
+   "null_values_excluded": 0,
+   "value_type_counts": {
+    "forecast_like_synthetic": 4,
+    "actual_like_synthetic": 6
+   },
+   "dataset_period": "Jan–Oct 2026"
+  },
+  "source": {
+   "table": "product_market_monthly",
+   "sheet": "Product_Market_Monthly",
+   "workbook": "data/source/Bayer_Pharmaceuticals_SinceAI_2026_FINAL_Builder_Data_Pack.xlsx",
+   "dataset_period": "Jan–Oct 2026",
+   "synthetic": true,
+   "fields": [
+    "net_sales_m_eur_syn"
+   ],
+   "filters": {
+    "product_id": [
+     "P-NUB"
+    ],
+    "market_id": [
+     "DE"
+    ],
+    "month": [
+     "2026-01",
+     "2026-02",
+     "2026-03",
+     "2026-04",
+     "2026-05",
+     "2026-06",
+     "2026-07",
+     "2026-08",
+     "2026-09",
+     "2026-10"
+    ]
+   }
+  },
+  "caveats": [
+   "No period was stated, so BIOS used the full dataset period, Jan–Oct 2026."
+  ],
+  "clarification": []
+ },
+ "governance_answer": null,
+ "migration_answer": null,
+ "presentation": {
+  "response_type": "DATA_ANSWER",
+  "recommended_action": "INFORMATIONAL",
+  "action_label": "Answer",
+  "action_status": "NOT_APPLICABLE",
+  "direct_answer": "Nubeqa net sales in Germany (DE) were €237.10M in Jan–Oct 2026. Across the 10 months, the highest was Sep 2026 at €44.50M.",
+  "why": [
+   "Total net sales, Jan–Oct 2026: €237.10M",
+   "Coverage: 10 of 10 expected product-market-month records; record labels actual_like_synthetic ×6, forecast_like_synthetic ×4.",
+   "Units: M EUR. Aggregation: sum of net_sales_m_eur_syn over matching product-market-month records.",
+   "Source: Product_Market_Monthly (synthetic SinceAI data, Jan–Oct 2026)."
+  ],
+  "matching_assets": [],
+  "next_steps": [],
+  "human_approval_required": false,
+  "approval_explanation": "No approval is needed: nothing is being changed.",
+  "confidence_explanation": "Computed directly from source records; no estimate involved.",
+  "governance": {
+   "blockers": [],
+   "warnings": [
+    {
+     "rule_id": "DATA",
+     "severity": "INFO",
+     "asset_id": null,
+     "kind": "WARNING",
+     "effect": "INFORMATIONAL",
+     "message": "No period was stated, so BIOS used the full dataset period, Jan–Oct 2026.",
+     "required_action": "",
+     "finding_ids": [],
+     "sources": [],
+     "affects_target": false
+    }
+   ],
+   "directives": [
+    {
+     "rule_id": "RULE-002",
+     "severity": "DIRECTIVE",
+     "asset_id": null,
+     "kind": "DIRECTIVE",
+     "effect": "INFORMATIONAL",
+     "message": "Use the approved canonical KPI(s) KPI-001 when reporting these figures.",
+     "required_action": "",
+     "finding_ids": [],
+     "sources": [],
+     "affects_target": false
+    }
+   ],
+   "backend_blocker_count": 0,
+   "backend_warning_count": 0,
+   "displayed_blocker_count": 0,
+   "displayed_warning_count": 1,
+   "displayed_directive_count": 1,
+   "out_of_scope_count": 13
+  }
+ }
+}

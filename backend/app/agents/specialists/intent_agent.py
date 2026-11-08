@@ -1,4 +1,5 @@
 import logging
+import re
 from typing import Optional
 
 from sqlalchemy.orm import Session
@@ -6,7 +7,10 @@ from sqlalchemy.orm import Session
 from backend.app.agents.entity_catalog import load_default_catalog, load_entity_catalog
 from backend.app.agents.intent_resolution import llm_prompt_vocabulary, normalize_intent, parse_intent
 from backend.app.agents.schemas import BusinessIntent, IntentExtraction
+from backend.app.agents.request_router import classify, find_title_topics, title_topic_vocabulary
 from backend.app.agents.specialists.llm_assisted import LLMAssistedAgent
+from backend.app.models.core import AnalyticsAssets
+from backend.app.models.domain import Products
 
 logger = logging.getLogger(__name__)
 
@@ -68,9 +72,33 @@ class IntentAgent(LLMAssistedAgent):
             ),
         )
         intent = normalize_intent(prompt, baseline, proposal, catalog)
+        intent = self._route(prompt, intent, db)
 
         logger.info(
             f"[{self.agent_name}] Extracted products={intent.products}, "
-            f"markets={intent.markets}, kpis={intent.kpis}, confidence={intent.confidence}"
+            f"markets={intent.markets}, kpis={intent.kpis}, confidence={intent.confidence}, "
+            f"request_types={[t.value for t in intent.request_types]}"
         )
         return intent
+
+    @staticmethod
+    def _route(prompt: str, intent: BusinessIntent, db: Optional[Session]) -> BusinessIntent:
+        """Deterministic request-type routing, added to the frozen intent. The LLM never affects it."""
+        route = classify(prompt)
+        topics: list = []
+        if db is not None:
+            names = [n for (n,) in db.query(AnalyticsAssets.asset_name).distinct().all()]
+            products = [n for (n,) in db.query(Products.product_name).all()] + ["All Pharma"]
+            topics = find_title_topics(prompt, title_topic_vocabulary(names, products))
+            # A topic made only of words the request already states as KPIs ("net sales", "growth")
+            # adds no title evidence; keep topics such as "budget mgmt" that are not metrics.
+            kpi_words = {w for k in intent.kpis for w in re.split(r"[\s-]+", k.lower())}
+            kpi_words |= {"sales", "net", "forecast", "variance", "growth", "revenue", "inventory", "units"}
+            topics = [t for t in topics if not set(re.split(r"[\s-]+", t)) <= kpi_words]
+        return intent.model_copy(update={
+            "request_types": route.request_types,
+            "request_type_evidence": route.evidence,
+            "asset_ids_mentioned": route.asset_ids,
+            "duplication_question": route.duplication_question,
+            "title_topics": topics,
+        })

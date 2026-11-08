@@ -1,0 +1,175 @@
+{
+  "qa_manifest_version": "1.0.0",
+  "evaluation_timestamp": "2026-11-07T09:32:00Z",
+  "project_name": "BIOS — Business Intelligence Optimization System",
+  "challenge": "SinceAI Hackathon 2026 — Bayer Challenge",
+  "baseline": {
+    "git_commit": "99c8fd01632e4e4a0cc1646f9d7338a8d7e06aab",
+    "git_commit_message": "Complete BIOS foundation through Milestone 5.5.2",
+    "working_tree_clean_at_baseline": true,
+    "source_dataset_filename": "Bayer_Pharmaceuticals_SinceAI_2026_FINAL_Builder_Data_Pack.xlsx",
+    "source_dataset_sha256": "7d01877096c640d7705c0507cfc32840dd88a99fe546d975a715f73b40f101ab",
+    "dataset_synthetic_notice": "Entirely synthetic dataset created by SinceAI, not Bayer internal operational data."
+  },
+  "environment": {
+    "os": "Windows 11 (win32)",
+    "python_version": "3.14.8",
+    "pytest_version": "9.2.0",
+    "database": {
+      "default_engine": "SQLite 3",
+      "path": "data/bios.db",
+      "production_supported": "PostgreSQL 15+ (pgvector)"
+    },
+    "alembic_head_revision": "b4f1c2d7e8a9",
+    "ai_provider": {
+      "configured_provider": "ollama",
+      "model_identifier": "qwen3.5:4b",
+      "paid_api_dependencies": false,
+      "claude_gemini_adapters_status": "standby_adapters_not_live"
+    },
+    "powerbi_desktop_tooling": {
+      "executable_found": false,
+      "pbi_desktop_path": null,
+      "desktop_verification_mode": "UNVERIFIED (PBIDesktop.exe not found on host)"
+    }
+  },
+  "test_execution": {
+    "test_command": "backend\\.venv\\Scripts\\python.exe -m pytest backend/tests",
+    "total_collected": 398,
+    "passed": 384,
+    "skipped": 14,
+    "failed": 0,
+    "errors": 0,
+    "execution_duration_seconds": 24.34,
+    "skipped_tests_explanation": "14 tests in backend/tests/test_ollama_live.py skipped automatically when local Ollama background service is not running."
+  },
+  "governance_benchmarks": {
+    "rule_001_reuse": {
+      "gate_enforced": true,
+      "discovery_logging": "persisted_and_inspectable",
+      "conformance_pct": 100.0
+    },
+    "rule_002_kpi": {
+      "violating_asset_kpi_map_rows": 960,
+      "affected_assets": 349,
+      "primary_role_violations": 496,
+      "predicate_verification": "exact_match"
+    },
+    "rule_003_owner": {
+      "predicate_a_missing_owner_assets": 21,
+      "predicate_a_signal_equality": true,
+      "predicate_a_data_quality_equality": true,
+      "predicate_b_empty_or_inactive_owner_assets": 86,
+      "inactive_owners_count": 13,
+      "assets_with_inactive_owners": 65
+    },
+    "rule_004_lineage": {
+      "lineage_edges_count": 438,
+      "exact_edge_set_equality": true,
+      "unresolved_nodes_count": 0,
+      "governance_findings_count": 16
+    },
+    "rule_005_high_reach": {
+      "current_implementation": {
+        "audience_threshold_high": 500,
+        "audience_threshold_self_service": 250,
+        "total_findings": 180,
+        "branch_1_unendorsed_high_reach": 171,
+        "branch_2_unreviewed_self_service": 9
+      },
+      "reference_signals_count": 152,
+      "alternative_a": {
+        "threshold_interval": "(775, 814]",
+        "total_findings": 152,
+        "exact_set_equality_with_signals": true,
+        "description": "Reproduces exactly the 152 HIGH_REACH_UNENDORSED reference signals."
+      },
+      "alternative_b": {
+        "threshold": 1000,
+        "total_findings": 132,
+        "difference_from_reference_signals": 20,
+        "description": "Enterprise tier-1 threshold for high-consequence reports."
+      },
+      "control_cases": {
+        "AST-0001": {
+          "audience": 1569,
+          "endorsement": "promoted",
+          "flagged": false
+        },
+        "AST-0003": {
+          "audience": 1359,
+          "endorsement": "none",
+          "flagged": true
+        }
+      }
+    },
+    "rule_006_migration_waste": {
+      "migration_backlog_entries": 94,
+      "retire_recommendations": 22,
+      "consolidate_recommendations": 12,
+      "non_1_to_1_migration_candidates": 34
+    },
+    "rule_007_ai_readiness": {
+      "total_models": 75,
+      "genuine_issue_pattern_models": 48,
+      "poor_names": 17,
+      "ambiguous_dates": 16,
+      "implicit_measures": 15,
+      "poor_or_partial_readiness_models": 45,
+      "union_models_count": 64
+    },
+    "rule_008_explainability": {
+      "evidence_bundle_completeness_pct": 100.0,
+      "unsupported_citations_count": 0
+    }
+  },
+  "duplication_gates": {
+    "layers_used": [
+      "scope_compatibility",
+      "canonical_group_jaccard",
+      "exact_kpi_jaccard",
+      "structural_lineage"
+    ],
+    "known_pairs_evaluated": {
+      "AST-0135_AST-0330": {
+        "scope_compatible": true,
+        "canonical_group_jaccard": 0.75,
+        "exact_kpi_jaccard": 0.0,
+        "recommendation": "SURFACE_FOR_CONSOLIDATION_REVIEW",
+        "conformance": "100%"
+      },
+      "AST-0193_AST-0197": {
+        "scope_compatible": false,
+        "same_model": true,
+        "exact_kpi_jaccard": 0.50,
+        "recommendation": "REJECT_CONSOLIDATION_SCOPE_MISMATCH",
+        "conformance": "100%"
+      },
+      "AST-0001_AST-0166": {
+        "scope_compatible": true,
+        "exact_kpi_jaccard": 0.0,
+        "canonical_group_jaccard": 0.0,
+        "recommendation": "ROUTE_TO_RULE_002_METRIC_DRIFT",
+        "conformance": "100%"
+      }
+    }
+  },
+  "powerbi_validation_ladder": {
+    "G0_generation": "PASS",
+    "G1_per_file": "PASS",
+    "G2_cross_reference": "PASS",
+    "G3_serializer_syntax": "PASS",
+    "G4_desktop_acceptance": "UNVERIFIED (PBIDesktop.exe not found on host)"
+  },
+  "security_evaluation": {
+    "must_block_scenarios_tested": 10,
+    "must_block_passed": 10,
+    "must_allow_controls_tested": 2,
+    "must_allow_passed": 2,
+    "prompt_injection_resistance": "PASS (deterministic gates strictly enforced)",
+    "anti_self_approval": "PASS",
+    "ai_agent_approval_ban": "PASS"
+  },
+  "readiness_classification": "READY WITH LIMITATIONS"
+}
+

@@ -16,7 +16,7 @@ Modular monolith. Keep explicit module boundaries; do not split into microservic
 Request → structured intent → discovery → evidence bundle → deterministic governance → lifecycle recommendation → (if justified) DashboardSpec → validation → human approval → Power BI export/publish path → asset registry → verification.
 
 ## Deployment
-Local Windows development; cloud-ready configuration. PostgreSQL locally or managed dev instance. n8n is an external workflow integration, not the business-rules engine. Arduino is optional.
+Local Windows development; cloud-ready configuration. PostgreSQL locally or managed dev instance. n8n is an optional external workflow integration, not the business-rules engine. Purely software-based enterprise platform (hardware/Arduino integrations removed in Milestone 5.7.2).
 
 ## Failure boundaries
-LLM unavailable: retain deterministic discovery/governance and manual path where possible. n8n unavailable: core app continues. Arduino unavailable: no core impact. Power BI unavailable: retain validated preview/export-pending state; never claim publication succeeded.
+LLM unavailable: retain deterministic discovery/governance and manual path where possible. n8n unavailable: core app continues. Power BI unavailable: retain validated preview/export-pending state; never claim publication succeeded.

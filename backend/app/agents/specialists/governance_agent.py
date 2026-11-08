@@ -115,10 +115,12 @@ class GovernanceAgent:
         # 3. Check Reuse Before Build (RULE-001)
         applicable_rules.add("RULE-001")
         if discovery.exact_matches:
-            top_exact = discovery.exact_matches[0]
+            endorsed = [a for a in discovery.exact_matches if a.endorsement in ("certified", "promoted")]
+            endorsed.sort(key=lambda a: 0 if a.endorsement == "certified" else 1)  # stable: keeps discovery order within a level
+            top_exact = endorsed[0] if endorsed else discovery.exact_matches[0]
             if top_exact.endorsement in ("certified", "promoted"):
                 warnings.append(
-                    f"RULE-001 DIRECTIVE: Certified asset {top_exact.asset_id} ('{top_exact.asset_name}') "
+                    f"RULE-001 DIRECTIVE: {top_exact.endorsement.capitalize()} asset {top_exact.asset_id} ('{top_exact.asset_name}') "
                     "already serves this exact scope. Reuse must be prioritized before building new analytics."
                 )
 

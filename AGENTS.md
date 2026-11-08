@@ -12,6 +12,6 @@ Read README.md and relevant docs before implementation. This repository and docs
    Exception: `data/source/Bayer_Pharmaceuticals_SinceAI_2026_FINAL_Builder_Data_Pack.xlsx` is the synthetic SinceAI hackathon dataset, explicitly approved for public repository inclusion by the challenge representative. No other files in `data/source/` are permitted.
 8. Human approval is required for consequential lifecycle actions.
 9. Do not claim Power BI publication succeeded until validated in target tooling.
-10. Arduino and n8n are optional integrations, never core dependencies.
+10. BIOS is an exclusively software-based enterprise platform (hardware/Arduino integrations are completely removed from project scope); n8n workflow integration remains optional, never a core dependency.
 11. Add tests and update docs for behaviour changes.
 12. Do not overwrite another agent's uncommitted work.

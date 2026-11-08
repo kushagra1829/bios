@@ -74,6 +74,13 @@ GENERIC_KPI_WORDS = {
     "digital", "management", "local", "adjusted", "legacy", "metric", "metrics", "total", "overall", "data",
 }
 
+ADVERSARIAL_OVERRIDE_PATTERNS = [
+    (r"\b(?:ignore\s+(?:all\s+)?(?:previous|prior\s+)?(?:instructions?|governance|rules|guardrails?))\b", "Prompt injection attempt: user instructs to ignore system instructions or governance rules."),
+    (r"\b(?:override\s+governance|bypass\s+rule(?:s)?|disregard\s+governance|system\s+override)\b", "Governance override attempt: user instructs to bypass corporate governance guardrails."),
+    (r"\b(?:always\s+build\s+new|force\s+build\s+new|do\s+not\s+check\s+(?:for\s+)?duplicates?|say\s+the\s+decision\s+is\s+build_new)\b", "Bypass attempt: user instructs to force BUILD_NEW or disable duplication detection."),
+    (r"\b(?:disable\s+guardrails?|skip\s+approvals?|no\s+blockers|no\s+human\s+approval\s+needed|grant\s+auto-?approval)\b", "Authorization bypass attempt: user instructs to skip approval requirements."),
+]
+
 
 @dataclass
 class ParsedIntent:
@@ -500,8 +507,27 @@ def parse_intent(prompt: str, catalog: EntityCatalog) -> ParsedIntent:
     kpis = _find_kpis(prompt, catalog)
     dimensions = _unique([label for pattern, label in DIMENSION_PATTERNS if re.search(pattern, prompt, re.IGNORECASE)])
     time_periods = _find_time_periods(prompt)
-    ambiguities = product_ambiguities + market_ambiguities
+
+    # Check for adversarial governance override attempts
+    security_ambiguities: List[EntityAmbiguity] = []
+    for pattern, reason in ADVERSARIAL_OVERRIDE_PATTERNS:
+        match = re.search(pattern, prompt, re.IGNORECASE)
+        if match:
+            security_ambiguities.append(
+                EntityAmbiguity(
+                    category="security_override_attempt",
+                    term=match.group(),
+                    candidates=[],
+                    reason=reason,
+                )
+            )
+
+    ambiguities = product_ambiguities + market_ambiguities + security_ambiguities
     missing, confidence = assess_completeness(products, markets, kpis, time_periods, ambiguities)
+
+    if security_ambiguities:
+        missing.append("Prompt contains governance override instruction which is strictly prohibited. Standard governance rules apply.")
+        confidence = min(confidence, 0.40)
 
     purpose = f"Analytics request for {', '.join(products) or 'unspecified product'}"
     if markets:

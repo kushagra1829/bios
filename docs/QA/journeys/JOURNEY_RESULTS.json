@@ -1,0 +1,152 @@
+{
+ "run_at": "2026-11-07T18:10:48.609545+00:00",
+ "ui": "http://127.0.0.1:3001",
+ "journeys": [
+  {
+   "journey": "J1",
+   "title": "Business sales question returns verified numbers",
+   "prompt": "What were Nubeqa sales in Germany in Q1 2026?",
+   "request_id": "REQ-20261107181041-6E85DF",
+   "decision": "INFORMATIONAL",
+   "action_status": "NOT_APPLICABLE",
+   "direct_answer": "Nubeqa net sales in Germany (DE) were €59.52M in Jan–Mar 2026. Across the 3 months, the highest was Feb 2026 at €25.67M.",
+   "checks": {
+    "routed_as_data_question": true,
+    "not_an_asset_action": true,
+    "value_matches_workbook (59.52)": true,
+    "unit_M_EUR": true,
+    "records_used_3": true,
+    "ui_rendered_backend_answer": true,
+    "http_201": true
+   },
+   "passed": true,
+   "screenshots": [
+    "J1_answer.png",
+    "J1_reasoning.png"
+   ],
+   "api_response": "J1_api_response.json"
+  },
+  {
+   "journey": "J2",
+   "title": "New dashboard request is answered with reuse",
+   "prompt": "Build a Kerendia sales scorecard for Finland.",
+   "request_id": "REQ-20261107181042-188D93",
+   "decision": "REUSE",
+   "action_status": "ACTIONABLE",
+   "direct_answer": "Reuse existing certified report AST-0292 ('Kerendia Gross-to-Net New').",
+   "checks": {
+    "decision_REUSE": true,
+    "target_exists": true,
+    "target_scope_Kerendia_FI": true,
+    "target_endorsed": true,
+    "target_owner_active": true,
+    "target_maps_KPI-001": true,
+    "not_BUILD_NEW": true,
+    "ui_rendered_backend_answer": true,
+    "http_201": true
+   },
+   "passed": true,
+   "screenshots": [
+    "J2_answer.png",
+    "J2_reasoning.png"
+   ],
+   "api_response": "J2_api_response.json"
+  },
+  {
+   "journey": "J3",
+   "title": "Dashboard request where duplicates exist gets evidence-backed consolidation",
+   "prompt": "I need a Hyrnuo net sales dashboard for the US, but we already have overlapping reports there.",
+   "request_id": "REQ-20261107181043-384E5C",
+   "decision": "CONSOLIDATE",
+   "action_status": "REQUIRES_APPROVAL",
+   "direct_answer": "Consolidate AST-0056 into AST-0147 ('Hyrnuo Launch Final') instead of building another asset.",
+   "checks": {
+    "decision_CONSOLIDATE": true,
+    "gate_pair_present": true,
+    "pair_same_scope_in_workbook": true,
+    "pair_shares_kpis": true,
+    "target_owned": true,
+    "approval_required": true,
+    "ui_rendered_backend_answer": true,
+    "http_201": true
+   },
+   "passed": true,
+   "screenshots": [
+    "J3_answer.png",
+    "J3_reasoning.png"
+   ],
+   "api_response": "J3_api_response.json"
+  },
+  {
+   "journey": "J4",
+   "title": "Modification of an unowned asset is blocked",
+   "prompt": "Add forecast variance to AST-0268.",
+   "request_id": "REQ-20261107181045-371439",
+   "decision": "MODIFY",
+   "action_status": "BLOCKED",
+   "direct_answer": "Modifying AST-0268 is blocked. AST-0268 has no accountable owner (RULE-003). It cannot be safely extended or modified until an owner is assigned and verified.",
+   "checks": {
+    "workbook_owner_empty": true,
+    "action_BLOCKED": true,
+    "no_actionable_target": true,
+    "RULE-003_blocker_shown": true,
+    "ui_rendered_backend_answer": true,
+    "http_201": true
+   },
+   "passed": true,
+   "screenshots": [
+    "J4_answer.png",
+    "J4_reasoning.png"
+   ],
+   "api_response": "J4_api_response.json"
+  },
+  {
+   "journey": "J5",
+   "title": "Governance question returns simplified findings at the end",
+   "prompt": "Why is AST-0268 blocked?",
+   "request_id": "REQ-20261107181046-2965F9",
+   "decision": "INFORMATIONAL",
+   "action_status": "NOT_APPLICABLE",
+   "direct_answer": "AST-0268 ('Nubeqa Budget Monthly') is blocked: Missing accountable owner on asset AST-0268 (RULE-003, critical).",
+   "checks": {
+    "routed_as_governance": true,
+    "answer_cites_RULE-003": true,
+    "workbook_owner_empty": true,
+    "findings_after_answer": true,
+    "deduplicated": true,
+    "ui_rendered_backend_answer": true,
+    "http_201": true
+   },
+   "passed": true,
+   "screenshots": [
+    "J5_answer.png",
+    "J5_reasoning.png"
+   ],
+   "api_response": "J5_api_response.json"
+  },
+  {
+   "journey": "J6",
+   "title": "No suitable asset: BUILD_NEW only after discovery and governance",
+   "prompt": "New monthly Certified Asset Share dashboard for Japan",
+   "request_id": "REQ-20261107181047-437935",
+   "decision": "BUILD_NEW",
+   "action_status": "REQUIRES_APPROVAL",
+   "direct_answer": "Build new governed analytics asset on shared semantic model.",
+   "checks": {
+    "decision_BUILD_NEW": true,
+    "discovery_searched_all_360": true,
+    "no_exact_or_partial_candidates": true,
+    "governance_agent_ran": true,
+    "approval_required": true,
+    "ui_rendered_backend_answer": true,
+    "http_201": true
+   },
+   "passed": true,
+   "screenshots": [
+    "J6_answer.png",
+    "J6_reasoning.png"
+   ],
+   "api_response": "J6_api_response.json"
+  }
+ ]
+}

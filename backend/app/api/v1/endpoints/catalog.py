@@ -32,6 +32,8 @@ from backend.app.schemas.catalog import (
     GovernanceSignalOut,
     MigrationBacklogOut,
 )
+from backend.app.auth.dependencies import get_current_user
+from backend.app.auth.schemas import UserRole, UserContext
 
 router = APIRouter()
 
@@ -49,15 +51,35 @@ def paginate(query, page: int, page_size: int, db: Session):
 @router.get("/assets", response_model=PaginatedResponse[AnalyticsAssetOut])
 def list_assets(
     page: int = Query(1, ge=1),
-    page_size: int = Query(50, ge=1, le=200),
+    page_size: int = Query(50, ge=1, le=1000),
+    limit: Optional[int] = Query(None, description="Alias for page_size"),
+    skip: Optional[int] = Query(None, description="Alias for offset"),
+    search: Optional[str] = Query(None, description="Search across ID, name, product, market, owner"),
     platform: Optional[str] = None,
     lifecycle_status: Optional[str] = None,
     endorsement: Optional[str] = None,
     product_scope: Optional[str] = None,
+    owner_id: Optional[str] = None,
     unowned_only: bool = False,
+    scoped: bool = False,
     db: Session = Depends(get_db),
+    user: UserContext = Depends(get_current_user),
 ):
+    eff_page_size = limit if limit is not None else page_size
+    eff_page = page
+    if skip is not None and eff_page_size > 0:
+        eff_page = (skip // eff_page_size) + 1
+
     query = select(AnalyticsAssets)
+    if search:
+        s = f"%{search.strip()}%"
+        query = query.where(
+            (AnalyticsAssets.asset_id.ilike(s))
+            | (AnalyticsAssets.asset_name.ilike(s))
+            | (AnalyticsAssets.product_scope.ilike(s))
+            | (AnalyticsAssets.market_scope.ilike(s))
+            | (AnalyticsAssets.owner_id.ilike(s))
+        )
     if platform:
         query = query.where(AnalyticsAssets.platform == platform)
     if lifecycle_status:
@@ -68,10 +90,30 @@ def list_assets(
         query = query.where(AnalyticsAssets.product_scope == product_scope)
     if unowned_only:
         query = query.where(AnalyticsAssets.owner_id == None)
+    if owner_id:
+        target_owner = user.actor_id if owner_id.lower() == "me" else owner_id
+        query = query.where(AnalyticsAssets.owner_id == target_owner)
+    elif scoped:
+        if user.role == UserRole.ASSET_OWNER and user.assigned_asset_ids:
+            query = query.where(AnalyticsAssets.asset_id.in_(user.assigned_asset_ids))
+        elif user.role == UserRole.DOMAIN_STEWARD and user.assigned_domains:
+            query = query.where(
+                (AnalyticsAssets.market_scope.in_(user.assigned_domains))
+                | (AnalyticsAssets.product_scope.in_(user.assigned_domains))
+            )
 
     query = query.order_by(AnalyticsAssets.asset_id)
-    items, meta = paginate(query, page, page_size, db)
-    return PaginatedResponse[AnalyticsAssetOut](items=items, meta=meta)
+    items, meta = paginate(query, eff_page, eff_page_size, db)
+
+    # Populate owner_name if available
+    enriched_items = []
+    for item in items:
+        out = AnalyticsAssetOut.model_validate(item)
+        if hasattr(item, "owner") and item.owner:
+            out.owner_name = item.owner.owner_name
+        enriched_items.append(out)
+
+    return PaginatedResponse[AnalyticsAssetOut](items=enriched_items, meta=meta)
 
 
 @router.get("/assets/{asset_id}", response_model=AnalyticsAssetDetailOut)

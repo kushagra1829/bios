@@ -64,6 +64,14 @@ class ApprovalRoutingEngine:
                 return UserRole.BI_GOVERNANCE_REVIEWER
             return UserRole.ASSET_OWNER
 
+        # 7. Asset Reuse and Modification
+        if action_type in (ApprovalActionType.REUSE, ApprovalActionType.MODIFY):
+            return UserRole.ASSET_OWNER
+
+        # 8. New Asset Provisioning
+        if action_type == ApprovalActionType.BUILD_NEW:
+            return UserRole.DOMAIN_STEWARD
+
         # Default fallback
         return UserRole.BI_GOVERNANCE_REVIEWER
 

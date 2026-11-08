@@ -1,5 +1,5 @@
 import logging
-from typing import Dict, List, Set
+from typing import Dict, List, Set, Optional, Any
 from backend.app.approvals.schemas import UserRole, ApprovalActionType
 
 logger = logging.getLogger(__name__)
@@ -21,16 +21,23 @@ class RolePermissionManager:
             ApprovalActionType.GOVERNANCE_EXCEPTION,
             ApprovalActionType.CHANGE_MODEL,
             ApprovalActionType.CHANGE_KPI,
+            ApprovalActionType.REUSE,
+            ApprovalActionType.MODIFY,
+            ApprovalActionType.BUILD_NEW,
         },
         UserRole.DOMAIN_STEWARD: {
             ApprovalActionType.CHANGE_MODEL,
             ApprovalActionType.CHANGE_KPI,
             ApprovalActionType.MIGRATE,
             ApprovalActionType.CONSOLIDATE,
+            ApprovalActionType.BUILD_NEW,
+            ApprovalActionType.MODIFY,
         },
         UserRole.ASSET_OWNER: {
             ApprovalActionType.CONSOLIDATE,
             ApprovalActionType.PUBLISH_ARTIFACT,
+            ApprovalActionType.REUSE,
+            ApprovalActionType.MODIFY,
         },
         UserRole.BIOS_ADMIN: {
             # Admins manage system config and lifecycle review queues, but cannot unilaterally
@@ -49,6 +56,7 @@ class RolePermissionManager:
         required_role: UserRole,
         action_type: ApprovalActionType,
         requester_id: str,
+        db: Optional[Any] = None,
     ) -> tuple[bool, str]:
         """
         Validate whether the given actor can authorize or reject an approval request.
@@ -62,7 +70,18 @@ class RolePermissionManager:
         if "agent" in actor_id.lower() or "bot" in actor_id.lower() or "ai" in actor_id.lower():
             return False, f"AI Agent authorization prohibited: Actor '{actor_id}' cannot authorize approval requests."
 
-        # 3. Exact Role Match or Higher Authority
+        # 3. Live Inactive-Owner Verification (N4 Control)
+        if actor_role == UserRole.ASSET_OWNER and db is not None:
+            from backend.app.models.core import Owners
+            owner = db.query(Owners).filter(
+                (Owners.owner_id == actor_id) | (Owners.owner_name == actor_id) | (Owners.email == actor_id)
+            ).first()
+            if not owner:
+                return False, f"Missing or invalid owner record: Actor '{actor_id}' is not a recognized asset owner."
+            if owner.status != "active":
+                return False, f"Inactive owner authorization prohibited: Owner '{owner.owner_id}' ({owner.owner_name}) has status '{owner.status}'."
+
+        # 4. Exact Role Match or Higher Authority
         if actor_role == required_role:
             return True, "Role matches required authorization level."
 

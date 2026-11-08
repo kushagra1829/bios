@@ -20,8 +20,12 @@ from backend.app.models.lifecycle import (
     MigrationAssessments,
 )
 from backend.app.models.core import AnalyticsAssets
+from backend.app.auth.dependencies import require_role
+from backend.app.auth.schemas import UserRole
 
-router = APIRouter()
+router = APIRouter(
+    dependencies=[Depends(require_role(UserRole.ASSET_OWNER, UserRole.DOMAIN_STEWARD, UserRole.BI_GOVERNANCE_REVIEWER, UserRole.BIOS_ADMIN))]
+)
 
 
 @router.post("/evaluate", response_model=LifecycleEvaluationRunSummary, status_code=status.HTTP_200_OK)

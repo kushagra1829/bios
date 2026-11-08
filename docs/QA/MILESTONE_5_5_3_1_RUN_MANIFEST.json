@@ -1,0 +1,108 @@
+{
+  "manifest_version": "5.5.3.1",
+  "audit_type": "QA Evidence Reconciliation & Consistency Audit",
+  "timestamp": "2026-11-07T09:58:00Z",
+  "project_name": "BIOS — Business Intelligence Optimization System",
+  "challenge": "SinceAI Hackathon 2026 — Bayer Challenge",
+  "baseline": {
+    "git_commit": "99c8fd01632e4e4a0cc1646f9d7338a8d7e06aab",
+    "git_commit_message": "Complete BIOS foundation through Milestone 5.5.2",
+    "working_tree_clean": true,
+    "source_dataset_filename": "Bayer_Pharmaceuticals_SinceAI_2026_FINAL_Builder_Data_Pack.xlsx",
+    "source_dataset_sha256": "7d01877096c640d7705c0507cfc32840dd88a99fe546d975a715f73b40f101ab",
+    "alembic_head": "b4f1c2d7e8a9",
+    "sqlite_database_path": "data/bios.db"
+  },
+  "test_execution_audit": {
+    "test_command": "backend\\.venv\\Scripts\\python.exe -m pytest backend/tests",
+    "total_collected": 398,
+    "total_passed": 384,
+    "total_skipped": 14,
+    "total_failed": 0,
+    "execution_duration_seconds": 24.34,
+    "skipped_explanation": "14 tests in backend/tests/test_ollama_live.py skipped automatically when local Ollama background service is not running."
+  },
+  "reconciliation_findings": {
+    "nubeqa_asset_reconciliation": {
+      "status": "RECONCILED_INTENT_SENSITIVE",
+      "prompt_a_sales_variance_target": "AST-0112",
+      "prompt_a_decision": "MODIFY",
+      "prompt_b_market_access_target": "AST-0065",
+      "prompt_b_decision": "CONSOLIDATE",
+      "prompt_c_us_market_share_target": "AST-0090",
+      "prompt_c_decision": "REUSE",
+      "empirical_reproducibility": "100% identical across 3 consecutive runs per prompt",
+      "conclusion": "Not a regression; distinct prompts address different KPI and market scopes."
+    },
+    "governance_benchmarks_reconciliation": {
+      "tier_a_structural_correctness": {
+        "status": "VERIFIED_MECHANICALLY",
+        "rule_002_violating_rows": 960,
+        "rule_002_affected_assets": 349,
+        "rule_002_primary_violations": 496,
+        "rule_003_empty_owners": 21,
+        "rule_003_inactive_owners": 65,
+        "rule_003_total_flagged": 86,
+        "rule_004_lineage_edges": 438,
+        "rule_004_findings": 16,
+        "rule_006_migration_backlog_total": 94,
+        "rule_006_non_one_to_one_waste": 34,
+        "rule_007_ai_ready_issues_total": 48,
+        "rule_007_poor_partial_readiness": 45,
+        "rule_007_union_models": 64,
+        "rule_008_evidence_completeness_pct": 100.0
+      },
+      "tier_b_pack_signal_agreement": {
+        "status": "RECONCILED_POLICY_DISCRETION",
+        "rule_005_current_thresholds": "500 standard / 250 self-service",
+        "rule_005_current_findings": 180,
+        "rule_005_workbook_signals": 152,
+        "rule_005_alternative_a_threshold": 780,
+        "rule_005_alternative_a_findings": 152,
+        "rule_005_alternative_b_threshold": 1000,
+        "rule_005_alternative_b_findings": 132,
+        "note": "Current policy of 500 represents conservative governance; agreement with synthetic telemetry is not a substitute for enterprise policy discretion."
+      },
+      "tier_c_human_adjudicated_correctness": {
+        "status": "UNADJUDICATED_BY_REAL_HUMANS",
+        "enterprise_human_reviews_conducted": 0,
+        "evaluation_mechanism": "Simulated personas and deterministic benchmark suites"
+      }
+    },
+    "ollama_latency_reconciliation": {
+      "deterministic_graph_p50_ms": 38,
+      "deterministic_graph_p95_ms": 55,
+      "single_step_warm_token_p50_ms": 640,
+      "single_step_warm_token_p95_ms": 1120,
+      "cold_start_spin_up_ms": 2850,
+      "cumulative_3_step_llm_flow_seconds": "6.2s - 6.8s",
+      "boundary_clarification": "The 640ms measurement reflects single-step warm token generation; cumulative multi-agent pipeline requires 6-7s on local consumer hardware."
+    },
+    "security_controls_audit": {
+      "total_controls_audited": 12,
+      "implemented_and_tested": 10,
+      "partially_implemented": 2,
+      "tested_only_through_mocks": 0,
+      "not_implemented": 0,
+      "not_verified": 0,
+      "partially_implemented_controls": [
+        "N4 (Inactive owner live DB check deferred to IAM layer)",
+        "N5 (Automated expiration TTL job not yet scheduled)"
+      ]
+    },
+    "powerbi_ladder_audit": {
+      "g0_generation": "PASS",
+      "g1_per_file_schema": "PASS",
+      "g2_cross_reference_integrity": "PASS",
+      "g3_serializer_semantic_integrity": "PASS",
+      "g4_desktop_smoke_verification": "UNVERIFIED (PBIDesktop.exe not found on test host)",
+      "overall_ladder_status": "VALID_WITH_UNVERIFIED_DESKTOP"
+    }
+  },
+  "overall_audit_classification": "READY WITH LIMITATIONS",
+  "auditor_sign_off": {
+    "role": "Senior Independent QA Auditor & Enterprise BI Governance Architect",
+    "decision": "Approved for Project Owner Review"
+  }
+}
+

@@ -1,0 +1,1543 @@
+{
+ "request_id": "REQ-20261107181042-188D93",
+ "raw_prompt": "Build a Kerendia sales scorecard for Finland.",
+ "status": "completed",
+ "intent": {
+  "raw_prompt": "Build a Kerendia sales scorecard for Finland.",
+  "products": [
+   "Kerendia"
+  ],
+  "markets": [
+   "FI"
+  ],
+  "kpis": [
+   "sales"
+  ],
+  "dimensions": [],
+  "time_periods": [],
+  "business_purpose": "Analytics request for Kerendia across FI covering sales",
+  "missing_or_ambiguous": [
+   "Time horizon or refresh frequency is unspecified (e.g. monthly, YTD)."
+  ],
+  "confidence": 0.85,
+  "ambiguities": [],
+  "interpretation_notes": [],
+  "unresolved_terms": [],
+  "resolution": {
+   "original_request": "Build a Kerendia sales scorecard for Finland.",
+   "deterministic_intent": {
+    "products": [
+     "Kerendia"
+    ],
+    "markets": [
+     "FI"
+    ],
+    "kpis": [
+     "sales"
+    ],
+    "dimensions": [],
+    "time_periods": [],
+    "business_purpose": "Analytics request for Kerendia across FI covering sales",
+    "missing_or_ambiguous": [
+     "Time horizon or refresh frequency is unspecified (e.g. monthly, YTD)."
+    ],
+    "confidence": 0.85
+   },
+   "llm_proposal": null,
+   "accepted": [],
+   "confirmed": [],
+   "rejected": []
+  },
+  "geography": {
+   "status": "RESOLVED",
+   "phrases": [
+    {
+     "original_phrase": "Finland",
+     "normalized_scope": "FI",
+     "resolved_market_ids": [
+      "FI"
+     ],
+     "suggested_market_ids": [],
+     "catalog_evidence": [],
+     "external_context": [],
+     "status": "RESOLVED",
+     "explanation": "'Finland' matches catalog scope 'FI'."
+    }
+   ],
+   "resolved_market_ids": [
+    "FI"
+   ],
+   "unresolved_geography": [],
+   "explanation": "All requested geography matched catalog records."
+  },
+  "request_types": [
+   "ASSET_REQUEST"
+  ],
+  "request_type_evidence": [
+   "Imperative build request: 'Build'."
+  ],
+  "asset_ids_mentioned": [],
+  "duplication_question": false,
+  "title_topics": []
+ },
+ "recommendation": {
+  "decision": "REUSE",
+  "confidence": 0.92,
+  "primary_recommendation": "Reuse existing certified report AST-0292 ('Kerendia Gross-to-Net New').",
+  "rationale": "Existing certified asset AST-0292 ('Kerendia Gross-to-Net New') already covers Kerendia in FI (endorsement: 'certified'). It supports 1 of the requested canonical KPIs [Lifecycle Engine: REVIEW, health score: 55.0]. In accordance with RULE-001 (Reuse before build), business users must be directed to this certified report rather than creating redundant analytics. 10 governance finding(s) on assets outside the requested scope are reported separately and aren't blockers for this request.",
+  "target_asset_ids": [
+   "AST-0292"
+  ],
+  "target_model_ids": [
+   "SM-002"
+  ],
+  "alternatives": [
+   {
+    "action": "MODIFY",
+    "target_id": "AST-0292",
+    "pros": "Enhances an existing certified asset without creating new content.",
+    "cons": "Requires minor report change management and testing."
+   },
+   {
+    "action": "BUILD_NEW",
+    "target_id": null,
+    "pros": "Complete customization for specific country request.",
+    "cons": "Violates RULE-001, increases BI estate sprawl and maintenance overhead."
+   }
+  ],
+  "blockers": [],
+  "warnings": [
+   "RULE-002 HIGH WARNING on AST-0292: Asset uses 1 non-canonical KPI(s).",
+   "RULE-001 DIRECTIVE: Certified asset AST-0292 ('Kerendia Gross-to-Net New') already serves this exact scope. Reuse must be prioritized before building new analytics."
+  ],
+  "human_approval_required": false,
+  "next_steps": [
+   "Provide user access to workspace containing AST-0292.",
+   "Verify user filters cover the desired country-level granularity."
+  ],
+  "active_finding_ids": [
+   "FND-RULE001-73D23AC3CE52",
+   "FND-RULE001-F91AE775A4BF",
+   "FND-RULE002-1F552A357EE1",
+   "FND-RULE002-A742AD92404F",
+   "FND-RULE002-C311BBF04097",
+   "FND-RULE002-0825BB2D9AF9",
+   "FND-RULE002-D210185FB979",
+   "FND-RULE002-DD20D08C8819",
+   "FND-RULE003-A307A9B69047",
+   "FND-RULE006-6C9B208CD1F4",
+   "FND-RULE008-C3CBB31A5FA6",
+   "FND-RULE008-1AB0A1BB9F3E"
+  ],
+  "out_of_scope_warnings": [
+   "RULE-002 on AST-0005, outside the requested scope: Asset uses 2 non-canonical KPI(s).",
+   "RULE-002 on AST-0022, outside the requested scope: Asset uses 3 non-canonical KPI(s).",
+   "RULE-002 on AST-0086, outside the requested scope: Asset uses 3 non-canonical KPI(s).",
+   "RULE-002 on AST-0011, outside the requested scope: Asset uses 2 non-canonical KPI(s).",
+   "RULE-002 on AST-0218, outside the requested scope: Asset uses 4 non-canonical KPI(s).",
+   "RULE-003 on AST-0011, outside the requested scope: Assigned owner inactive on asset AST-0011.",
+   "RULE-006 on AST-0005, outside the requested scope: Waste rationalisation: AST-0005 (RETIRE).",
+   "RULE-008 on AST-0086, outside the requested scope: Unjustified retirement risk: AST-0086 has active usage."
+  ],
+  "llm_narrative": null,
+  "action_status": "ACTIONABLE",
+  "ineligible_targets": []
+ },
+ "discovery": {
+  "exact_matches": [
+   {
+    "asset_id": "AST-0292",
+    "asset_name": "Kerendia Gross-to-Net New",
+    "match_tier": "EXACT",
+    "product_scope": "Kerendia",
+    "market_scope": "FI",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "match_score": 0.9,
+    "match_reasons": [
+     "Product scope matches 'Kerendia'",
+     "Market scope aligns with 'FI'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-002",
+    "model_name": "Market Access 02",
+    "model_endorsement": "none",
+    "owner_name": "Anna Novak",
+    "estimated_audience": 345,
+    "evidence": {
+     "asset_id": "AST-0292",
+     "workspace_id": "WS-006",
+     "model_id": "SM-002",
+     "product_scope": "Kerendia",
+     "market_scope": "FI",
+     "endorsement": "certified",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   }
+  ],
+  "partial_matches": [
+   {
+    "asset_id": "AST-0218",
+    "asset_name": "Kerendia Net Sales Final",
+    "match_tier": "PARTIAL",
+    "product_scope": "Kerendia",
+    "market_scope": "Global",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.8,
+    "match_reasons": [
+     "Product scope matches 'Kerendia'",
+     "Title keywords match requested concepts: sales",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-015",
+    "model_name": "Pharma Finance 15",
+    "model_endorsement": "promoted",
+    "owner_name": "Sofia Novak",
+    "estimated_audience": 1960,
+    "evidence": {
+     "asset_id": "AST-0218",
+     "workspace_id": "WS-003",
+     "model_id": "SM-015",
+     "product_scope": "Kerendia",
+     "market_scope": "Global",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0005",
+    "asset_name": "Kerendia Inventory Copy",
+    "match_tier": "PARTIAL",
+    "product_scope": "Kerendia",
+    "market_scope": "Global",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Kerendia'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-051",
+    "model_name": "Regional Commercial 51",
+    "model_endorsement": "promoted",
+    "owner_name": "Julia Brown",
+    "estimated_audience": 1210,
+    "evidence": {
+     "asset_id": "AST-0005",
+     "workspace_id": "WS-013",
+     "model_id": "SM-051",
+     "product_scope": "Kerendia",
+     "market_scope": "Global",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0011",
+    "asset_name": "Kerendia Supply Final",
+    "match_tier": "PARTIAL",
+    "product_scope": "Kerendia",
+    "market_scope": "DE",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Kerendia'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-004",
+    "model_name": "Launch Excellence 04",
+    "model_endorsement": "none",
+    "owner_name": "Felix Fischer",
+    "estimated_audience": 1504,
+    "evidence": {
+     "asset_id": "AST-0011",
+     "workspace_id": "WS-015",
+     "model_id": "SM-004",
+     "product_scope": "Kerendia",
+     "market_scope": "DE",
+     "endorsement": "certified",
+     "lifecycle_status": "active",
+     "owner_status": "inactive",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Assigned owner is 'inactive'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0022",
+    "asset_name": "All Pharma Net Sales Final",
+    "match_tier": "PARTIAL",
+    "product_scope": "All Pharma",
+    "market_scope": "FI",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Market scope aligns with 'FI'",
+     "Title keywords match requested concepts: sales",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-007",
+    "model_name": "Portfolio Performance 07",
+    "model_endorsement": "promoted",
+    "owner_name": "Nina Garcia",
+    "estimated_audience": 1479,
+    "evidence": {
+     "asset_id": "AST-0022",
+     "workspace_id": "WS-012",
+     "model_id": "SM-007",
+     "product_scope": "All Pharma",
+     "market_scope": "FI",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'All Pharma' does not match requested 'Kerendia'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0086",
+    "asset_name": "Kerendia Executive - EMEA",
+    "match_tier": "PARTIAL",
+    "product_scope": "Kerendia",
+    "market_scope": "UK",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Kerendia'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-043",
+    "model_name": "Executive Pharma 43",
+    "model_endorsement": "none",
+    "owner_name": "Nina Andersson",
+    "estimated_audience": 482,
+    "evidence": {
+     "asset_id": "AST-0086",
+     "workspace_id": "WS-005",
+     "model_id": "SM-043",
+     "product_scope": "Kerendia",
+     "market_scope": "UK",
+     "endorsement": "certified",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0096",
+    "asset_name": "Kerendia Forecast",
+    "match_tier": "PARTIAL",
+    "product_scope": "Kerendia",
+    "market_scope": "AU",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Kerendia'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-056",
+    "model_name": "Pharma Commercial Core 56",
+    "model_endorsement": "promoted",
+    "owner_name": "Mika Rossi",
+    "estimated_audience": 763,
+    "evidence": {
+     "asset_id": "AST-0096",
+     "workspace_id": "WS-014",
+     "model_id": "SM-056",
+     "product_scope": "Kerendia",
+     "market_scope": "AU",
+     "endorsement": "certified",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0121",
+    "asset_name": "Kerendia Inventory Monthly",
+    "match_tier": "PARTIAL",
+    "product_scope": "Kerendia",
+    "market_scope": "ES",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Kerendia'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-055",
+    "model_name": "Channel Performance 55",
+    "model_endorsement": "none",
+    "owner_name": null,
+    "estimated_audience": 1548,
+    "evidence": {
+     "asset_id": "AST-0121",
+     "workspace_id": "WS-003",
+     "model_id": "SM-055",
+     "product_scope": "Kerendia",
+     "market_scope": "ES",
+     "endorsement": "promoted",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "missing",
+     "missing_evidence": [
+      "No active owner assigned (RULE-004 accountability defect)"
+     ],
+     "negative_evidence": [
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0164",
+    "asset_name": "Kerendia Gross-to-Net New",
+    "match_tier": "PARTIAL",
+    "product_scope": "Kerendia",
+    "market_scope": "Global",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Kerendia'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-022",
+    "model_name": "Product Market Performance 22",
+    "model_endorsement": "none",
+    "owner_name": "Mika Weber",
+    "estimated_audience": 279,
+    "evidence": {
+     "asset_id": "AST-0164",
+     "workspace_id": "WS-003",
+     "model_id": "SM-022",
+     "product_scope": "Kerendia",
+     "market_scope": "Global",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0170",
+    "asset_name": "Kerendia Portfolio - Global",
+    "match_tier": "PARTIAL",
+    "product_scope": "Kerendia",
+    "market_scope": "ES",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Kerendia'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-028",
+    "model_name": "Channel Performance 28",
+    "model_endorsement": "none",
+    "owner_name": "Elias Schmidt",
+    "estimated_audience": 95,
+    "evidence": {
+     "asset_id": "AST-0170",
+     "workspace_id": "WS-009",
+     "model_id": "SM-028",
+     "product_scope": "Kerendia",
+     "market_scope": "ES",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0185",
+    "asset_name": "Kerendia Gross-to-Net Copy",
+    "match_tier": "PARTIAL",
+    "product_scope": "Kerendia",
+    "market_scope": "UK",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.6,
+    "match_reasons": [
+     "Product scope matches 'Kerendia'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-060",
+    "model_name": "Pharma Finance 60",
+    "model_endorsement": "certified",
+    "owner_name": "Sofia Fischer",
+    "estimated_audience": 1772,
+    "evidence": {
+     "asset_id": "AST-0185",
+     "workspace_id": "WS-003",
+     "model_id": "SM-060",
+     "product_scope": "Kerendia",
+     "market_scope": "UK",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   }
+  ],
+  "weak_candidates": [
+   {
+    "asset_id": "AST-0089",
+    "asset_name": "All Pharma Demand Legacy",
+    "match_tier": "WEAK",
+    "product_scope": "All Pharma",
+    "market_scope": "FI",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'FI'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-002",
+    "model_name": "Market Access 02",
+    "model_endorsement": "none",
+    "owner_name": "Sofia Rossi",
+    "estimated_audience": 1183,
+    "evidence": {
+     "asset_id": "AST-0089",
+     "workspace_id": "WS-016",
+     "model_id": "SM-002",
+     "product_scope": "All Pharma",
+     "market_scope": "FI",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'All Pharma' does not match requested 'Kerendia'",
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0101",
+    "asset_name": "Beyonttra Portfolio Monthly",
+    "match_tier": "WEAK",
+    "product_scope": "Beyonttra",
+    "market_scope": "FI",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'FI'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-001",
+    "model_name": "Executive Pharma 01",
+    "model_endorsement": "certified",
+    "owner_name": "Julia Martin",
+    "estimated_audience": 1071,
+    "evidence": {
+     "asset_id": "AST-0101",
+     "workspace_id": "WS-013",
+     "model_id": "SM-001",
+     "product_scope": "Beyonttra",
+     "market_scope": "FI",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Beyonttra' does not match requested 'Kerendia'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0137",
+    "asset_name": "Nubeqa Budget Final",
+    "match_tier": "WEAK",
+    "product_scope": "Nubeqa",
+    "market_scope": "FI",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'FI'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-001",
+    "model_name": "Executive Pharma 01",
+    "model_endorsement": "certified",
+    "owner_name": "Emma Garcia",
+    "estimated_audience": 80,
+    "evidence": {
+     "asset_id": "AST-0137",
+     "workspace_id": "WS-012",
+     "model_id": "SM-001",
+     "product_scope": "Nubeqa",
+     "market_scope": "FI",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "inactive",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Nubeqa' does not match requested 'Kerendia'",
+      "Assigned owner is 'inactive'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0174",
+    "asset_name": "Nubeqa Product Performance Final",
+    "match_tier": "WEAK",
+    "product_scope": "Nubeqa",
+    "market_scope": "FI",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'FI'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-013",
+    "model_name": "Pharma Finance 13",
+    "model_endorsement": "promoted",
+    "owner_name": "Leo Weber",
+    "estimated_audience": 881,
+    "evidence": {
+     "asset_id": "AST-0174",
+     "workspace_id": "WS-010",
+     "model_id": "SM-013",
+     "product_scope": "Nubeqa",
+     "market_scope": "FI",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Nubeqa' does not match requested 'Kerendia'",
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0179",
+    "asset_name": "Beyonttra Demand Legacy",
+    "match_tier": "WEAK",
+    "product_scope": "Beyonttra",
+    "market_scope": "FI",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'FI'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-023",
+    "model_name": "Pharma Finance 23",
+    "model_endorsement": "certified",
+    "owner_name": "Julia Virtanen",
+    "estimated_audience": 1678,
+    "evidence": {
+     "asset_id": "AST-0179",
+     "workspace_id": "WS-013",
+     "model_id": "SM-023",
+     "product_scope": "Beyonttra",
+     "market_scope": "FI",
+     "endorsement": "certified",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Beyonttra' does not match requested 'Kerendia'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0229",
+    "asset_name": "Eylea Demand - US",
+    "match_tier": "WEAK",
+    "product_scope": "Eylea",
+    "market_scope": "FI",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'FI'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-011",
+    "model_name": "Regional Commercial 11",
+    "model_endorsement": "none",
+    "owner_name": "Felix Virtanen",
+    "estimated_audience": 281,
+    "evidence": {
+     "asset_id": "AST-0229",
+     "workspace_id": "WS-013",
+     "model_id": "SM-011",
+     "product_scope": "Eylea",
+     "market_scope": "FI",
+     "endorsement": "promoted",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "inactive",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Eylea' does not match requested 'Kerendia'",
+      "Assigned owner is 'inactive'",
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0311",
+    "asset_name": "Hyrnuo Gross-to-Net Monthly",
+    "match_tier": "WEAK",
+    "product_scope": "Hyrnuo",
+    "market_scope": "FI",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'FI'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-071",
+    "model_name": "Pharma Commercial Core 71",
+    "model_endorsement": "none",
+    "owner_name": "Laura Fischer",
+    "estimated_audience": 335,
+    "evidence": {
+     "asset_id": "AST-0311",
+     "workspace_id": "WS-009",
+     "model_id": "SM-071",
+     "product_scope": "Hyrnuo",
+     "market_scope": "FI",
+     "endorsement": "certified",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Hyrnuo' does not match requested 'Kerendia'",
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0350",
+    "asset_name": "Beyonttra Digital Engagement Monthly",
+    "match_tier": "WEAK",
+    "product_scope": "Beyonttra",
+    "market_scope": "FI",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'FI'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-046",
+    "model_name": "Demand Forecast 46",
+    "model_endorsement": "promoted",
+    "owner_name": "Elias Schmidt",
+    "estimated_audience": 1303,
+    "evidence": {
+     "asset_id": "AST-0350",
+     "workspace_id": "WS-001",
+     "model_id": "SM-046",
+     "product_scope": "Beyonttra",
+     "market_scope": "FI",
+     "endorsement": "promoted",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Beyonttra' does not match requested 'Kerendia'",
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0039",
+    "asset_name": "All Pharma Product Performance Legacy",
+    "match_tier": "WEAK",
+    "product_scope": "All Pharma",
+    "market_scope": "FI",
+    "platform": "Tableau",
+    "endorsement": "none",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Market scope aligns with 'FI'"
+    ],
+    "model_id": "SM-027",
+    "model_name": "Launch Excellence 27",
+    "model_endorsement": "certified",
+    "owner_name": "Felix Meyer",
+    "estimated_audience": 91,
+    "evidence": {
+     "asset_id": "AST-0039",
+     "workspace_id": "WS-013",
+     "model_id": "SM-027",
+     "product_scope": "All Pharma",
+     "market_scope": "FI",
+     "endorsement": "none",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'All Pharma' does not match requested 'Kerendia'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0042",
+    "asset_name": "Eylea Net Sales Final",
+    "match_tier": "WEAK",
+    "product_scope": "Eylea",
+    "market_scope": "SE",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.3,
+    "match_reasons": [
+     "Title keywords match requested concepts: sales",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-045",
+    "model_name": "Demand Forecast 45",
+    "model_endorsement": "none",
+    "owner_name": "Sofia Rossi",
+    "estimated_audience": 1980,
+    "evidence": {
+     "asset_id": "AST-0042",
+     "workspace_id": "WS-009",
+     "model_id": "SM-045",
+     "product_scope": "Eylea",
+     "market_scope": "SE",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Product scope 'Eylea' does not match requested 'Kerendia'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   }
+  ],
+  "total_searched": 360,
+  "search_notes": "Searched 360 assets. Found 1 exact matches, 41 partial matches, and 28 weak candidates.",
+  "data_answer": null,
+  "governance_answer": null,
+  "migration_answer": null,
+  "title_topic_matches": []
+ },
+ "kpi_analysis": {
+  "matches": [
+   {
+    "requested_metric": "sales",
+    "matched_kpi_id": "KPI-001",
+    "matched_kpi_name": "Net Sales",
+    "domain": "Commercial",
+    "approval_status": "approved",
+    "definition_status": "canonical",
+    "is_canonical": true,
+    "is_approved": true,
+    "semantic_equivalence_notes": "Semantic equivalence: requested 'sales' mapped to canonical concept 'Net Sales' (KPI-001)",
+    "conflicts": [],
+    "alternative_kpis": []
+   }
+  ],
+  "canonical_approved_kpi_ids": [
+   "KPI-001"
+  ],
+  "unapproved_or_conflicted_kpi_ids": [],
+  "unmatched_requested_metrics": [],
+  "has_conflicts": false,
+  "summary": "Evaluated 1 requested metrics: 1 canonical approved, 0 unapproved/conflicted, 0 unmatched.",
+  "llm_review": []
+ },
+ "duplication": {
+  "has_duplicates": false,
+  "candidates": [
+   {
+    "asset_id": "AST-0005",
+    "asset_name": "Kerendia Inventory Copy",
+    "similarity_score": 0.57,
+    "structural_similarity": 1.0,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.6,
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "evidence": {
+     "scope_compatible": true,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Shares product semantic model SM-051 ('Regional Commercial 51')",
+      "Semantic model is endorsed as 'promoted'"
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Kerendia'",
+      "Endorsement level is 'certified'"
+     ],
+     "mapped_kpi_count": 3
+    }
+   },
+   {
+    "asset_id": "AST-0292",
+    "asset_name": "Kerendia Gross-to-Net New",
+    "similarity_score": 0.53,
+    "structural_similarity": 0.0,
+    "kpi_similarity": 1.0,
+    "semantic_similarity": 0.9,
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": true,
+     "metric_drift_detected": false,
+     "structural_reasons": [],
+     "kpi_reasons": [
+      "Shares 1 requested KPI(s): KPI-001"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Kerendia'",
+      "Market scope aligns with 'FI'",
+      "Endorsement level is 'certified'"
+     ],
+     "mapped_kpi_count": 3
+    }
+   },
+   {
+    "asset_id": "AST-0086",
+    "asset_name": "Kerendia Executive - EMEA",
+    "similarity_score": 0.35,
+    "structural_similarity": 0.6,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.6,
+    "endorsement": "certified",
+    "lifecycle_status": "candidate_retire",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Shares product semantic model SM-043 ('Executive Pharma 43')",
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Kerendia'",
+      "Endorsement level is 'certified'"
+     ],
+     "mapped_kpi_count": 4
+    }
+   },
+   {
+    "asset_id": "AST-0218",
+    "asset_name": "Kerendia Net Sales Final",
+    "similarity_score": 0.34,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.8,
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": true,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'promoted'"
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Kerendia'",
+      "Title keywords match requested concepts: sales",
+      "Endorsement level is 'promoted'"
+     ],
+     "mapped_kpi_count": 4
+    }
+   },
+   {
+    "asset_id": "AST-0022",
+    "asset_name": "All Pharma Net Sales Final",
+    "similarity_score": 0.3,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.6,
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'promoted'",
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Market scope aligns with 'FI'",
+      "Title keywords match requested concepts: sales",
+      "Endorsement level is 'promoted'"
+     ],
+     "mapped_kpi_count": 5
+    }
+   },
+   {
+    "asset_id": "AST-0096",
+    "asset_name": "Kerendia Forecast",
+    "similarity_score": 0.3,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.6,
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'promoted'",
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Kerendia'",
+      "Endorsement level is 'certified'"
+     ],
+     "mapped_kpi_count": 5
+    }
+   },
+   {
+    "asset_id": "AST-0185",
+    "asset_name": "Kerendia Gross-to-Net Copy",
+    "similarity_score": 0.3,
+    "structural_similarity": 0.4,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.6,
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Semantic model is endorsed as 'certified'",
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Kerendia'",
+      "Endorsement level is 'promoted'"
+     ],
+     "mapped_kpi_count": 6
+    }
+   },
+   {
+    "asset_id": "AST-0011",
+    "asset_name": "Kerendia Supply Final",
+    "similarity_score": 0.12,
+    "structural_similarity": 0.0,
+    "kpi_similarity": 0.0,
+    "semantic_similarity": 0.6,
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "evidence": {
+     "scope_compatible": false,
+     "metric_drift_detected": true,
+     "structural_reasons": [
+      "Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation."
+     ],
+     "kpi_reasons": [
+      "Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)"
+     ],
+     "semantic_reasons": [
+      "Product scope matches 'Kerendia'",
+      "Endorsement level is 'certified'"
+     ],
+     "mapped_kpi_count": 2
+    }
+   }
+  ],
+  "highest_similarity_score": 0.57,
+  "primary_duplicate_asset_id": null,
+  "explanation": "No high-confidence duplicates detected. Existing assets have distinct structural scope, incompatible domains, or disjoint KPI mappings.",
+  "gate_evaluations": [],
+  "consolidation_eligible_pairs": [],
+  "title_alike_groups": []
+ },
+ "governance": {
+  "blockers": [],
+  "warnings": [
+   "RULE-002 HIGH WARNING on AST-0292: Asset uses 1 non-canonical KPI(s).",
+   "RULE-001 DIRECTIVE: Certified asset AST-0292 ('Kerendia Gross-to-Net New') already serves this exact scope. Reuse must be prioritized before building new analytics."
+  ],
+  "applicable_rule_ids": [
+   "RULE-001",
+   "RULE-002",
+   "RULE-003",
+   "RULE-006",
+   "RULE-008"
+  ],
+  "active_finding_ids": [
+   "FND-RULE001-73D23AC3CE52",
+   "FND-RULE001-F91AE775A4BF",
+   "FND-RULE002-1F552A357EE1",
+   "FND-RULE002-A742AD92404F",
+   "FND-RULE002-C311BBF04097",
+   "FND-RULE002-0825BB2D9AF9",
+   "FND-RULE002-D210185FB979",
+   "FND-RULE002-DD20D08C8819",
+   "FND-RULE003-A307A9B69047",
+   "FND-RULE006-6C9B208CD1F4",
+   "FND-RULE008-C3CBB31A5FA6",
+   "FND-RULE008-1AB0A1BB9F3E"
+  ],
+  "human_approval_required": true,
+  "evidence_references": [
+   {
+    "finding_id": "FND-RULE001-73D23AC3CE52",
+    "target_id": "AST-0086",
+    "rule_id": "RULE-001",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE001-F91AE775A4BF",
+    "target_id": "AST-0292",
+    "rule_id": "RULE-001",
+    "severity": "medium",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-1F552A357EE1",
+    "target_id": "AST-0005",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-A742AD92404F",
+    "target_id": "AST-0022",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-C311BBF04097",
+    "target_id": "AST-0086",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-0825BB2D9AF9",
+    "target_id": "AST-0292",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "request"
+   },
+   {
+    "finding_id": "FND-RULE002-D210185FB979",
+    "target_id": "AST-0011",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE002-DD20D08C8819",
+    "target_id": "AST-0218",
+    "rule_id": "RULE-002",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE003-A307A9B69047",
+    "target_id": "AST-0011",
+    "rule_id": "RULE-003",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE006-6C9B208CD1F4",
+    "target_id": "AST-0005",
+    "rule_id": "RULE-006",
+    "severity": "high",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE008-C3CBB31A5FA6",
+    "target_id": "AST-0005",
+    "rule_id": "RULE-008",
+    "severity": "medium",
+    "scope": "outside_request"
+   },
+   {
+    "finding_id": "FND-RULE008-1AB0A1BB9F3E",
+    "target_id": "AST-0086",
+    "rule_id": "RULE-008",
+    "severity": "high",
+    "scope": "outside_request"
+   }
+  ],
+  "request_finding_ids": [
+   "FND-RULE001-F91AE775A4BF",
+   "FND-RULE002-0825BB2D9AF9"
+  ],
+  "out_of_scope_finding_ids": [
+   "FND-RULE001-73D23AC3CE52",
+   "FND-RULE002-1F552A357EE1",
+   "FND-RULE002-A742AD92404F",
+   "FND-RULE002-C311BBF04097",
+   "FND-RULE002-D210185FB979",
+   "FND-RULE002-DD20D08C8819",
+   "FND-RULE003-A307A9B69047",
+   "FND-RULE006-6C9B208CD1F4",
+   "FND-RULE008-C3CBB31A5FA6",
+   "FND-RULE008-1AB0A1BB9F3E"
+  ],
+  "out_of_scope_warnings": [
+   "RULE-002 on AST-0005, outside the requested scope: Asset uses 2 non-canonical KPI(s).",
+   "RULE-002 on AST-0022, outside the requested scope: Asset uses 3 non-canonical KPI(s).",
+   "RULE-002 on AST-0086, outside the requested scope: Asset uses 3 non-canonical KPI(s).",
+   "RULE-002 on AST-0011, outside the requested scope: Asset uses 2 non-canonical KPI(s).",
+   "RULE-002 on AST-0218, outside the requested scope: Asset uses 4 non-canonical KPI(s).",
+   "RULE-003 on AST-0011, outside the requested scope: Assigned owner inactive on asset AST-0011.",
+   "RULE-006 on AST-0005, outside the requested scope: Waste rationalisation: AST-0005 (RETIRE).",
+   "RULE-008 on AST-0086, outside the requested scope: Unjustified retirement risk: AST-0086 has active usage."
+  ]
+ },
+ "traces": [
+  {
+   "trace_id": "TRC-ED3E48BC9BB6",
+   "request_id": "REQ-20261107181042-188D93",
+   "agent_name": "IntentAgent",
+   "step_order": 1,
+   "status": "success",
+   "duration_ms": 4.79,
+   "input_json": "{\"prompt\": \"Build a Kerendia sales scorecard for Finland.\"}",
+   "output_json": "{\"raw_prompt\": \"Build a Kerendia sales scorecard for Finland.\", \"products\": [\"Kerendia\"], \"markets\": [\"FI\"], \"kpis\": [\"sales\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for Kerendia across FI covering sales\", \"missing_or_ambiguous\": [\"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.85, \"ambiguities\": [], \"interpretation_notes\": [], \"unresolved_terms\": [], \"resolution\": {\"original_request\": \"Build a Kerendia sales scorecard for Finland.\", \"deterministic_intent\": {\"products\": [\"Kerendia\"], \"markets\": [\"FI\"], \"kpis\": [\"sales\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for Kerendia across FI covering sales\", \"missing_or_ambiguous\": [\"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.85}, \"llm_proposal\": null, \"accepted\": [], \"confirmed\": [], \"rejected\": []}, \"geography\": {\"status\": \"RESOLVED\", \"phrases\": [{\"original_phrase\": \"Finland\", \"normalized_scope\": \"FI\", \"resolved_market_ids\": [\"FI\"], \"suggested_market_ids\": [], \"catalog_evidence\": [], \"external_context\": [], \"status\": \"RESOLVED\", \"explanation\": \"'Finland' matches catalog scope 'FI'.\"}], \"resolved_market_ids\": [\"FI\"], \"unresolved_geography\": [], \"explanation\": \"All requested geography matched catalog records.\"}, \"request_types\": [\"ASSET_REQUEST\"], \"request_type_evidence\": [\"Imperative build request: 'Build'.\"], \"asset_ids_mentioned\": [], \"duplication_question\": false, \"title_topics\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":\"deterministic_fallback\",\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:42.693035"
+  },
+  {
+   "trace_id": "TRC-ABE22365E0B9",
+   "request_id": "REQ-20261107181042-188D93",
+   "agent_name": "DiscoveryAgent",
+   "step_order": 2,
+   "status": "success",
+   "duration_ms": 11.83,
+   "input_json": "{\"raw_prompt\": \"Build a Kerendia sales scorecard for Finland.\", \"products\": [\"Kerendia\"], \"markets\": [\"FI\"], \"kpis\": [\"sales\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for Kerendia across FI covering sales\", \"missing_or_ambiguous\": [\"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.85, \"ambiguities\": [], \"interpretation_notes\": [], \"unresolved_terms\": [], \"resolution\": {\"original_request\": \"Build a Kerendia sales scorecard for Finland.\", \"deterministic_intent\": {\"products\": [\"Kerendia\"], \"markets\": [\"FI\"], \"kpis\": [\"sales\"], \"dimensions\": [], \"time_periods\": [], \"business_purpose\": \"Analytics request for Kerendia across FI covering sales\", \"missing_or_ambiguous\": [\"Time horizon or refresh frequency is unspecified (e.g. monthly, YTD).\"], \"confidence\": 0.85}, \"llm_proposal\": null, \"accepted\": [], \"confirmed\": [], \"rejected\": []}, \"geography\": {\"status\": \"RESOLVED\", \"phrases\": [{\"original_phrase\": \"Finland\", \"normalized_scope\": \"FI\", \"resolved_market_ids\": [\"FI\"], \"suggested_market_ids\": [], \"catalog_evidence\": [], \"external_context\": [], \"status\": \"RESOLVED\", \"explanation\": \"'Finland' matches catalog scope 'FI'.\"}], \"resolved_market_ids\": [\"FI\"], \"unresolved_geography\": [], \"explanation\": \"All requested geography matched catalog records.\"}, \"request_types\": [\"ASSET_REQUEST\"], \"request_type_evidence\": [\"Imperative build request: 'Build'.\"], \"asset_ids_mentioned\": [], \"duplication_question\": false, \"title_topics\": []}",
+   "output_json": "{\"exact_matches\": [{\"asset_id\": \"AST-0292\", \"asset_name\": \"Kerendia Gross-to-Net New\", \"match_tier\": \"EXACT\", \"product_scope\": \"Kerendia\", \"market_scope\": \"FI\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"match_score\": 0.9, \"match_reasons\": [\"Product scope matches 'Kerendia'\", \"Market scope aligns with 'FI'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-002\", \"model_name\": \"Market Access 02\", \"model_endorsement\": \"none\", \"owner_name\": \"Anna Novak\", \"estimated_audience\": 345, \"evidence\": {\"asset_id\": \"AST-0292\", \"workspace_id\": \"WS-006\", \"model_id\": \"SM-002\", \"product_scope\": \"Kerendia\", \"market_scope\": \"FI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}], \"partial_matches\": [{\"asset_id\": \"AST-0218\", \"asset_name\": \"Kerendia Net Sales Final\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Kerendia\", \"market_scope\": \"Global\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.8, \"match_reasons\": [\"Product scope matches 'Kerendia'\", \"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-015\", \"model_name\": \"Pharma Finance 15\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Sofia Novak\", \"estimated_audience\": 1960, \"evidence\": {\"asset_id\": \"AST-0218\", \"workspace_id\": \"WS-003\", \"model_id\": \"SM-015\", \"product_scope\": \"Kerendia\", \"market_scope\": \"Global\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0005\", \"asset_name\": \"Kerendia Inventory Copy\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Kerendia\", \"market_scope\": \"Global\", \"platform\": \"Tableau\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-051\", \"model_name\": \"Regional Commercial 51\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Julia Brown\", \"estimated_audience\": 1210, \"evidence\": {\"asset_id\": \"AST-0005\", \"workspace_id\": \"WS-013\", \"model_id\": \"SM-051\", \"product_scope\": \"Kerendia\", \"market_scope\": \"Global\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0011\", \"asset_name\": \"Kerendia Supply Final\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Kerendia\", \"market_scope\": \"DE\", \"platform\": \"Tableau\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-004\", \"model_name\": \"Launch Excellence 04\", \"model_endorsement\": \"none\", \"owner_name\": \"Felix Fischer\", \"estimated_audience\": 1504, \"evidence\": {\"asset_id\": \"AST-0011\", \"workspace_id\": \"WS-015\", \"model_id\": \"SM-004\", \"product_scope\": \"Kerendia\", \"market_scope\": \"DE\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"owner_status\": \"inactive\", \"missing_evidence\": [], \"negative_evidence\": [\"Assigned owner is 'inactive'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0022\", \"asset_name\": \"All Pharma Net Sales Final\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"All Pharma\", \"market_scope\": \"FI\", \"platform\": \"Tableau\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.6, \"match_reasons\": [\"Market scope aligns with 'FI'\", \"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-007\", \"model_name\": \"Portfolio Performance 07\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Nina Garcia\", \"estimated_audience\": 1479, \"evidence\": {\"asset_id\": \"AST-0022\", \"workspace_id\": \"WS-012\", \"model_id\": \"SM-007\", \"product_scope\": \"All Pharma\", \"market_scope\": \"FI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'All Pharma' does not match requested 'Kerendia'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0086\", \"asset_name\": \"Kerendia Executive - EMEA\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Kerendia\", \"market_scope\": \"UK\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-043\", \"model_name\": \"Executive Pharma 43\", \"model_endorsement\": \"none\", \"owner_name\": \"Nina Andersson\", \"estimated_audience\": 482, \"evidence\": {\"asset_id\": \"AST-0086\", \"workspace_id\": \"WS-005\", \"model_id\": \"SM-043\", \"product_scope\": \"Kerendia\", \"market_scope\": \"UK\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0096\", \"asset_name\": \"Kerendia Forecast\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Kerendia\", \"market_scope\": \"AU\", \"platform\": \"Tableau\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-056\", \"model_name\": \"Pharma Commercial Core 56\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Mika Rossi\", \"estimated_audience\": 763, \"evidence\": {\"asset_id\": \"AST-0096\", \"workspace_id\": \"WS-014\", \"model_id\": \"SM-056\", \"product_scope\": \"Kerendia\", \"market_scope\": \"AU\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0121\", \"asset_name\": \"Kerendia Inventory Monthly\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Kerendia\", \"market_scope\": \"ES\", \"platform\": \"Tableau\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-055\", \"model_name\": \"Channel Performance 55\", \"model_endorsement\": \"none\", \"owner_name\": null, \"estimated_audience\": 1548, \"evidence\": {\"asset_id\": \"AST-0121\", \"workspace_id\": \"WS-003\", \"model_id\": \"SM-055\", \"product_scope\": \"Kerendia\", \"market_scope\": \"ES\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"missing\", \"missing_evidence\": [\"No active owner assigned (RULE-004 accountability defect)\"], \"negative_evidence\": [\"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0164\", \"asset_name\": \"Kerendia Gross-to-Net New\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Kerendia\", \"market_scope\": \"Global\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-022\", \"model_name\": \"Product Market Performance 22\", \"model_endorsement\": \"none\", \"owner_name\": \"Mika Weber\", \"estimated_audience\": 279, \"evidence\": {\"asset_id\": \"AST-0164\", \"workspace_id\": \"WS-003\", \"model_id\": \"SM-022\", \"product_scope\": \"Kerendia\", \"market_scope\": \"Global\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0170\", \"asset_name\": \"Kerendia Portfolio - Global\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Kerendia\", \"market_scope\": \"ES\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-028\", \"model_name\": \"Channel Performance 28\", \"model_endorsement\": \"none\", \"owner_name\": \"Elias Schmidt\", \"estimated_audience\": 95, \"evidence\": {\"asset_id\": \"AST-0170\", \"workspace_id\": \"WS-009\", \"model_id\": \"SM-028\", \"product_scope\": \"Kerendia\", \"market_scope\": \"ES\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0185\", \"asset_name\": \"Kerendia Gross-to-Net Copy\", \"match_tier\": \"PARTIAL\", \"product_scope\": \"Kerendia\", \"market_scope\": \"UK\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.6, \"match_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-060\", \"model_name\": \"Pharma Finance 60\", \"model_endorsement\": \"certified\", \"owner_name\": \"Sofia Fischer\", \"estimated_audience\": 1772, \"evidence\": {\"asset_id\": \"AST-0185\", \"workspace_id\": \"WS-003\", \"model_id\": \"SM-060\", \"product_scope\": \"Kerendia\", \"market_scope\": \"UK\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}], \"weak_candidates\": [{\"asset_id\": \"AST-0089\", \"asset_name\": \"All Pharma Demand Legacy\", \"match_tier\": \"WEAK\", \"product_scope\": \"All Pharma\", \"market_scope\": \"FI\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'FI'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-002\", \"model_name\": \"Market Access 02\", \"model_endorsement\": \"none\", \"owner_name\": \"Sofia Rossi\", \"estimated_audience\": 1183, \"evidence\": {\"asset_id\": \"AST-0089\", \"workspace_id\": \"WS-016\", \"model_id\": \"SM-002\", \"product_scope\": \"All Pharma\", \"market_scope\": \"FI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'All Pharma' does not match requested 'Kerendia'\", \"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0101\", \"asset_name\": \"Beyonttra Portfolio Monthly\", \"match_tier\": \"WEAK\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"FI\", \"platform\": \"Tableau\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'FI'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-001\", \"model_name\": \"Executive Pharma 01\", \"model_endorsement\": \"certified\", \"owner_name\": \"Julia Martin\", \"estimated_audience\": 1071, \"evidence\": {\"asset_id\": \"AST-0101\", \"workspace_id\": \"WS-013\", \"model_id\": \"SM-001\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"FI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Beyonttra' does not match requested 'Kerendia'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0137\", \"asset_name\": \"Nubeqa Budget Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"FI\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'FI'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-001\", \"model_name\": \"Executive Pharma 01\", \"model_endorsement\": \"certified\", \"owner_name\": \"Emma Garcia\", \"estimated_audience\": 80, \"evidence\": {\"asset_id\": \"AST-0137\", \"workspace_id\": \"WS-012\", \"model_id\": \"SM-001\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"FI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"inactive\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Nubeqa' does not match requested 'Kerendia'\", \"Assigned owner is 'inactive'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0174\", \"asset_name\": \"Nubeqa Product Performance Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"FI\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'FI'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-013\", \"model_name\": \"Pharma Finance 13\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Leo Weber\", \"estimated_audience\": 881, \"evidence\": {\"asset_id\": \"AST-0174\", \"workspace_id\": \"WS-010\", \"model_id\": \"SM-013\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"FI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Nubeqa' does not match requested 'Kerendia'\", \"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0179\", \"asset_name\": \"Beyonttra Demand Legacy\", \"match_tier\": \"WEAK\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"FI\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'FI'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-023\", \"model_name\": \"Pharma Finance 23\", \"model_endorsement\": \"certified\", \"owner_name\": \"Julia Virtanen\", \"estimated_audience\": 1678, \"evidence\": {\"asset_id\": \"AST-0179\", \"workspace_id\": \"WS-013\", \"model_id\": \"SM-023\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"FI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Beyonttra' does not match requested 'Kerendia'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0229\", \"asset_name\": \"Eylea Demand - US\", \"match_tier\": \"WEAK\", \"product_scope\": \"Eylea\", \"market_scope\": \"FI\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'FI'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-011\", \"model_name\": \"Regional Commercial 11\", \"model_endorsement\": \"none\", \"owner_name\": \"Felix Virtanen\", \"estimated_audience\": 281, \"evidence\": {\"asset_id\": \"AST-0229\", \"workspace_id\": \"WS-013\", \"model_id\": \"SM-011\", \"product_scope\": \"Eylea\", \"market_scope\": \"FI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"inactive\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Eylea' does not match requested 'Kerendia'\", \"Assigned owner is 'inactive'\", \"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0311\", \"asset_name\": \"Hyrnuo Gross-to-Net Monthly\", \"match_tier\": \"WEAK\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"FI\", \"platform\": \"Tableau\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'FI'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-071\", \"model_name\": \"Pharma Commercial Core 71\", \"model_endorsement\": \"none\", \"owner_name\": \"Laura Fischer\", \"estimated_audience\": 335, \"evidence\": {\"asset_id\": \"AST-0311\", \"workspace_id\": \"WS-009\", \"model_id\": \"SM-071\", \"product_scope\": \"Hyrnuo\", \"market_scope\": \"FI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Hyrnuo' does not match requested 'Kerendia'\", \"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0350\", \"asset_name\": \"Beyonttra Digital Engagement Monthly\", \"match_tier\": \"WEAK\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"FI\", \"platform\": \"Tableau\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'FI'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-046\", \"model_name\": \"Demand Forecast 46\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Elias Schmidt\", \"estimated_audience\": 1303, \"evidence\": {\"asset_id\": \"AST-0350\", \"workspace_id\": \"WS-001\", \"model_id\": \"SM-046\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"FI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Beyonttra' does not match requested 'Kerendia'\", \"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0039\", \"asset_name\": \"All Pharma Product Performance Legacy\", \"match_tier\": \"WEAK\", \"product_scope\": \"All Pharma\", \"market_scope\": \"FI\", \"platform\": \"Tableau\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Market scope aligns with 'FI'\"], \"model_id\": \"SM-027\", \"model_name\": \"Launch Excellence 27\", \"model_endorsement\": \"certified\", \"owner_name\": \"Felix Meyer\", \"estimated_audience\": 91, \"evidence\": {\"asset_id\": \"AST-0039\", \"workspace_id\": \"WS-013\", \"model_id\": \"SM-027\", \"product_scope\": \"All Pharma\", \"market_scope\": \"FI\", \"endorsement\": \"none\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'All Pharma' does not match requested 'Kerendia'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0042\", \"asset_name\": \"Eylea Net Sales Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"Eylea\", \"market_scope\": \"SE\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.3, \"match_reasons\": [\"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-045\", \"model_name\": \"Demand Forecast 45\", \"model_endorsement\": \"none\", \"owner_name\": \"Sofia Rossi\", \"estimated_audience\": 1980, \"evidence\": {\"asset_id\": \"AST-0042\", \"workspace_id\": \"WS-009\", \"model_id\": \"SM-045\", \"product_scope\": \"Eylea\", \"market_scope\": \"SE\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Product scope 'Eylea' does not match requested 'Kerendia'\"], \"title_topic_match\": [], \"named_in_request\": false}}], \"total_searched\": 360, \"search_notes\": \"Searched 360 assets. Found 1 exact matches, 41 partial matches, and 28 weak candidates.\", \"data_answer\": null, \"governance_answer\": null, \"migration_answer\": null, \"title_topic_matches\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:42.718071"
+  },
+  {
+   "trace_id": "TRC-34B9B506F0DC",
+   "request_id": "REQ-20261107181042-188D93",
+   "agent_name": "KpiIntelligenceAgent",
+   "step_order": 3,
+   "status": "success",
+   "duration_ms": 0.97,
+   "input_json": "{\"requested_kpis\": [\"sales\"]}",
+   "output_json": "{\"matches\": [{\"requested_metric\": \"sales\", \"matched_kpi_id\": \"KPI-001\", \"matched_kpi_name\": \"Net Sales\", \"domain\": \"Commercial\", \"approval_status\": \"approved\", \"definition_status\": \"canonical\", \"is_canonical\": true, \"is_approved\": true, \"semantic_equivalence_notes\": \"Semantic equivalence: requested 'sales' mapped to canonical concept 'Net Sales' (KPI-001)\", \"conflicts\": [], \"alternative_kpis\": []}], \"canonical_approved_kpi_ids\": [\"KPI-001\"], \"unapproved_or_conflicted_kpi_ids\": [], \"unmatched_requested_metrics\": [], \"has_conflicts\": false, \"summary\": \"Evaluated 1 requested metrics: 1 canonical approved, 0 unapproved/conflicted, 0 unmatched.\", \"llm_review\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":\"deterministic_fallback\",\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:42.725664"
+  },
+  {
+   "trace_id": "TRC-C4064AC0C8AF",
+   "request_id": "REQ-20261107181042-188D93",
+   "agent_name": "DuplicationAgent",
+   "step_order": 4,
+   "status": "success",
+   "duration_ms": 11.77,
+   "input_json": "{\"products\": [\"Kerendia\"], \"exact_matches\": 1, \"canonical_kpis\": [\"KPI-001\"]}",
+   "output_json": "{\"has_duplicates\": false, \"candidates\": [{\"asset_id\": \"AST-0005\", \"asset_name\": \"Kerendia Inventory Copy\", \"similarity_score\": 0.57, \"structural_similarity\": 1.0, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.6, \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"evidence\": {\"scope_compatible\": true, \"metric_drift_detected\": true, \"structural_reasons\": [\"Shares product semantic model SM-051 ('Regional Commercial 51')\", \"Semantic model is endorsed as 'promoted'\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'certified'\"], \"mapped_kpi_count\": 3}}, {\"asset_id\": \"AST-0292\", \"asset_name\": \"Kerendia Gross-to-Net New\", \"similarity_score\": 0.53, \"structural_similarity\": 0.0, \"kpi_similarity\": 1.0, \"semantic_similarity\": 0.9, \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": true, \"metric_drift_detected\": false, \"structural_reasons\": [], \"kpi_reasons\": [\"Shares 1 requested KPI(s): KPI-001\"], \"semantic_reasons\": [\"Product scope matches 'Kerendia'\", \"Market scope aligns with 'FI'\", \"Endorsement level is 'certified'\"], \"mapped_kpi_count\": 3}}, {\"asset_id\": \"AST-0086\", \"asset_name\": \"Kerendia Executive - EMEA\", \"similarity_score\": 0.35, \"structural_similarity\": 0.6, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.6, \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": true, \"structural_reasons\": [\"Shares product semantic model SM-043 ('Executive Pharma 43')\", \"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'certified'\"], \"mapped_kpi_count\": 4}}, {\"asset_id\": \"AST-0218\", \"asset_name\": \"Kerendia Net Sales Final\", \"similarity_score\": 0.34, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.8, \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": true, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'promoted'\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Kerendia'\", \"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"mapped_kpi_count\": 4}}, {\"asset_id\": \"AST-0022\", \"asset_name\": \"All Pharma Net Sales Final\", \"similarity_score\": 0.3, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.6, \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'promoted'\", \"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Market scope aligns with 'FI'\", \"Title keywords match requested concepts: sales\", \"Endorsement level is 'promoted'\"], \"mapped_kpi_count\": 5}}, {\"asset_id\": \"AST-0096\", \"asset_name\": \"Kerendia Forecast\", \"similarity_score\": 0.3, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.6, \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'promoted'\", \"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'certified'\"], \"mapped_kpi_count\": 5}}, {\"asset_id\": \"AST-0185\", \"asset_name\": \"Kerendia Gross-to-Net Copy\", \"similarity_score\": 0.3, \"structural_similarity\": 0.4, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.6, \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": true, \"structural_reasons\": [\"Semantic model is endorsed as 'certified'\", \"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'promoted'\"], \"mapped_kpi_count\": 6}}, {\"asset_id\": \"AST-0011\", \"asset_name\": \"Kerendia Supply Final\", \"similarity_score\": 0.12, \"structural_similarity\": 0.0, \"kpi_similarity\": 0.0, \"semantic_similarity\": 0.6, \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"evidence\": {\"scope_compatible\": false, \"metric_drift_detected\": true, \"structural_reasons\": [\"Gate G1 Scope Veto: Product or market scope mismatch prohibits consolidation.\"], \"kpi_reasons\": [\"Zero exact shared KPIs despite scope alignment; potential metric drift (Gate G3)\"], \"semantic_reasons\": [\"Product scope matches 'Kerendia'\", \"Endorsement level is 'certified'\"], \"mapped_kpi_count\": 2}}], \"highest_similarity_score\": 0.57, \"primary_duplicate_asset_id\": null, \"explanation\": \"No high-confidence duplicates detected. Existing assets have distinct structural scope, incompatible domains, or disjoint KPI mappings.\", \"gate_evaluations\": [], \"consolidation_eligible_pairs\": [], \"title_alike_groups\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:42.743484"
+  },
+  {
+   "trace_id": "TRC-00DADD386A21",
+   "request_id": "REQ-20261107181042-188D93",
+   "agent_name": "GovernanceAgent",
+   "step_order": 5,
+   "status": "success",
+   "duration_ms": 4.25,
+   "input_json": "{\"exact_candidates\": [\"AST-0292\"], \"unapproved_kpis\": []}",
+   "output_json": "{\"blockers\": [], \"warnings\": [\"RULE-002 HIGH WARNING on AST-0292: Asset uses 1 non-canonical KPI(s).\", \"RULE-001 DIRECTIVE: Certified asset AST-0292 ('Kerendia Gross-to-Net New') already serves this exact scope. Reuse must be prioritized before building new analytics.\"], \"applicable_rule_ids\": [\"RULE-001\", \"RULE-002\", \"RULE-003\", \"RULE-006\", \"RULE-008\"], \"active_finding_ids\": [\"FND-RULE001-73D23AC3CE52\", \"FND-RULE001-F91AE775A4BF\", \"FND-RULE002-1F552A357EE1\", \"FND-RULE002-A742AD92404F\", \"FND-RULE002-C311BBF04097\", \"FND-RULE002-0825BB2D9AF9\", \"FND-RULE002-D210185FB979\", \"FND-RULE002-DD20D08C8819\", \"FND-RULE003-A307A9B69047\", \"FND-RULE006-6C9B208CD1F4\", \"FND-RULE008-C3CBB31A5FA6\", \"FND-RULE008-1AB0A1BB9F3E\"], \"human_approval_required\": true, \"evidence_references\": [{\"finding_id\": \"FND-RULE001-73D23AC3CE52\", \"target_id\": \"AST-0086\", \"rule_id\": \"RULE-001\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE001-F91AE775A4BF\", \"target_id\": \"AST-0292\", \"rule_id\": \"RULE-001\", \"severity\": \"medium\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-1F552A357EE1\", \"target_id\": \"AST-0005\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-A742AD92404F\", \"target_id\": \"AST-0022\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-C311BBF04097\", \"target_id\": \"AST-0086\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-0825BB2D9AF9\", \"target_id\": \"AST-0292\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"request\"}, {\"finding_id\": \"FND-RULE002-D210185FB979\", \"target_id\": \"AST-0011\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE002-DD20D08C8819\", \"target_id\": \"AST-0218\", \"rule_id\": \"RULE-002\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE003-A307A9B69047\", \"target_id\": \"AST-0011\", \"rule_id\": \"RULE-003\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE006-6C9B208CD1F4\", \"target_id\": \"AST-0005\", \"rule_id\": \"RULE-006\", \"severity\": \"high\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE008-C3CBB31A5FA6\", \"target_id\": \"AST-0005\", \"rule_id\": \"RULE-008\", \"severity\": \"medium\", \"scope\": \"outside_request\"}, {\"finding_id\": \"FND-RULE008-1AB0A1BB9F3E\", \"target_id\": \"AST-0086\", \"rule_id\": \"RULE-008\", \"severity\": \"high\", \"scope\": \"outside_request\"}], \"request_finding_ids\": [\"FND-RULE001-F91AE775A4BF\", \"FND-RULE002-0825BB2D9AF9\"], \"out_of_scope_finding_ids\": [\"FND-RULE001-73D23AC3CE52\", \"FND-RULE002-1F552A357EE1\", \"FND-RULE002-A742AD92404F\", \"FND-RULE002-C311BBF04097\", \"FND-RULE002-D210185FB979\", \"FND-RULE002-DD20D08C8819\", \"FND-RULE003-A307A9B69047\", \"FND-RULE006-6C9B208CD1F4\", \"FND-RULE008-C3CBB31A5FA6\", \"FND-RULE008-1AB0A1BB9F3E\"], \"out_of_scope_warnings\": [\"RULE-002 on AST-0005, outside the requested scope: Asset uses 2 non-canonical KPI(s).\", \"RULE-002 on AST-0022, outside the requested scope: Asset uses 3 non-canonical KPI(s).\", \"RULE-002 on AST-0086, outside the requested scope: Asset uses 3 non-canonical KPI(s).\", \"RULE-002 on AST-0011, outside the requested scope: Asset uses 2 non-canonical KPI(s).\", \"RULE-002 on AST-0218, outside the requested scope: Asset uses 4 non-canonical KPI(s).\", \"RULE-003 on AST-0011, outside the requested scope: Assigned owner inactive on asset AST-0011.\", \"RULE-006 on AST-0005, outside the requested scope: Waste rationalisation: AST-0005 (RETIRE).\", \"RULE-008 on AST-0086, outside the requested scope: Unjustified retirement risk: AST-0086 has active usage.\"]}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:42.754838"
+  },
+  {
+   "trace_id": "TRC-796542D2ADB6",
+   "request_id": "REQ-20261107181042-188D93",
+   "agent_name": "DecisionAgent",
+   "step_order": 6,
+   "status": "success",
+   "duration_ms": 20.22,
+   "input_json": "{\"intent_confidence\": 0.85, \"exact_matches_count\": 1, \"has_duplicates\": false, \"governance_blockers_count\": 0}",
+   "output_json": "{\"decision\": \"REUSE\", \"confidence\": 0.92, \"primary_recommendation\": \"Reuse existing certified report AST-0292 ('Kerendia Gross-to-Net New').\", \"rationale\": \"Existing certified asset AST-0292 ('Kerendia Gross-to-Net New') already covers Kerendia in FI (endorsement: 'certified'). It supports 1 of the requested canonical KPIs [Lifecycle Engine: REVIEW, health score: 55.0]. In accordance with RULE-001 (Reuse before build), business users must be directed to this certified report rather than creating redundant analytics. 10 governance finding(s) on assets outside the requested scope are reported separately and aren't blockers for this request.\", \"target_asset_ids\": [\"AST-0292\"], \"target_model_ids\": [\"SM-002\"], \"alternatives\": [{\"action\": \"MODIFY\", \"target_id\": \"AST-0292\", \"pros\": \"Enhances an existing certified asset without creating new content.\", \"cons\": \"Requires minor report change management and testing.\"}, {\"action\": \"BUILD_NEW\", \"target_id\": null, \"pros\": \"Complete customization for specific country request.\", \"cons\": \"Violates RULE-001, increases BI estate sprawl and maintenance overhead.\"}], \"blockers\": [], \"warnings\": [\"RULE-002 HIGH WARNING on AST-0292: Asset uses 1 non-canonical KPI(s).\", \"RULE-001 DIRECTIVE: Certified asset AST-0292 ('Kerendia Gross-to-Net New') already serves this exact scope. Reuse must be prioritized before building new analytics.\"], \"human_approval_required\": false, \"next_steps\": [\"Provide user access to workspace containing AST-0292.\", \"Verify user filters cover the desired country-level granularity.\"], \"active_finding_ids\": [\"FND-RULE001-73D23AC3CE52\", \"FND-RULE001-F91AE775A4BF\", \"FND-RULE002-1F552A357EE1\", \"FND-RULE002-A742AD92404F\", \"FND-RULE002-C311BBF04097\", \"FND-RULE002-0825BB2D9AF9\", \"FND-RULE002-D210185FB979\", \"FND-RULE002-DD20D08C8819\", \"FND-RULE003-A307A9B69047\", \"FND-RULE006-6C9B208CD1F4\", \"FND-RULE008-C3CBB31A5FA6\", \"FND-RULE008-1AB0A1BB9F3E\"], \"out_of_scope_warnings\": [\"RULE-002 on AST-0005, outside the requested scope: Asset uses 2 non-canonical KPI(s).\", \"RULE-002 on AST-0022, outside the requested scope: Asset uses 3 non-canonical KPI(s).\", \"RULE-002 on AST-0086, outside the requested scope: Asset uses 3 non-canonical KPI(s).\", \"RULE-002 on AST-0011, outside the requested scope: Asset uses 2 non-canonical KPI(s).\", \"RULE-002 on AST-0218, outside the requested scope: Asset uses 4 non-canonical KPI(s).\", \"RULE-003 on AST-0011, outside the requested scope: Assigned owner inactive on asset AST-0011.\", \"RULE-006 on AST-0005, outside the requested scope: Waste rationalisation: AST-0005 (RETIRE).\", \"RULE-008 on AST-0086, outside the requested scope: Unjustified retirement risk: AST-0086 has active usage.\"], \"llm_narrative\": null, \"action_status\": \"ACTIONABLE\", \"ineligible_targets\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":\"deterministic_fallback\",\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:42.781740"
+  }
+ ],
+ "request_types": [
+  "ASSET_REQUEST"
+ ],
+ "data_answer": null,
+ "governance_answer": null,
+ "migration_answer": null,
+ "presentation": {
+  "response_type": "ASSET_RECOMMENDATION",
+  "recommended_action": "REUSE",
+  "action_label": "Reuse an existing asset",
+  "action_status": "ACTIONABLE",
+  "direct_answer": "Reuse existing certified report AST-0292 ('Kerendia Gross-to-Net New').",
+  "why": [
+   "Existing certified asset AST-0292 ('Kerendia Gross-to-Net New') already covers Kerendia in FI (endorsement: 'certified'). It supports 1 of the requested canonical KPIs [Lifecycle Engine: REVIEW, health score: 55.0]. In accordance with RULE-001 (Reuse before build), business users must be directed to this certified report rather than creating redundant analytics. 10 governance finding(s) on assets outside the requested scope are reported separately and aren't blockers for this request."
+  ],
+  "matching_assets": [
+   {
+    "asset_id": "AST-0292",
+    "asset_name": "Kerendia Gross-to-Net New",
+    "product_scope": "Kerendia",
+    "market_scope": "FI",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "owner_name": "Anna Novak",
+    "match_tier": "EXACT",
+    "reasons": [
+     "Product scope matches 'Kerendia'",
+     "Market scope aligns with 'FI'",
+     "Endorsement level is 'certified'"
+    ]
+   },
+   {
+    "asset_id": "AST-0218",
+    "asset_name": "Kerendia Net Sales Final",
+    "product_scope": "Kerendia",
+    "market_scope": "Global",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "owner_name": "Sofia Novak",
+    "match_tier": "PARTIAL",
+    "reasons": [
+     "Product scope matches 'Kerendia'",
+     "Title keywords match requested concepts: sales",
+     "Endorsement level is 'promoted'"
+    ]
+   },
+   {
+    "asset_id": "AST-0005",
+    "asset_name": "Kerendia Inventory Copy",
+    "product_scope": "Kerendia",
+    "market_scope": "Global",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "owner_name": "Julia Brown",
+    "match_tier": "PARTIAL",
+    "reasons": [
+     "Product scope matches 'Kerendia'",
+     "Endorsement level is 'certified'"
+    ]
+   },
+   {
+    "asset_id": "AST-0011",
+    "asset_name": "Kerendia Supply Final",
+    "product_scope": "Kerendia",
+    "market_scope": "DE",
+    "platform": "Tableau",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "owner_name": "Felix Fischer",
+    "match_tier": "PARTIAL",
+    "reasons": [
+     "Product scope matches 'Kerendia'",
+     "Endorsement level is 'certified'"
+    ]
+   },
+   {
+    "asset_id": "AST-0022",
+    "asset_name": "All Pharma Net Sales Final",
+    "product_scope": "All Pharma",
+    "market_scope": "FI",
+    "platform": "Tableau",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "owner_name": "Nina Garcia",
+    "match_tier": "PARTIAL",
+    "reasons": [
+     "Market scope aligns with 'FI'",
+     "Title keywords match requested concepts: sales",
+     "Endorsement level is 'promoted'"
+    ]
+   },
+   {
+    "asset_id": "AST-0086",
+    "asset_name": "Kerendia Executive - EMEA",
+    "product_scope": "Kerendia",
+    "market_scope": "UK",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "candidate_retire",
+    "owner_name": "Nina Andersson",
+    "match_tier": "PARTIAL",
+    "reasons": [
+     "Product scope matches 'Kerendia'",
+     "Endorsement level is 'certified'"
+    ]
+   }
+  ],
+  "next_steps": [
+   "Provide user access to workspace containing AST-0292.",
+   "Verify user filters cover the desired country-level granularity."
+  ],
+  "human_approval_required": false,
+  "approval_explanation": "No change management is needed: this grants access to an existing endorsed asset.",
+  "confidence_explanation": "Rule-based decision (internal score 0.92). The score orders the decision matrix's outcomes; it is not a calibrated probability.",
+  "governance": {
+   "blockers": [],
+   "warnings": [
+    {
+     "rule_id": "RULE-002",
+     "severity": "HIGH",
+     "asset_id": "AST-0292",
+     "kind": "WARNING",
+     "effect": "REQUIRES_REVIEW",
+     "message": "Asset uses 1 non-canonical KPI(s).",
+     "required_action": "Remap asset AST-0292 to certified canonical KPIs before next release.",
+     "finding_ids": [
+      "FND-RULE002-0825BB2D9AF9"
+     ],
+     "sources": [
+      "RULE-002 HIGH WARNING on AST-0292: Asset uses 1 non-canonical KPI(s)."
+     ],
+     "affects_target": true
+    }
+   ],
+   "directives": [
+    {
+     "rule_id": "RULE-001",
+     "severity": "DIRECTIVE",
+     "asset_id": "AST-0292",
+     "kind": "DIRECTIVE",
+     "effect": "INFORMATIONAL",
+     "message": "Certified asset AST-0292 ('Kerendia Gross-to-Net New') already serves this exact scope. Reuse must be prioritized before building new analytics.",
+     "required_action": "Review and deduplicate AST-0292 against duplicates: AST-0164.",
+     "finding_ids": [
+      "FND-RULE001-F91AE775A4BF"
+     ],
+     "sources": [
+      "RULE-001 DIRECTIVE: Certified asset AST-0292 ('Kerendia Gross-to-Net New') already serves this exact scope. Reuse must be prioritized before building new analytics."
+     ],
+     "affects_target": true
+    }
+   ],
+   "backend_blocker_count": 0,
+   "backend_warning_count": 2,
+   "displayed_blocker_count": 0,
+   "displayed_warning_count": 1,
+   "displayed_directive_count": 1,
+   "out_of_scope_count": 10
+  }
+ }
+}

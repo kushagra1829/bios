@@ -1,0 +1,47 @@
+{
+  "manifest_version": "1.0.0",
+  "milestone": "5.7.1",
+  "generated_at": "2026-11-07T13:49:15Z",
+  "classification": "FIXED_AND_VERIFIED",
+  "root_cause": {
+    "error_type": "TypeError",
+    "description": "Cannot read properties of undefined (reading 'toFixed') in Array.map inside frontend/app/assistant/page.tsx",
+    "source_field_backend": "duration_ms (AgentTraceOut in backend/app/agents/schemas.py)",
+    "faulty_field_frontend": "latency_ms (declared as required number on AgentTrace in frontend/lib/types.ts, evaluated to undefined on live response)"
+  },
+  "files_modified_or_created": [
+    "frontend/lib/format.ts",
+    "frontend/lib/types.ts",
+    "frontend/app/assistant/page.tsx",
+    "frontend/app/lifecycle/page.tsx",
+    "frontend/tests/assistant_regression.test.mjs",
+    "docs/QA/MILESTONE_5_7_1_ASSISTANT_RUNTIME_FIX.md",
+    "docs/QA/MILESTONE_5_7_1_RUN_MANIFEST.json"
+  ],
+  "verification_results": {
+    "node_regression_tests": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0
+    },
+    "typescript_typecheck": {
+      "command": "npx tsc --noEmit",
+      "exit_code": 0
+    },
+    "production_build": {
+      "command": "npm run build",
+      "exit_code": 0,
+      "routes_generated": 13
+    },
+    "live_end_to_end_test": {
+      "endpoint": "http://localhost:3000/api/v1/assistant/requests",
+      "status_code": 201,
+      "request_id": "REQ-20261107134826-2519DF",
+      "decision": "MODIFY",
+      "confidence": 0.84,
+      "traces_count": 6,
+      "traces_durations_ms": [7563.0, 40.6, 6000.57, 22.37, 6.44, 6532.2]
+    }
+  }
+}
+

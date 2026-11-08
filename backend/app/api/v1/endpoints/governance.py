@@ -13,6 +13,8 @@ from backend.app.governance.schemas import (
     RuleId,
 )
 from backend.app.models.governance import GovernanceFindings, GovernanceEvaluationRuns
+from backend.app.auth.dependencies import require_role, get_current_user
+from backend.app.auth.schemas import UserRole, UserContext
 
 router = APIRouter()
 
@@ -20,6 +22,7 @@ router = APIRouter()
 @router.post("/evaluate", response_model=EvaluationRunSummary, status_code=status.HTTP_200_OK)
 def trigger_evaluation(
     db: Session = Depends(get_db),
+    user: UserContext = Depends(require_role(UserRole.BI_GOVERNANCE_REVIEWER, UserRole.BIOS_ADMIN)),
 ):
     """
     Execute a full deterministic governance evaluation run across all eight rules.
@@ -46,11 +49,17 @@ def list_findings(
     limit: int = Query(100, ge=1, le=1000, description="Page limit"),
     offset: int = Query(0, ge=0, description="Page offset"),
     db: Session = Depends(get_db),
+    user: UserContext = Depends(require_role(UserRole.ASSET_OWNER, UserRole.DOMAIN_STEWARD, UserRole.BI_GOVERNANCE_REVIEWER, UserRole.BIOS_ADMIN)),
 ):
     """
     List governance findings with optional filtering by rule, severity, status, entity, or run.
+    Scopes results to owned assets when queried by an Asset Owner.
     """
     query = db.query(GovernanceFindings)
+
+    # Scoping: Asset Owner only sees findings affecting assigned assets
+    if user.role == UserRole.ASSET_OWNER and user.assigned_asset_ids:
+        query = query.filter(GovernanceFindings.target_entity_id.in_(user.assigned_asset_ids))
 
     if rule_id:
         query = query.filter(GovernanceFindings.rule_id == rule_id)

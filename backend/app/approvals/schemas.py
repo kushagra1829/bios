@@ -22,6 +22,9 @@ class ApprovalActionType(str, Enum):
     CHANGE_KPI = "CHANGE_KPI"
     PUBLISH_ARTIFACT = "PUBLISH_ARTIFACT"
     GOVERNANCE_EXCEPTION = "GOVERNANCE_EXCEPTION"
+    REUSE = "REUSE"
+    MODIFY = "MODIFY"
+    BUILD_NEW = "BUILD_NEW"
 
 
 class UserRole(str, Enum):
@@ -33,12 +36,12 @@ class UserRole(str, Enum):
 
 
 class ApprovalCreate(BaseModel):
-    target_entity_type: str = Field(description="Entity type: asset, model, kpi, artifact, migration")
-    target_entity_id: str = Field(description="Unique entity ID (e.g. AST-0001, SM-001, KPI-001)")
+    target_entity_type: str = Field(default="asset", description="Entity type: asset, model, kpi, artifact, migration")
+    target_entity_id: Optional[str] = Field(default=None, description="Unique entity ID (e.g. AST-0001, SM-001, KPI-001)")
     action_type: ApprovalActionType = Field(description="Consequential action requested")
     recommendation_ref: Optional[str] = Field(None, description="Associated recommendation (e.g. REC-xxx, ASM-xxx, MIG-xxx)")
-    requester_id: str = Field(min_length=2, description="Identity of the requester")
-    requester_role: UserRole = Field(default=UserRole.REQUESTER)
+    requester_id: Optional[str] = Field(default=None, description="Identity of the requester")
+    requester_role: Optional[UserRole] = Field(default=UserRole.REQUESTER)
     title: str = Field(min_length=5, description="Summary title of the approval request")
     description: str = Field(min_length=10, description="Detailed rationale and scope")
     evidence_snapshot: Dict[str, Any] = Field(default_factory=dict)

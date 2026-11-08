@@ -1,0 +1,637 @@
+{
+ "request_id": "REQ-20261107181047-437935",
+ "raw_prompt": "New monthly Certified Asset Share dashboard for Japan",
+ "status": "completed",
+ "intent": {
+  "raw_prompt": "New monthly Certified Asset Share dashboard for Japan",
+  "products": [],
+  "markets": [
+   "JP"
+  ],
+  "kpis": [
+   "certified asset share"
+  ],
+  "dimensions": [
+   "month"
+  ],
+  "time_periods": [
+   "monthly"
+  ],
+  "business_purpose": "Analytics request for unspecified product across JP covering certified asset share",
+  "missing_or_ambiguous": [
+   "Product scope is unspecified (e.g., Nubeqa, Xarelto)."
+  ],
+  "confidence": 0.85,
+  "ambiguities": [],
+  "interpretation_notes": [],
+  "unresolved_terms": [],
+  "resolution": {
+   "original_request": "New monthly Certified Asset Share dashboard for Japan",
+   "deterministic_intent": {
+    "products": [],
+    "markets": [
+     "JP"
+    ],
+    "kpis": [
+     "certified asset share"
+    ],
+    "dimensions": [
+     "month"
+    ],
+    "time_periods": [
+     "monthly"
+    ],
+    "business_purpose": "Analytics request for unspecified product across JP covering certified asset share",
+    "missing_or_ambiguous": [
+     "Product scope is unspecified (e.g., Nubeqa, Xarelto)."
+    ],
+    "confidence": 0.85
+   },
+   "llm_proposal": null,
+   "accepted": [],
+   "confirmed": [],
+   "rejected": []
+  },
+  "geography": {
+   "status": "RESOLVED",
+   "phrases": [
+    {
+     "original_phrase": "Japan",
+     "normalized_scope": "JP",
+     "resolved_market_ids": [
+      "JP"
+     ],
+     "suggested_market_ids": [],
+     "catalog_evidence": [],
+     "external_context": [],
+     "status": "RESOLVED",
+     "explanation": "'Japan' matches catalog scope 'JP'."
+    }
+   ],
+   "resolved_market_ids": [
+    "JP"
+   ],
+   "unresolved_geography": [],
+   "explanation": "All requested geography matched catalog records."
+  },
+  "request_types": [
+   "ASSET_REQUEST"
+  ],
+  "request_type_evidence": [
+   "Asks to provision an asset: 'New monthly Certified Asset Share dashboard'."
+  ],
+  "asset_ids_mentioned": [],
+  "duplication_question": false,
+  "title_topics": []
+ },
+ "recommendation": {
+  "decision": "BUILD_NEW",
+  "confidence": 0.78,
+  "primary_recommendation": "Build new governed analytics asset on shared semantic model.",
+  "rationale": "Discovery searched all 360 analytics assets, their semantic models and the migration backlog, and found no existing asset covering the requested scope in JP. Building a new analytics asset is justified, provided it connects to a shared semantic model, consumes approved canonical KPIs, and has an active owner assigned.",
+  "target_asset_ids": [],
+  "target_model_ids": [],
+  "alternatives": [],
+  "blockers": [],
+  "warnings": [],
+  "human_approval_required": true,
+  "next_steps": [
+   "Assign designated active business owner.",
+   "Select or create certified shared semantic model.",
+   "Map measures strictly to approved canonical KPIs."
+  ],
+  "active_finding_ids": [],
+  "out_of_scope_warnings": [],
+  "llm_narrative": null,
+  "action_status": "REQUIRES_APPROVAL",
+  "ineligible_targets": []
+ },
+ "discovery": {
+  "exact_matches": [],
+  "partial_matches": [],
+  "weak_candidates": [
+   {
+    "asset_id": "AST-0008",
+    "asset_name": "All Pharma Market Access Monthly",
+    "match_tier": "WEAK",
+    "product_scope": "All Pharma",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'JP'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-034",
+    "model_name": "Regional Commercial 34",
+    "model_endorsement": "promoted",
+    "owner_name": "Nina Schmidt",
+    "estimated_audience": 1559,
+    "evidence": {
+     "asset_id": "AST-0008",
+     "workspace_id": "WS-016",
+     "model_id": "SM-034",
+     "product_scope": "All Pharma",
+     "market_scope": "JP",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0078",
+    "asset_name": "Xarelto Commercial Reach Mgmt",
+    "match_tier": "WEAK",
+    "product_scope": "Xarelto",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'JP'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-067",
+    "model_name": "Market Access 67",
+    "model_endorsement": "promoted",
+    "owner_name": "Nina Schmidt",
+    "estimated_audience": 698,
+    "evidence": {
+     "asset_id": "AST-0078",
+     "workspace_id": "WS-005",
+     "model_id": "SM-067",
+     "product_scope": "Xarelto",
+     "market_scope": "JP",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0079",
+    "asset_name": "Eylea Commercial Reach Final",
+    "match_tier": "WEAK",
+    "product_scope": "Eylea",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'JP'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-040",
+    "model_name": "Launch Excellence 40",
+    "model_endorsement": "none",
+    "owner_name": "Julia Brown",
+    "estimated_audience": 707,
+    "evidence": {
+     "asset_id": "AST-0079",
+     "workspace_id": "WS-005",
+     "model_id": "SM-040",
+     "product_scope": "Eylea",
+     "market_scope": "JP",
+     "endorsement": "certified",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0112",
+    "asset_name": "Nubeqa Net Sales Mgmt",
+    "match_tier": "WEAK",
+    "product_scope": "Nubeqa",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'JP'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-043",
+    "model_name": "Executive Pharma 43",
+    "model_endorsement": "none",
+    "owner_name": "Felix Virtanen",
+    "estimated_audience": 642,
+    "evidence": {
+     "asset_id": "AST-0112",
+     "workspace_id": "WS-006",
+     "model_id": "SM-043",
+     "product_scope": "Nubeqa",
+     "market_scope": "JP",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "inactive",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Assigned owner is 'inactive'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0114",
+    "asset_name": "Nubeqa Forecast - US",
+    "match_tier": "WEAK",
+    "product_scope": "Nubeqa",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'JP'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-062",
+    "model_name": "Channel Performance 62",
+    "model_endorsement": "none",
+    "owner_name": "Mika Novak",
+    "estimated_audience": 1001,
+    "evidence": {
+     "asset_id": "AST-0114",
+     "workspace_id": "WS-006",
+     "model_id": "SM-062",
+     "product_scope": "Nubeqa",
+     "market_scope": "JP",
+     "endorsement": "certified",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0135",
+    "asset_name": "Beyonttra Commercial Reach Legacy",
+    "match_tier": "WEAK",
+    "product_scope": "Beyonttra",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'JP'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-062",
+    "model_name": "Channel Performance 62",
+    "model_endorsement": "none",
+    "owner_name": "Mika Martin",
+    "estimated_audience": 1219,
+    "evidence": {
+     "asset_id": "AST-0135",
+     "workspace_id": "WS-004",
+     "model_id": "SM-062",
+     "product_scope": "Beyonttra",
+     "market_scope": "JP",
+     "endorsement": "promoted",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0150",
+    "asset_name": "Eylea Market Access Legacy",
+    "match_tier": "WEAK",
+    "product_scope": "Eylea",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "active",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'JP'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-010",
+    "model_name": "Supply & Inventory 10",
+    "model_endorsement": "promoted",
+    "owner_name": "Julia Virtanen",
+    "estimated_audience": 492,
+    "evidence": {
+     "asset_id": "AST-0150",
+     "workspace_id": "WS-011",
+     "model_id": "SM-010",
+     "product_scope": "Eylea",
+     "market_scope": "JP",
+     "endorsement": "certified",
+     "lifecycle_status": "active",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0154",
+    "asset_name": "All Pharma Demand Final",
+    "match_tier": "WEAK",
+    "product_scope": "All Pharma",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "legacy",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'JP'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-033",
+    "model_name": "Executive Pharma 33",
+    "model_endorsement": "certified",
+    "owner_name": "Daniel Meyer",
+    "estimated_audience": 396,
+    "evidence": {
+     "asset_id": "AST-0154",
+     "workspace_id": "WS-010",
+     "model_id": "SM-033",
+     "product_scope": "All Pharma",
+     "market_scope": "JP",
+     "endorsement": "promoted",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0231",
+    "asset_name": "All Pharma Forecast - Global",
+    "match_tier": "WEAK",
+    "product_scope": "All Pharma",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "certified",
+    "lifecycle_status": "legacy",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'JP'",
+     "Endorsement level is 'certified'"
+    ],
+    "model_id": "SM-068",
+    "model_name": "Demand Forecast 68",
+    "model_endorsement": "certified",
+    "owner_name": "Max Keller",
+    "estimated_audience": 1541,
+    "evidence": {
+     "asset_id": "AST-0231",
+     "workspace_id": "WS-004",
+     "model_id": "SM-068",
+     "product_scope": "All Pharma",
+     "market_scope": "JP",
+     "endorsement": "certified",
+     "lifecycle_status": "legacy",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'legacy'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   },
+   {
+    "asset_id": "AST-0237",
+    "asset_name": "Nubeqa Net Sales Final",
+    "match_tier": "WEAK",
+    "product_scope": "Nubeqa",
+    "market_scope": "JP",
+    "platform": "Power BI",
+    "endorsement": "promoted",
+    "lifecycle_status": "candidate_retire",
+    "match_score": 0.4,
+    "match_reasons": [
+     "Market scope aligns with 'JP'",
+     "Endorsement level is 'promoted'"
+    ],
+    "model_id": "SM-010",
+    "model_name": "Supply & Inventory 10",
+    "model_endorsement": "promoted",
+    "owner_name": "Nina Andersson",
+    "estimated_audience": 2142,
+    "evidence": {
+     "asset_id": "AST-0237",
+     "workspace_id": "WS-007",
+     "model_id": "SM-010",
+     "product_scope": "Nubeqa",
+     "market_scope": "JP",
+     "endorsement": "promoted",
+     "lifecycle_status": "candidate_retire",
+     "owner_status": "active",
+     "missing_evidence": [],
+     "negative_evidence": [
+      "Lifecycle status is 'candidate_retire'"
+     ],
+     "title_topic_match": [],
+     "named_in_request": false
+    }
+   }
+  ],
+  "total_searched": 360,
+  "search_notes": "Searched 360 assets. Found 0 exact matches, 0 partial matches, and 29 weak candidates.",
+  "data_answer": null,
+  "governance_answer": null,
+  "migration_answer": null,
+  "title_topic_matches": []
+ },
+ "kpi_analysis": {
+  "matches": [
+   {
+    "requested_metric": "certified asset share",
+    "matched_kpi_id": "KPI-054",
+    "matched_kpi_name": "Certified Asset Share",
+    "domain": "BI Governance",
+    "approval_status": "approved",
+    "definition_status": "canonical",
+    "is_canonical": true,
+    "is_approved": true,
+    "semantic_equivalence_notes": "Exact match on canonical approved KPI 'Certified Asset Share' (KPI-054)",
+    "conflicts": [],
+    "alternative_kpis": []
+   }
+  ],
+  "canonical_approved_kpi_ids": [
+   "KPI-054"
+  ],
+  "unapproved_or_conflicted_kpi_ids": [],
+  "unmatched_requested_metrics": [],
+  "has_conflicts": false,
+  "summary": "Evaluated 1 requested metrics: 1 canonical approved, 0 unapproved/conflicted, 0 unmatched.",
+  "llm_review": []
+ },
+ "duplication": {
+  "has_duplicates": false,
+  "candidates": [],
+  "highest_similarity_score": 0.0,
+  "primary_duplicate_asset_id": null,
+  "explanation": "No existing assets identified with sufficient scope overlap to assess duplication.",
+  "gate_evaluations": [],
+  "consolidation_eligible_pairs": [],
+  "title_alike_groups": []
+ },
+ "governance": {
+  "blockers": [],
+  "warnings": [],
+  "applicable_rule_ids": [
+   "RULE-001",
+   "RULE-002",
+   "RULE-003"
+  ],
+  "active_finding_ids": [],
+  "human_approval_required": true,
+  "evidence_references": [],
+  "request_finding_ids": [],
+  "out_of_scope_finding_ids": [],
+  "out_of_scope_warnings": []
+ },
+ "traces": [
+  {
+   "trace_id": "TRC-BB0F31F5B148",
+   "request_id": "REQ-20261107181047-437935",
+   "agent_name": "IntentAgent",
+   "step_order": 1,
+   "status": "success",
+   "duration_ms": 6.92,
+   "input_json": "{\"prompt\": \"New monthly Certified Asset Share dashboard for Japan\"}",
+   "output_json": "{\"raw_prompt\": \"New monthly Certified Asset Share dashboard for Japan\", \"products\": [], \"markets\": [\"JP\"], \"kpis\": [\"certified asset share\"], \"dimensions\": [\"month\"], \"time_periods\": [\"monthly\"], \"business_purpose\": \"Analytics request for unspecified product across JP covering certified asset share\", \"missing_or_ambiguous\": [\"Product scope is unspecified (e.g., Nubeqa, Xarelto).\"], \"confidence\": 0.85, \"ambiguities\": [], \"interpretation_notes\": [], \"unresolved_terms\": [], \"resolution\": {\"original_request\": \"New monthly Certified Asset Share dashboard for Japan\", \"deterministic_intent\": {\"products\": [], \"markets\": [\"JP\"], \"kpis\": [\"certified asset share\"], \"dimensions\": [\"month\"], \"time_periods\": [\"monthly\"], \"business_purpose\": \"Analytics request for unspecified product across JP covering certified asset share\", \"missing_or_ambiguous\": [\"Product scope is unspecified (e.g., Nubeqa, Xarelto).\"], \"confidence\": 0.85}, \"llm_proposal\": null, \"accepted\": [], \"confirmed\": [], \"rejected\": []}, \"geography\": {\"status\": \"RESOLVED\", \"phrases\": [{\"original_phrase\": \"Japan\", \"normalized_scope\": \"JP\", \"resolved_market_ids\": [\"JP\"], \"suggested_market_ids\": [], \"catalog_evidence\": [], \"external_context\": [], \"status\": \"RESOLVED\", \"explanation\": \"'Japan' matches catalog scope 'JP'.\"}], \"resolved_market_ids\": [\"JP\"], \"unresolved_geography\": [], \"explanation\": \"All requested geography matched catalog records.\"}, \"request_types\": [\"ASSET_REQUEST\"], \"request_type_evidence\": [\"Asks to provision an asset: 'New monthly Certified Asset Share dashboard'.\"], \"asset_ids_mentioned\": [], \"duplication_question\": false, \"title_topics\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":\"deterministic_fallback\",\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:47.767769"
+  },
+  {
+   "trace_id": "TRC-B390B0E3E2CA",
+   "request_id": "REQ-20261107181047-437935",
+   "agent_name": "DiscoveryAgent",
+   "step_order": 2,
+   "status": "success",
+   "duration_ms": 13.48,
+   "input_json": "{\"raw_prompt\": \"New monthly Certified Asset Share dashboard for Japan\", \"products\": [], \"markets\": [\"JP\"], \"kpis\": [\"certified asset share\"], \"dimensions\": [\"month\"], \"time_periods\": [\"monthly\"], \"business_purpose\": \"Analytics request for unspecified product across JP covering certified asset share\", \"missing_or_ambiguous\": [\"Product scope is unspecified (e.g., Nubeqa, Xarelto).\"], \"confidence\": 0.85, \"ambiguities\": [], \"interpretation_notes\": [], \"unresolved_terms\": [], \"resolution\": {\"original_request\": \"New monthly Certified Asset Share dashboard for Japan\", \"deterministic_intent\": {\"products\": [], \"markets\": [\"JP\"], \"kpis\": [\"certified asset share\"], \"dimensions\": [\"month\"], \"time_periods\": [\"monthly\"], \"business_purpose\": \"Analytics request for unspecified product across JP covering certified asset share\", \"missing_or_ambiguous\": [\"Product scope is unspecified (e.g., Nubeqa, Xarelto).\"], \"confidence\": 0.85}, \"llm_proposal\": null, \"accepted\": [], \"confirmed\": [], \"rejected\": []}, \"geography\": {\"status\": \"RESOLVED\", \"phrases\": [{\"original_phrase\": \"Japan\", \"normalized_scope\": \"JP\", \"resolved_market_ids\": [\"JP\"], \"suggested_market_ids\": [], \"catalog_evidence\": [], \"external_context\": [], \"status\": \"RESOLVED\", \"explanation\": \"'Japan' matches catalog scope 'JP'.\"}], \"resolved_market_ids\": [\"JP\"], \"unresolved_geography\": [], \"explanation\": \"All requested geography matched catalog records.\"}, \"request_types\": [\"ASSET_REQUEST\"], \"request_type_evidence\": [\"Asks to provision an asset: 'New monthly Certified Asset Share dashboard'.\"], \"asset_ids_mentioned\": [], \"duplication_question\": false, \"title_topics\": []}",
+   "output_json": "{\"exact_matches\": [], \"partial_matches\": [], \"weak_candidates\": [{\"asset_id\": \"AST-0008\", \"asset_name\": \"All Pharma Market Access Monthly\", \"match_tier\": \"WEAK\", \"product_scope\": \"All Pharma\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'JP'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-034\", \"model_name\": \"Regional Commercial 34\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Nina Schmidt\", \"estimated_audience\": 1559, \"evidence\": {\"asset_id\": \"AST-0008\", \"workspace_id\": \"WS-016\", \"model_id\": \"SM-034\", \"product_scope\": \"All Pharma\", \"market_scope\": \"JP\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0078\", \"asset_name\": \"Xarelto Commercial Reach Mgmt\", \"match_tier\": \"WEAK\", \"product_scope\": \"Xarelto\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'JP'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-067\", \"model_name\": \"Market Access 67\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Nina Schmidt\", \"estimated_audience\": 698, \"evidence\": {\"asset_id\": \"AST-0078\", \"workspace_id\": \"WS-005\", \"model_id\": \"SM-067\", \"product_scope\": \"Xarelto\", \"market_scope\": \"JP\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0079\", \"asset_name\": \"Eylea Commercial Reach Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"Eylea\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'JP'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-040\", \"model_name\": \"Launch Excellence 40\", \"model_endorsement\": \"none\", \"owner_name\": \"Julia Brown\", \"estimated_audience\": 707, \"evidence\": {\"asset_id\": \"AST-0079\", \"workspace_id\": \"WS-005\", \"model_id\": \"SM-040\", \"product_scope\": \"Eylea\", \"market_scope\": \"JP\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0112\", \"asset_name\": \"Nubeqa Net Sales Mgmt\", \"match_tier\": \"WEAK\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'JP'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-043\", \"model_name\": \"Executive Pharma 43\", \"model_endorsement\": \"none\", \"owner_name\": \"Felix Virtanen\", \"estimated_audience\": 642, \"evidence\": {\"asset_id\": \"AST-0112\", \"workspace_id\": \"WS-006\", \"model_id\": \"SM-043\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"JP\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"inactive\", \"missing_evidence\": [], \"negative_evidence\": [\"Assigned owner is 'inactive'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0114\", \"asset_name\": \"Nubeqa Forecast - US\", \"match_tier\": \"WEAK\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'JP'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-062\", \"model_name\": \"Channel Performance 62\", \"model_endorsement\": \"none\", \"owner_name\": \"Mika Novak\", \"estimated_audience\": 1001, \"evidence\": {\"asset_id\": \"AST-0114\", \"workspace_id\": \"WS-006\", \"model_id\": \"SM-062\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"JP\", \"endorsement\": \"certified\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0135\", \"asset_name\": \"Beyonttra Commercial Reach Legacy\", \"match_tier\": \"WEAK\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'JP'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-062\", \"model_name\": \"Channel Performance 62\", \"model_endorsement\": \"none\", \"owner_name\": \"Mika Martin\", \"estimated_audience\": 1219, \"evidence\": {\"asset_id\": \"AST-0135\", \"workspace_id\": \"WS-004\", \"model_id\": \"SM-062\", \"product_scope\": \"Beyonttra\", \"market_scope\": \"JP\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0150\", \"asset_name\": \"Eylea Market Access Legacy\", \"match_tier\": \"WEAK\", \"product_scope\": \"Eylea\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'JP'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-010\", \"model_name\": \"Supply & Inventory 10\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Julia Virtanen\", \"estimated_audience\": 492, \"evidence\": {\"asset_id\": \"AST-0150\", \"workspace_id\": \"WS-011\", \"model_id\": \"SM-010\", \"product_scope\": \"Eylea\", \"market_scope\": \"JP\", \"endorsement\": \"certified\", \"lifecycle_status\": \"active\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0154\", \"asset_name\": \"All Pharma Demand Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"All Pharma\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'JP'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-033\", \"model_name\": \"Executive Pharma 33\", \"model_endorsement\": \"certified\", \"owner_name\": \"Daniel Meyer\", \"estimated_audience\": 396, \"evidence\": {\"asset_id\": \"AST-0154\", \"workspace_id\": \"WS-010\", \"model_id\": \"SM-033\", \"product_scope\": \"All Pharma\", \"market_scope\": \"JP\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0231\", \"asset_name\": \"All Pharma Forecast - Global\", \"match_tier\": \"WEAK\", \"product_scope\": \"All Pharma\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'JP'\", \"Endorsement level is 'certified'\"], \"model_id\": \"SM-068\", \"model_name\": \"Demand Forecast 68\", \"model_endorsement\": \"certified\", \"owner_name\": \"Max Keller\", \"estimated_audience\": 1541, \"evidence\": {\"asset_id\": \"AST-0231\", \"workspace_id\": \"WS-004\", \"model_id\": \"SM-068\", \"product_scope\": \"All Pharma\", \"market_scope\": \"JP\", \"endorsement\": \"certified\", \"lifecycle_status\": \"legacy\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'legacy'\"], \"title_topic_match\": [], \"named_in_request\": false}}, {\"asset_id\": \"AST-0237\", \"asset_name\": \"Nubeqa Net Sales Final\", \"match_tier\": \"WEAK\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"JP\", \"platform\": \"Power BI\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"match_score\": 0.4, \"match_reasons\": [\"Market scope aligns with 'JP'\", \"Endorsement level is 'promoted'\"], \"model_id\": \"SM-010\", \"model_name\": \"Supply & Inventory 10\", \"model_endorsement\": \"promoted\", \"owner_name\": \"Nina Andersson\", \"estimated_audience\": 2142, \"evidence\": {\"asset_id\": \"AST-0237\", \"workspace_id\": \"WS-007\", \"model_id\": \"SM-010\", \"product_scope\": \"Nubeqa\", \"market_scope\": \"JP\", \"endorsement\": \"promoted\", \"lifecycle_status\": \"candidate_retire\", \"owner_status\": \"active\", \"missing_evidence\": [], \"negative_evidence\": [\"Lifecycle status is 'candidate_retire'\"], \"title_topic_match\": [], \"named_in_request\": false}}], \"total_searched\": 360, \"search_notes\": \"Searched 360 assets. Found 0 exact matches, 0 partial matches, and 29 weak candidates.\", \"data_answer\": null, \"governance_answer\": null, \"migration_answer\": null, \"title_topic_matches\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:47.796614"
+  },
+  {
+   "trace_id": "TRC-41149BE82D86",
+   "request_id": "REQ-20261107181047-437935",
+   "agent_name": "KpiIntelligenceAgent",
+   "step_order": 3,
+   "status": "success",
+   "duration_ms": 0.99,
+   "input_json": "{\"requested_kpis\": [\"certified asset share\"]}",
+   "output_json": "{\"matches\": [{\"requested_metric\": \"certified asset share\", \"matched_kpi_id\": \"KPI-054\", \"matched_kpi_name\": \"Certified Asset Share\", \"domain\": \"BI Governance\", \"approval_status\": \"approved\", \"definition_status\": \"canonical\", \"is_canonical\": true, \"is_approved\": true, \"semantic_equivalence_notes\": \"Exact match on canonical approved KPI 'Certified Asset Share' (KPI-054)\", \"conflicts\": [], \"alternative_kpis\": []}], \"canonical_approved_kpi_ids\": [\"KPI-054\"], \"unapproved_or_conflicted_kpi_ids\": [], \"unmatched_requested_metrics\": [], \"has_conflicts\": false, \"summary\": \"Evaluated 1 requested metrics: 1 canonical approved, 0 unapproved/conflicted, 0 unmatched.\", \"llm_review\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:47.804280"
+  },
+  {
+   "trace_id": "TRC-713A968F9DA1",
+   "request_id": "REQ-20261107181047-437935",
+   "agent_name": "DuplicationAgent",
+   "step_order": 4,
+   "status": "success",
+   "duration_ms": 0.07,
+   "input_json": "{\"products\": [], \"exact_matches\": 0, \"canonical_kpis\": [\"KPI-054\"]}",
+   "output_json": "{\"has_duplicates\": false, \"candidates\": [], \"highest_similarity_score\": 0.0, \"primary_duplicate_asset_id\": null, \"explanation\": \"No existing assets identified with sufficient scope overlap to assess duplication.\", \"gate_evaluations\": [], \"consolidation_eligible_pairs\": [], \"title_alike_groups\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:47.811642"
+  },
+  {
+   "trace_id": "TRC-703151150A10",
+   "request_id": "REQ-20261107181047-437935",
+   "agent_name": "GovernanceAgent",
+   "step_order": 5,
+   "status": "success",
+   "duration_ms": 0.08,
+   "input_json": "{\"exact_candidates\": [], \"unapproved_kpis\": []}",
+   "output_json": "{\"blockers\": [], \"warnings\": [], \"applicable_rule_ids\": [\"RULE-001\", \"RULE-002\", \"RULE-003\"], \"active_finding_ids\": [], \"human_approval_required\": true, \"evidence_references\": [], \"request_finding_ids\": [], \"out_of_scope_finding_ids\": [], \"out_of_scope_warnings\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":null,\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:47.819093"
+  },
+  {
+   "trace_id": "TRC-8383323B9EB7",
+   "request_id": "REQ-20261107181047-437935",
+   "agent_name": "DecisionAgent",
+   "step_order": 6,
+   "status": "success",
+   "duration_ms": 0.22,
+   "input_json": "{\"intent_confidence\": 0.85, \"exact_matches_count\": 0, \"has_duplicates\": false, \"governance_blockers_count\": 0}",
+   "output_json": "{\"decision\": \"BUILD_NEW\", \"confidence\": 0.78, \"primary_recommendation\": \"Build new governed analytics asset on shared semantic model.\", \"rationale\": \"Discovery searched all 360 analytics assets, their semantic models and the migration backlog, and found no existing asset covering the requested scope in JP. Building a new analytics asset is justified, provided it connects to a shared semantic model, consumes approved canonical KPIs, and has an active owner assigned.\", \"target_asset_ids\": [], \"target_model_ids\": [], \"alternatives\": [], \"blockers\": [], \"warnings\": [], \"human_approval_required\": true, \"next_steps\": [\"Assign designated active business owner.\", \"Select or create certified shared semantic model.\", \"Map measures strictly to approved canonical KPIs.\"], \"active_finding_ids\": [], \"out_of_scope_warnings\": [], \"llm_narrative\": null, \"action_status\": \"REQUIRES_APPROVAL\", \"ineligible_targets\": []}",
+   "error_message": null,
+   "execution_metadata_json": "{\"execution_mode\":\"DETERMINISTIC\",\"provider\":\"deterministic_fallback\",\"model\":null,\"fallback_reason\":null,\"llm_calls\":[]}",
+   "executed_at": "2026-11-07T18:10:47.826277"
+  }
+ ],
+ "request_types": [
+  "ASSET_REQUEST"
+ ],
+ "data_answer": null,
+ "governance_answer": null,
+ "migration_answer": null,
+ "presentation": {
+  "response_type": "ASSET_RECOMMENDATION",
+  "recommended_action": "BUILD_NEW",
+  "action_label": "Build a new asset",
+  "action_status": "REQUIRES_APPROVAL",
+  "direct_answer": "Build new governed analytics asset on shared semantic model.",
+  "why": [
+   "Discovery searched all 360 analytics assets, their semantic models and the migration backlog, and found no existing asset covering the requested scope in JP. Building a new analytics asset is justified, provided it connects to a shared semantic model, consumes approved canonical KPIs, and has an active owner assigned."
+  ],
+  "matching_assets": [],
+  "next_steps": [
+   "Assign designated active business owner.",
+   "Select or create certified shared semantic model.",
+   "Map measures strictly to approved canonical KPIs."
+  ],
+  "human_approval_required": true,
+  "approval_explanation": "An authorised human must approve this action before anything changes (owner authority is checked by the approvals service).",
+  "confidence_explanation": "Rule-based decision (internal score 0.78). The score orders the decision matrix's outcomes; it is not a calibrated probability.",
+  "governance": {
+   "blockers": [],
+   "warnings": [],
+   "directives": [],
+   "backend_blocker_count": 0,
+   "backend_warning_count": 0,
+   "displayed_blocker_count": 0,
+   "displayed_warning_count": 0,
+   "displayed_directive_count": 0,
+   "out_of_scope_count": 0
+  }
+ }
+}

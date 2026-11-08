@@ -118,8 +118,21 @@ class ArtifactService:
         else:
             raise ValueError("Either spec, spec_id, or request_id must be provided")
 
-        # 2. Enforce Reuse-First Gate
+        # 2. Enforce Reuse-First Gate & Synchronous Approval Verification
         req_id = spec.request_id or request.request_id
+        from backend.app.approvals.service import ApprovalService
+
+        # Explicit approval provided on spec or request must be verified synchronously
+        explicit_app_id = spec.approval_id or request.approval_id
+        if explicit_app_id and not request.force:
+            try:
+                ApprovalService.verify_waiver_synchronous(
+                    db=db,
+                    waiver_id=explicit_app_id,
+                )
+            except (PermissionError, ValueError) as err:
+                raise ApprovalRequiredError(f"APPROVAL_REQUIRED: {err}")
+
         if req_id and not request.force:
             rec = db.query(AssistantRecommendations).filter(
                 AssistantRecommendations.request_id == req_id
@@ -144,14 +157,29 @@ class ArtifactService:
                             raise ApprovalRequiredError(
                                 "APPROVAL_REQUIRED: Action BUILD_NEW requires an approved human approval before artifact generation."
                             )
+                        try:
+                            ApprovalService.verify_waiver_synchronous(
+                                db=db,
+                                waiver_id=app.approval_id,
+                                target_entity_id=req_id,
+                            )
+                        except (PermissionError, ValueError) as err:
+                            raise ApprovalRequiredError(f"APPROVAL_REQUIRED: {err}")
                     else:
                         app = db.query(ApprovalRequests).filter(
                             ApprovalRequests.approval_id == app_id
                         ).first()
-                        if not app or app.status != "APPROVED":
+                        if not app:
                             raise ApprovalRequiredError(
-                                f"APPROVAL_REQUIRED: Approval {app_id} is not in APPROVED state (current state: {app.status if app else 'NOT_FOUND'})."
+                                f"APPROVAL_REQUIRED: Approval {app_id} is not found."
                             )
+                        try:
+                            ApprovalService.verify_waiver_synchronous(
+                                db=db,
+                                waiver_id=app.approval_id,
+                            )
+                        except (PermissionError, ValueError) as err:
+                            raise ApprovalRequiredError(f"APPROVAL_REQUIRED: {err}")
 
         # 3. Create or save specification in DB if not already present
         if not db_spec:

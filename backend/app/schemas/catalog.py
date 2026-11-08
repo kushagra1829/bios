@@ -78,6 +78,7 @@ class AnalyticsAssetOut(BaseModel):
     product_scope: str
     market_scope: str
     owner_id: Optional[str] = None
+    owner_name: Optional[str] = None
     created_date: Optional[datetime] = None
     last_modified: Optional[datetime] = None
     lifecycle_status: str

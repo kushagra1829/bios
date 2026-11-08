@@ -46,6 +46,14 @@ from backend.app.models.artifact import (
     DashboardSpecifications,
     GeneratedArtifacts,
 )
+from backend.app.models.integrations import (
+    IntegrationConfigs,
+    ExternalAssetMappings,
+)
+from backend.app.models.monitoring import (
+    MonitoringExecutionRuns,
+    GovernanceAlerts,
+)
 
 __all__ = [
     "Base",
@@ -83,5 +91,9 @@ __all__ = [
     "AuditEvents",
     "DashboardSpecifications",
     "GeneratedArtifacts",
+    "IntegrationConfigs",
+    "ExternalAssetMappings",
+    "MonitoringExecutionRuns",
+    "GovernanceAlerts",
 ]
 

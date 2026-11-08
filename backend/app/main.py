@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 import logging
 from fastapi import FastAPI, Request, status
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
@@ -14,8 +15,25 @@ app = FastAPI(
     version="0.1.0",
 )
 
+# Enable CORS for local Next.js frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000", "http://localhost:3001"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # Include API v1 router
 app.include_router(api_v1_router, prefix="/api/v1")
+
+
+@app.on_event("startup")
+def on_startup():
+    from backend.app.db.session import engine, Base
+    import backend.app.models  # noqa: F401
+    Base.metadata.create_all(bind=engine)
+    logger.info("Database schemas verified and initialized.")
 
 
 @app.exception_handler(StarletteHTTPException)

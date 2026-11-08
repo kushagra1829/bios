@@ -1,1 +1,0 @@
-Optional Arduino UNO Q companion for physical status and acknowledgement. Core BIOS workflows must work without it.

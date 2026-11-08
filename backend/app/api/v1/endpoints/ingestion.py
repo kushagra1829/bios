@@ -7,6 +7,8 @@ from backend.app.db.session import get_db
 from backend.app.models.audit import SourceImportRuns
 from backend.app.schemas.catalog import IngestionReportOut
 from backend.app.ingestion.loader import WorkbookIngestionService
+from backend.app.auth.dependencies import require_admin
+from backend.app.auth.schemas import UserContext
 
 router = APIRouter()
 
@@ -14,6 +16,7 @@ router = APIRouter()
 @router.post("/run", response_model=IngestionReportOut)
 def run_ingestion(
     dry_run: bool = Query(False, description="Simulate ingestion without writing to database"),
+    user: UserContext = Depends(require_admin),
 ):
     service = WorkbookIngestionService()
     try:

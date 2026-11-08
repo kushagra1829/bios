@@ -17,8 +17,14 @@ from backend.app.artifacts.service import (
     SpecificationNotFoundError,
 )
 from backend.app.db.session import get_db
+from backend.app.auth.dependencies import require_role
+from backend.app.auth.schemas import UserRole
 
-router = APIRouter(prefix="/artifacts", tags=["Power BI Artifacts"])
+router = APIRouter(
+    prefix="/artifacts",
+    tags=["Power BI Artifacts"],
+    dependencies=[Depends(require_role(UserRole.DOMAIN_STEWARD, UserRole.BI_GOVERNANCE_REVIEWER, UserRole.BIOS_ADMIN))],
+)
 
 
 @router.post("/specifications", response_model=DashboardSpecOut, status_code=status.HTTP_201_CREATED)

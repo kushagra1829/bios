@@ -1,0 +1,114 @@
+{
+  "manifest_version": "5.6.0",
+  "audit_type": "Reliability Fixes & Integration Readiness Validation",
+  "timestamp": "2026-11-07T11:48:00Z",
+  "project_name": "BIOS — Business Intelligence Optimization System",
+  "challenge": "SinceAI Hackathon 2026 — Bayer Challenge",
+  "baseline": {
+    "git_commit": "99c8fd01632e4e4a0cc1646f9d7338a8d7e06aab",
+    "git_commit_message": "Complete BIOS foundation through Milestone 5.5.2",
+    "working_tree_clean_on_tracked_files": true,
+    "source_dataset_filename": "Bayer_Pharmaceuticals_SinceAI_2026_FINAL_Builder_Data_Pack.xlsx",
+    "source_dataset_sha256": "7d01877096c640d7705c0507cfc32840dd88a99fe546d975a715f73b40f101ab",
+    "alembic_head": "b4f1c2d7e8a9",
+    "sqlite_database_path": "data/bios.db"
+  },
+  "test_execution_audit": {
+    "test_command": "backend\\.venv\\Scripts\\python.exe -m pytest backend/tests",
+    "total_collected": 410,
+    "total_passed": 396,
+    "total_skipped": 14,
+    "total_failed": 0,
+    "skipped_explanation": "14 tests in backend/tests/test_ollama_live.py skipped automatically when local Ollama background service is not running."
+  },
+  "priorities_completed": {
+    "priority_1_n4_live_owner_verification": {
+      "status": "IMPLEMENTED_AND_TESTED",
+      "implementation_files": [
+        "backend/app/approvals/service.py",
+        "backend/app/approvals/roles.py"
+      ],
+      "test_file": "backend/tests/test_reliability_n4_n5.py",
+      "test_count": 5,
+      "features": [
+        "Live Owners table re-query at approval time",
+        "Rejection of inactive owners with UNAUTHORIZED_INACTIVE_OWNER audit event",
+        "Rejection of missing or forged owner records with UNAUTHORIZED_OWNER_ACTION audit event",
+        "Rejection of owner scope mismatches with OWNER_SCOPE_MISMATCH audit event",
+        "Stale requests cannot bypass newly updated owner status"
+      ]
+    },
+    "priority_2_n5_synchronous_expired_waiver_enforcement": {
+      "status": "IMPLEMENTED_AND_TESTED",
+      "implementation_files": [
+        "backend/app/approvals/service.py",
+        "backend/app/artifacts/service.py"
+      ],
+      "test_file": "backend/tests/test_reliability_n4_n5.py",
+      "test_count": 7,
+      "features": [
+        "Point-of-use synchronous expiration check (verify_waiver_synchronous)",
+        "Stale APPROVED state past expiration synchronously transitioned to EXPIRED",
+        "Audit event EXPIRED_WAIVER_USE_REJECTED logged on expired waiver usage",
+        "Audit event EXPIRED_APPROVAL_ATTEMPT logged on expired request approval",
+        "Synchronous rejection of revoked, invalid, out-of-scope, and RULE-008 waivers",
+        "Artifact Factory verifies approved requests synchronously before BUILD_NEW generation"
+      ]
+    },
+    "priority_3_security_control_matrix_reconciliation": {
+      "status": "RECONCILED_AND_VERIFIED",
+      "reference_document": "docs/QA/MILESTONE_5_6_SECURITY_CONTROL_MATRIX.md",
+      "original_negative_controls_count": 10,
+      "original_positive_controls_count": 2,
+      "total_controls_count": 12,
+      "sub_rules": {
+        "N3_AI": "Classified as sub-rule of N3 (Self-Approval Prohibition)"
+      },
+      "implemented_and_tested_count": 12,
+      "partially_implemented_count": 0,
+      "tested_only_through_mocks_count": 0,
+      "not_implemented_count": 0,
+      "not_verified_count": 0
+    },
+    "priority_4_six_agent_reliability_and_scenarios": {
+      "status": "REGRESSION_PASSED",
+      "scenarios_passed": [
+        "Scenario 1: Nubeqa Sales Analytics Reuse (MODIFY AST-0112 / SM-043)",
+        "Scenario 2: KPI Conflict Resolution (Net Sales Canonical Mapping)",
+        "Scenario 3: Tableau Migration Rationalization (22 Retire, 12 Consolidate)",
+        "Scenario 4: Geography Ambiguity Handling & Safe Fallback",
+        "Scenario 5: Genuine New Power BI Artifact Workflow"
+      ]
+    },
+    "priority_5_api_integration_readiness": {
+      "status": "DOCUMENTED_AND_VERIFIED",
+      "reference_document": "docs/ARCHITECTURE/API_INTEGRATION_REFERENCE.md",
+      "api_version": "v1",
+      "endpoints_audited": 9
+    },
+    "priority_6_arduino_uno_q_interfaces": {
+      "status": "CONTRACT_SPECIFIED",
+      "reference_document": "docs/ARCHITECTURE/ARDUINO_INTEGRATION_CONTRACT.md",
+      "non_authoritative_boundary_preserved": true,
+      "security": "HMAC-SHA256 mutual authentication + 30-second TTL challenge nonces",
+      "target_implementation_milestone": 6
+    },
+    "priority_7_powerbi_artifact_factory": {
+      "status": "REGRESSION_PASSED",
+      "ladder_status": {
+        "g0_generation": "PASS",
+        "g1_per_file_schema": "PASS",
+        "g2_cross_reference_integrity": "PASS",
+        "g3_serializer_semantic_integrity": "PASS",
+        "g4_desktop_acceptance": "UNVERIFIED (PBIDesktop.exe not found on test host)"
+      },
+      "overall_status": "VALID_WITH_UNVERIFIED_DESKTOP"
+    }
+  },
+  "overall_milestone_classification": "READY",
+  "technical_lead_sign_off": {
+    "role": "Senior Software Architect, Enterprise BI Governance Engineer & Technical Lead",
+    "decision": "Approved for Milestone 5.6 Project Owner Review"
+  }
+}
+

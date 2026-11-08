@@ -6,6 +6,8 @@ from datetime import datetime, timezone
 from typing import Optional, List, Dict, Any
 from sqlalchemy.orm import Session
 
+from backend.app.agents.answering.final_validation import validate_final_decision
+from backend.app.agents.answering.presentation import build_presentation
 from backend.app.agents.execution import capture_execution
 from backend.app.agents.schemas import (
     BusinessIntent,
@@ -175,8 +177,10 @@ class AgentOrchestrator:
                     "has_duplicates": duplication.has_duplicates,
                     "governance_blockers_count": len(governance.blockers),
                 },
-                func=lambda: self.decision_agent.process(
-                    intent, discovery, kpi_analysis, duplication, governance, db
+                # The decision (including any LLM narrative) is always passed through deterministic
+                # validation before it is traced, persisted or returned. No provider can bypass it.
+                func=lambda: validate_final_decision(
+                    self.decision_agent.process(intent, discovery, kpi_analysis, duplication, governance, db), db
                 ),
                 db=db,
             )
@@ -225,6 +229,10 @@ class AgentOrchestrator:
                 for t in trace_records
             ]
 
+            presentation = build_presentation(
+                intent, discovery, kpi_analysis, duplication, governance, recommendation,
+                discovery.data_answer, discovery.governance_answer, discovery.migration_answer, db,
+            )
             return AssistantWorkflowResponse(
                 request_id=request_id,
                 raw_prompt=prompt,
@@ -236,6 +244,11 @@ class AgentOrchestrator:
                 duplication=duplication,
                 governance=governance,
                 traces=trace_outs,
+                request_types=list(intent.request_types),
+                data_answer=discovery.data_answer,
+                governance_answer=discovery.governance_answer,
+                migration_answer=discovery.migration_answer,
+                presentation=presentation,
             )
 
         except Exception as e:
@@ -262,7 +275,7 @@ class AgentOrchestrator:
     ) -> tuple[Any, AgentExecutionTraces]:
         """Execute a single agent step with timing, retry support, and trace recording."""
         start = time.time()
-        trace_id = f"TRC-{uuid.uuid4().hex[:8].upper()}"
+        trace_id = f"TRC-{uuid.uuid4().hex[:12].upper()}"
         attempts = 0
         last_error: Optional[str] = None
         result = None
