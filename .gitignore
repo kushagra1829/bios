@@ -26,6 +26,7 @@ data/exports/*
 *.sqlite3
 *.tsbuildinfo
 *.zip
+cloudflared.exe
 bios_approval_demo_dataset.xlsx
 *.pbix
 *.pbip/

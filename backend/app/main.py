@@ -1,3 +1,5 @@
+import os
+os.environ.setdefault("DISABLE_SQLALCHEMY_CEXT", "1")
 from datetime import datetime, timezone
 import logging
 from fastapi import FastAPI, Request, status
