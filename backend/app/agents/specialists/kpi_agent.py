@@ -8,6 +8,7 @@ from backend.app.agents.schemas import (
     KpiEquivalenceReview,
     KpiMatch,
     KpiReviewOutput,
+    RequestType,
 )
 from backend.app.agents.specialists.llm_assisted import LLMAssistedAgent
 from backend.app.models.governance import KpiCatalog
@@ -233,6 +234,12 @@ class KpiIntelligenceAgent(LLMAssistedAgent):
         )
 
         logger.info(f"[{self.agent_name}] {summary}")
+        is_data_question = any(
+            t in (RequestType.DATA_QUESTION, RequestType.BUSINESS_DATA_QUESTION)
+            for t in getattr(intent, "request_types", [])
+        )
+        llm_review = [] if is_data_question else self._review_equivalence(matches, all_kpis)
+
         return KpiAnalysisResult(
             matches=matches,
             canonical_approved_kpi_ids=canonical_found,
@@ -240,7 +247,7 @@ class KpiIntelligenceAgent(LLMAssistedAgent):
             unmatched_requested_metrics=unmatched,
             has_conflicts=has_conflicts or len(unmatched) > 0,
             summary=summary,
-            llm_review=self._review_equivalence(matches, all_kpis),
+            llm_review=llm_review,
         )
 
     def _review_equivalence(self, matches: List[KpiMatch], all_kpis: List[KpiCatalog]) -> List[KpiEquivalenceReview]:

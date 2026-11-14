@@ -49,6 +49,23 @@ class IntentAgent(LLMAssistedAgent):
 
         catalog = load_entity_catalog(db) if db is not None else load_default_catalog()
         baseline = parse_intent(prompt, catalog)
+        route = classify(prompt)
+
+        # For high-confidence data questions, resolve directly via deterministic catalog parsing
+        # without incurring unnecessary external LLM network latency.
+        from backend.app.agents.schemas import RequestType
+        if (
+            RequestType.DATA_QUESTION in route.request_types
+            or RequestType.BUSINESS_DATA_QUESTION in route.request_types
+        ) and baseline.fields.confidence >= 0.7:
+            intent = normalize_intent(prompt, baseline, None, catalog)
+            intent = self._route(prompt, intent, db)
+            logger.info(
+                f"[{self.agent_name}] Fast-path resolved data question: products={intent.products}, "
+                f"markets={intent.markets}, kpis={intent.kpis}, confidence={intent.confidence}"
+            )
+            return intent
+
         vocabulary = llm_prompt_vocabulary(catalog)
 
         proposal = self._llm_step(

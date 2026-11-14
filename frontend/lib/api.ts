@@ -51,7 +51,7 @@ async function fetcher<T>(endpoint: string, options?: RequestInit): Promise<T> {
     });
 
     if (!res.ok) {
-      let errorMsg = `HTTP Error ${res.status}: ${res.statusText}`;
+      let errorMsg = res.statusText ? `HTTP Error ${res.status}: ${res.statusText}` : `HTTP Error ${res.status}`;
       try {
         const errorJson = await res.json();
         if (errorJson.details && Array.isArray(errorJson.details)) {
@@ -65,6 +65,9 @@ async function fetcher<T>(endpoint: string, options?: RequestInit): Promise<T> {
         }
       } catch {
         // Fallback to text status
+      }
+      if (errorMsg.trim().endsWith(":") || errorMsg === `HTTP Error ${res.status}`) {
+        errorMsg = `HTTP Error ${res.status}: Request could not be completed. Please retry.`;
       }
       const err = new Error(errorMsg) as any;
       err.status = res.status;
